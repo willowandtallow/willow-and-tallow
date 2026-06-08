@@ -1,49 +1,59 @@
 import Image from "next/image";
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#F5F1E8] flex items-center justify-center px-6">
-      <section className="max-w-3xl text-center">
-<Image
-  src="/willow-tallow-logo.PNG"
-  alt="Willow & Tallow"
-  width={600}
-  height={250}
-  priority
-  className="mx-auto mb-8"
-/>
+    <main className="min-h-screen bg-[#F4F0E8] flex flex-col items-center px-6 pt-16 pb-12">
+      <div className="max-w-2xl w-full text-center">
 
-        <p className="text-xl md:text-2xl italic text-[#6F775A] mb-10">
+        {/* Logo */}
+        <Image
+          src="/willow-tallow-logo1.PNG"
+          alt="Willow & Tallow"
+          width={500}
+          height={500}
+          priority
+          className="mx-auto"
+        />
+
+        {/* Tagline */}
+        <p className="text-[#7A8165] italic text-2xl -mt-2 mb-8">
           Rooted in Nature. Crafted with Tallow.
         </p>
 
-        <p className="text-lg text-[#4B4B4B] leading-8 mb-12">
-          Thoughtfully crafted skincare inspired by nature,
-          tradition, and simple ingredients.
-          <br />
+        {/* Description */}
+        <p className="text-gray-700 text-xl mb-2">
+          Thoughtfully crafted skincare inspired by nature, tradition,
+          and simple ingredients.
+        </p>
+
+        <p className="text-gray-700 text-xl mb-10">
           Our first collection is coming soon.
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+        {/* Email Form */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <input
             type="email"
             placeholder="Enter your email"
-            className="px-5 py-4 rounded-full border border-[#D5D0C8] bg-white min-w-[300px]"
+            className="w-full sm:w-80 rounded-full border border-gray-300 px-6 py-4 bg-white"
           />
 
-          <button className="px-8 py-4 rounded-full bg-[#3F4738] text-white hover:opacity-90 transition">
+          <button className="bg-[#4B5540] text-white rounded-full px-8 py-4 hover:opacity-90 transition">
             Join the Waitlist
           </button>
         </div>
 
-        <p className="text-[#6F775A]">
+        {/* Offer */}
+        <p className="text-[#7A8165] text-lg mb-12">
           Join the waitlist and receive 15% off your first order at launch.
         </p>
 
-        <div className="mt-12 text-sm tracking-wide text-[#6F775A]">
-Follow us on Instagram & TikTok
-@willowandtallow
-        </div>
-      </section>
+        {/* Social */}
+        <p className="text-[#7A8165] text-lg">
+          Follow us on Instagram & TikTok @willowandtallow
+        </p>
+
+      </div>
     </main>
   );
 }
