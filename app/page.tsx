@@ -7,7 +7,7 @@ export default function Home() {
 
         {/* Logo */}
         <Image
-          src="/willow-tallow-logo1.PNG"
+          src="/willow-tallow-logo.PNG"
           alt="Willow & Tallow"
           width={500}
           height={500}
