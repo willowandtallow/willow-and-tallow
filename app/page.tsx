@@ -3,9 +3,14 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#F5F1E8] flex items-center justify-center px-6">
       <section className="max-w-3xl text-center">
-<h1 className="text-6xl md:text-7xl font-serif tracking-[0.2em] text-[#3F4738] mb-6">
-  WILLOW & TALLOW
-</h1>
+<Image
+  src="/willow-tallow-logo.PNG"
+  alt="Willow & Tallow"
+  width={600}
+  height={250}
+  priority
+  className="mx-auto mb-8"
+/>
 
         <p className="text-xl md:text-2xl italic text-[#6F775A] mb-10">
           Rooted in Nature. Crafted with Tallow.
