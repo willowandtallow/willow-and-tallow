@@ -9,16 +9,16 @@ export default function Home() {
         <Image
           src="/willow-tallow-logo.PNG"
           alt="Willow & Tallow"
-          width={300}
-          height={300}
+          width={600}
+          height={600}
           priority
           className="mx-auto"
         />
 
-        {/* Tagline */}
-        <p className="text-[#7A8165] italic text-2xl -mt-2 mb-8">
-          Rooted in Nature. Crafted with Tallow.
-        </p>
+{/* Tagline */}
+<p className="text-[#7A8165] italic text-2xl -mt-20 mb-8">
+  Rooted in Nature. Crafted with Tallow.
+</p>
 
         {/* Description */}
         <p className="text-gray-700 text-xl mb-2">
