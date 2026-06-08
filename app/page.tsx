@@ -9,8 +9,8 @@ export default function Home() {
         <Image
           src="/willow-tallow-logo.PNG"
           alt="Willow & Tallow"
-          width={600}
-          height={600}
+          width={500}
+          height={500}
           priority
           className="mx-auto"
         />
