@@ -4,44 +4,54 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="bg-[#F5F0E7] text-[#353A31]">
-      {/* HERO */}
-      <section
-        className="relative min-h-screen overflow-hidden bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/willow-background.png')",
-        }}
-      >
-        <div className="absolute inset-0 bg-[#F7F1E7]/20" />
+    {/* HERO */}
+<section
+  className="relative min-h-[92vh] overflow-hidden bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: "url('/willow-background.png')",
+  }}
+>
+  {/* Soft overall veil */}
+  <div className="absolute inset-0 bg-[#F7F1E7]/10" />
 
-        <div className="relative z-10 flex min-h-screen items-center justify-center px-6 pt-24 text-center">
-          <div className="max-w-3xl">
-            <Image
-              src="/willow-tallow-logo.PNG"
-              alt="Willow & Tallow"
-              width={700}
-              height={700}
-              priority
-              className="mx-auto h-auto w-full max-w-[500px]"
-            />
+  {/* Bottom fade so the hero flows into the next section */}
+  <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-b from-transparent via-[#F5F0E7]/45 to-[#F5F0E7]" />
 
-            <p className="-mt-12 font-serif text-xl italic text-[#69715F] md:-mt-16 md:text-2xl">
-              Rooted in Nature. Crafted with Tallow.
-            </p>
+  <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center px-6 pb-28 pt-36 text-center md:pt-40">
+    {/* LOGO */}
+    <Image
+      src="/willow-tallow-logo.PNG"
+      alt="Willow & Tallow"
+      width={700}
+      height={700}
+      priority
+      className="h-auto w-full max-w-[440px] md:max-w-[540px]"
+    />
 
-            <p className="mx-auto mt-8 max-w-xl text-base leading-7 text-[#5E6556] md:text-lg">
-              Simple, nourishing skincare made with thoughtfully selected
-              ingredients and a slower approach to everyday care.
-            </p>
+    {/* TAGLINE */}
+    <p className="-mt-8 font-serif text-xl italic tracking-wide text-[#69715F] md:-mt-12 md:text-[1.65rem]">
+      Rooted in Nature. Crafted with Tallow.
+    </p>
 
-            <Link
-              href="/shop"
-              className="mt-9 inline-block border border-[#69715F] bg-[#F7F1E7]/65 px-8 py-4 text-xs uppercase tracking-[0.28em] text-[#4A5344] backdrop-blur-sm transition hover:bg-[#F7F1E7]"
-            >
-              Discover the Collection
-            </Link>
-          </div>
-        </div>
-      </section>
+    {/* DESCRIPTION */}
+    <p className="mx-auto mt-7 max-w-xl text-[17px] leading-8 text-[#5E6556] md:text-lg">
+      Simple, nourishing skincare made with thoughtfully selected ingredients
+      and a slower approach to everyday care.
+    </p>
+
+    {/* CTA */}
+    <Link
+      href="/shop"
+      className="group mt-9 inline-flex items-center gap-4 border-b border-[#66705D] pb-2 text-xs uppercase tracking-[0.3em] text-[#46503F] transition duration-300 hover:border-[#343C31] hover:text-[#343C31]"
+    >
+      Discover the Collection
+
+      <span className="transition-transform duration-300 group-hover:translate-x-1">
+        →
+      </span>
+    </Link>
+  </div>
+</section>
 
       {/* INTRO */}
       <section className="px-6 py-24 md:px-10 md:py-32">
