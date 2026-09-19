@@ -59,8 +59,8 @@ function Reveal({
         }
       },
       {
-        threshold: 0.08,
-        rootMargin: "0px 0px -20px 0px",
+        threshold: 0.12,
+        rootMargin: "0px 0px -70px 0px",
       }
     );
 
@@ -74,16 +74,17 @@ function Reveal({
       ref={ref}
       style={{
         transitionDelay: `${delay}ms`,
+        transitionDuration: "1350ms",
+        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
       }}
       className={`
         transform-gpu
+        will-change-[opacity,transform]
         transition-[opacity,transform]
-        duration-[1000ms]
-        ease-[cubic-bezier(0.16,1,0.3,1)]
         ${
           visible
             ? "translate-y-0 opacity-100"
-            : "translate-y-7 opacity-0"
+            : "translate-y-8 opacity-0"
         }
         ${className}
       `}
@@ -818,7 +819,7 @@ export default function Home() {
             {products.map((product, index) => (
               <Reveal
                 key={product.name}
-                delay={index * 120}
+                delay={index * 140}
                 className="h-full"
               >
                 <article
