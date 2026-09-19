@@ -49,7 +49,6 @@ function Reveal({
 
   useEffect(() => {
     const element = ref.current;
-
     if (!element) return;
 
     const observer = new IntersectionObserver(
@@ -75,17 +74,16 @@ function Reveal({
       ref={ref}
       style={{
         transitionDelay: `${delay}ms`,
-        transitionDuration: "1100ms",
-        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
       }}
       className={`
         transform-gpu
-        will-change-transform
         transition-[opacity,transform]
+        duration-[1000ms]
+        ease-[cubic-bezier(0.16,1,0.3,1)]
         ${
           visible
-            ? "translate-y-0 scale-100 opacity-100"
-            : "translate-y-5 scale-[0.995] opacity-0"
+            ? "translate-y-0 opacity-100"
+            : "translate-y-7 opacity-0"
         }
         ${className}
       `}
@@ -185,7 +183,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="animate-[heroFade_1s_ease-out_0.15s_both]">
+          <div className="animate-[heroFade_1000ms_cubic-bezier(0.16,1,0.3,1)_0.10s_both]">
             <p
               className={`
                 font-serif
@@ -201,7 +199,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="animate-[heroFade_1s_ease-out_0.3s_both]">
+          <div className="animate-[heroFade_1000ms_cubic-bezier(0.16,1,0.3,1)_0.20s_both]">
             <p
               className={`
                 mx-auto
@@ -220,7 +218,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="animate-[heroFade_1s_ease-out_0.45s_both]">
+          <div className="animate-[heroFade_1000ms_cubic-bezier(0.16,1,0.3,1)_0.30s_both]">
             <Link
               href="/shop"
               className={`
@@ -1326,14 +1324,12 @@ export default function Home() {
         @keyframes heroFade {
           0% {
             opacity: 0;
-            transform: translateY(14px);
-            filter: blur(2px);
+            transform: translateY(28px);
           }
 
           100% {
             opacity: 1;
             transform: translateY(0);
-            filter: blur(0);
           }
         }
 
