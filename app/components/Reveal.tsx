@@ -34,16 +34,14 @@ export default function Reveal({
         }
       },
       {
-        threshold: 0.08,
-        rootMargin: "0px 0px -6% 0px",
+        threshold: 0.06,
+        rootMargin: "0px 0px -4% 0px",
       }
     );
 
     observer.observe(element);
 
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -55,20 +53,16 @@ export default function Reveal({
 
         transform: visible
           ? "translate3d(0, 0, 0)"
-          : "translate3d(0, 8px, 0)",
+          : "translate3d(0, 3px, 0)",
 
         transitionProperty: "opacity, transform",
 
-        transitionDuration: "1200ms",
+        transitionDuration: "950ms",
 
         transitionTimingFunction:
-          "cubic-bezier(0.16, 1, 0.3, 1)",
+          "cubic-bezier(0.22, 1, 0.36, 1)",
 
         transitionDelay: `${delay}ms`,
-
-        willChange: visible
-          ? "auto"
-          : "opacity, transform",
       }}
     >
       {children}
