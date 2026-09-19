@@ -44,50 +44,28 @@ function Reveal({
   delay?: number;
   className?: string;
 }) {
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) setVisible(true);
       },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -70px 0px",
-      }
+      { threshold: 0.15 }
     );
 
-    observer.observe(element);
-
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
   return (
     <div
       ref={ref}
-      style={{
-        transitionDelay: `${delay}ms`,
-        transitionDuration: "1350ms",
-        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
-      }}
-      className={`
-        transform-gpu
-        will-change-[opacity,transform]
-        transition-[opacity,transform]
-        ${
-          visible
-            ? "translate-y-0 opacity-100"
-            : "translate-y-8 opacity-0"
-        }
-        ${className}
-      `}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`transition-all duration-1000 ease-out ${
+        visible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+      } ${className}`}
     >
       {children}
     </div>
@@ -819,7 +797,7 @@ export default function Home() {
             {products.map((product, index) => (
               <Reveal
                 key={product.name}
-                delay={index * 140}
+                delay={index * 90}
                 className="h-full"
               >
                 <article
