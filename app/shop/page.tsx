@@ -10,8 +10,6 @@ const products = [
     description:
       "A rich, nourishing balm made for simple everyday moisture and comforting care.",
     image: "/whipped-tallow-balm.png",
-    status: "available",
-    href: "/shop/tallow-balm",
     label: "Deep Nourishment",
   },
   {
@@ -19,8 +17,6 @@ const products = [
     description:
       "A simple everyday essential designed to keep lips feeling soft, smooth, and protected.",
     image: "/tallow-lip-balm.png",
-    status: "coming-soon",
-    href: "#",
     label: "Everyday Protection",
   },
   {
@@ -28,8 +24,6 @@ const products = [
     description:
       "A gentle, thoughtfully made cleansing bar inspired by traditional ingredients and simple routines.",
     image: "/tallow-soap.png",
-    status: "coming-soon",
-    href: "#",
     label: "Gentle Cleansing",
   },
 ];
@@ -86,7 +80,7 @@ export default function ShopPage() {
           `}
         >
           <div className="max-w-3xl">
-            <div className="animate-[heroFade_1000ms_ease-out_0.1s_both]">
+            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.1s_both]">
               <span
                 className={`
                   inline-flex
@@ -107,7 +101,7 @@ export default function ShopPage() {
               </span>
             </div>
 
-            <div className="animate-[heroFade_1000ms_ease-out_0.2s_both]">
+            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.2s_both]">
               <h1
                 className={`
                   mt-7
@@ -124,7 +118,7 @@ export default function ShopPage() {
               </h1>
             </div>
 
-            <div className="animate-[heroFade_1000ms_ease-out_0.3s_both]">
+            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.3s_both]">
               <p
                 className={`
                   mx-auto
@@ -226,8 +220,15 @@ export default function ShopPage() {
         <div className="mx-auto max-w-7xl">
           <Reveal>
             <div className="mb-14 text-center">
-              <p
+              <span
                 className={`
+                  inline-flex
+                  rounded-full
+                  border
+                  border-[#C7C2B6]
+                  bg-[#F5F0E7]/60
+                  px-5
+                  py-2
                   text-[9px]
                   uppercase
                   tracking-[0.36em]
@@ -235,22 +236,38 @@ export default function ShopPage() {
                 `}
               >
                 Our Essentials
-              </p>
+              </span>
 
               <h2
                 className={`
-                  mt-5
+                  mt-7
                   font-serif
                   text-4xl
+                  leading-tight
                   text-[#363C33]
                   md:text-5xl
                 `}
               >
                 Made for everyday care.
               </h2>
+
+              <p
+                className={`
+                  mx-auto
+                  mt-5
+                  max-w-xl
+                  text-[16px]
+                  leading-7
+                  text-[#6B7065]
+                `}
+              >
+                A thoughtfully made collection of simple skincare essentials,
+                coming soon.
+              </p>
             </div>
           </Reveal>
 
+          {/* PRODUCT CARDS */}
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {products.map((product, index) => (
               <Reveal
@@ -277,7 +294,7 @@ export default function ShopPage() {
                     hover:shadow-[0_22px_60px_rgba(70,64,55,0.09)]
                   `}
                 >
-                  {/* IMAGE */}
+                  {/* PRODUCT IMAGE */}
                   <div
                     className={`
                       relative
@@ -301,6 +318,7 @@ export default function ShopPage() {
                       `}
                     />
 
+                    {/* COMING SOON BADGE */}
                     <div
                       className={`
                         absolute
@@ -320,13 +338,25 @@ export default function ShopPage() {
                         backdrop-blur-md
                       `}
                     >
-                      {product.status === "available"
-                        ? "Available"
-                        : "Coming Soon"}
+                      Coming Soon
                     </div>
+
+                    {/* SOFT IMAGE OVERLAY */}
+                    <div
+                      className={`
+                        pointer-events-none
+                        absolute
+                        inset-x-0
+                        bottom-0
+                        h-24
+                        bg-gradient-to-t
+                        from-[#4B5147]/10
+                        to-transparent
+                      `}
+                    />
                   </div>
 
-                  {/* CONTENT */}
+                  {/* PRODUCT CONTENT */}
                   <div
                     className={`
                       flex
@@ -373,58 +403,24 @@ export default function ShopPage() {
                     </p>
 
                     <div className="mt-auto pt-7">
-                      {product.status === "available" ? (
-                        <Link
-                          href={product.href}
-                          className={`
-                            group/button
-                            inline-flex
-                            items-center
-                            gap-3
-                            rounded-full
-                            bg-[#56604E]
-                            px-6
-                            py-3.5
-                            text-[9px]
-                            uppercase
-                            tracking-[0.25em]
-                            text-[#F7F2EA]
-                            transition-all
-                            duration-300
-                            hover:bg-[#454E40]
-                          `}
-                        >
-                          View Product
-
-                          <span
-                            className={`
-                              transition-transform
-                              duration-300
-                              group-hover/button:translate-x-1
-                            `}
-                          >
-                            →
-                          </span>
-                        </Link>
-                      ) : (
-                        <span
-                          className={`
-                            inline-flex
-                            rounded-full
-                            border
-                            border-[#D0C9BD]
-                            bg-[#EEE8DE]/70
-                            px-5
-                            py-3
-                            text-[9px]
-                            uppercase
-                            tracking-[0.25em]
-                            text-[#8A8D7D]
-                          `}
-                        >
-                          Coming Soon
-                        </span>
-                      )}
+                      <span
+                        className={`
+                          inline-flex
+                          items-center
+                          rounded-full
+                          border
+                          border-[#D0C9BD]
+                          bg-[#EEE8DE]/70
+                          px-5
+                          py-3
+                          text-[9px]
+                          uppercase
+                          tracking-[0.25em]
+                          text-[#7E8373]
+                        `}
+                      >
+                        Coming Soon
+                      </span>
                     </div>
                   </div>
                 </article>
@@ -435,7 +431,7 @@ export default function ShopPage() {
       </section>
 
       {/* =====================================================
-          COMING SOON
+          COMING SOON CTA
       ===================================================== */}
       <section
         className={`
@@ -478,7 +474,7 @@ export default function ShopPage() {
                 text-[#7B816E]
               `}
             >
-              More is on the way
+              Coming Soon
             </span>
 
             <h2
@@ -509,8 +505,9 @@ export default function ShopPage() {
                 md:text-lg
               `}
             >
-              Lip balm, soap, and more Willow & Tallow essentials are currently
-              in the works.
+              Our first Willow & Tallow essentials are currently in the works.
+              We&apos;re taking our time to create a collection that feels
+              simple, thoughtful, and worth the wait.
             </p>
 
             <Link
@@ -553,12 +550,14 @@ export default function ShopPage() {
         </Reveal>
       </section>
 
-      {/* HERO ANIMATION */}
+      {/* =====================================================
+          HERO ANIMATION
+      ===================================================== */}
       <style jsx global>{`
         @keyframes heroFade {
           0% {
             opacity: 0;
-            transform: translateY(28px);
+            transform: translateY(12px);
           }
 
           100% {
