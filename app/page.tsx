@@ -2,12 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ReactNode,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import Reveal from "@/components/Reveal";
 
 /* =========================================================
    PRODUCTS
@@ -34,43 +29,6 @@ const products = [
 /* =========================================================
    SCROLL REVEAL
 ========================================================= */
-
-function Reveal({
-  children,
-  delay = 0,
-  className = "",
-}: {
-  children: ReactNode;
-  delay?: number;
-  className?: string;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.15 }
-    );
-
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-1000 ease-out ${
-        visible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-      } ${className}`}
-    >
-      {children}
-    </div>
-  );
-}
 
 /* =========================================================
    HOME
@@ -797,7 +755,7 @@ export default function Home() {
             {products.map((product, index) => (
               <Reveal
                 key={product.name}
-                delay={index * 90}
+                delay={index * 100}
                 className="h-full"
               >
                 <article
