@@ -19,121 +19,56 @@ export default function Reveal({
   className = "",
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [progress, setProgress] = useState(0);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const element = ref.current;
+
     if (!element) return;
 
-    let rafId: number | null = null;
-
-    const update = () => {
-      const rect = element.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-
-      // Starts appearing near the bottom of the screen.
-      const revealStart = viewportHeight * 0.96;
-
-      // Fully visible once it reaches this point.
-      const revealEnd = viewportHeight * 0.76;
-
-      let rawProgress =
-        (revealStart - rect.top) /
-        (revealStart - revealEnd);
-
-      rawProgress = Math.max(
-        0,
-        Math.min(1, rawProgress)
-      );
-
-      // Smoothstep easing.
-      const eased =
-        rawProgress *
-        rawProgress *
-        (3 - 2 * rawProgress);
-
-      setProgress(eased);
-
-      rafId = null;
-    };
-
-    const requestUpdate = () => {
-      if (rafId !== null) return;
-
-      rafId = requestAnimationFrame(update);
-    };
-
-    update();
-
-    window.addEventListener(
-      "scroll",
-      requestUpdate,
-      { passive: true }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.08,
+        rootMargin: "0px 0px -6% 0px",
+      }
     );
 
-    window.addEventListener(
-      "resize",
-      requestUpdate
-    );
+    observer.observe(element);
 
     return () => {
-      window.removeEventListener(
-        "scroll",
-        requestUpdate
-      );
-
-      window.removeEventListener(
-        "resize",
-        requestUpdate
-      );
-
-      if (rafId !== null) {
-        cancelAnimationFrame(rafId);
-      }
+      observer.disconnect();
     };
   }, []);
-
-  /*
-   * Keeps the stagger on product cards,
-   * but makes it much smaller than before.
-   */
-  const staggerAmount =
-    delay > 0
-      ? Math.min(delay / 1800, 0.12)
-      : 0;
-
-  const adjustedProgress = Math.max(
-    0,
-    Math.min(
-      1,
-      (progress - staggerAmount) /
-        (1 - staggerAmount)
-    )
-  );
-
-  /*
-   * Very small movement.
-   * Opacity is doing most of the visual work.
-   */
-  const translateY =
-    (1 - adjustedProgress) * 10;
 
   return (
     <div
       ref={ref}
       className={className}
       style={{
-        opacity: adjustedProgress,
+        opacity: visible ? 1 : 0,
 
-        transform: `
-          translate3d(
-            0,
-            ${translateY}px,
-            0
-          )
-        `,
+        transform: visible
+          ? "translate3d(0, 0, 0)"
+          : "translate3d(0, 8px, 0)",
 
-        willChange: "opacity, transform",
+        transitionProperty: "opacity, transform",
+
+        transitionDuration: "1200ms",
+
+        transitionTimingFunction:
+          "cubic-bezier(0.16, 1, 0.3, 1)",
+
+        transitionDelay: `${delay}ms`,
+
+        willChange: visible
+          ? "auto"
+          : "opacity, transform",
       }}
     >
       {children}
