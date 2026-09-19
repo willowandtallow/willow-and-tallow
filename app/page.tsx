@@ -107,14 +107,14 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className="
+        className={`
           relative
           min-h-[90vh]
           overflow-hidden
           bg-cover
           bg-center
           bg-no-repeat
-        "
+        `}
         style={{
           backgroundImage: "url('/willow-background.png')",
         }}
@@ -122,7 +122,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#F7F1E7]/10" />
 
         <div
-          className="
+          className={`
             absolute
             inset-x-0
             bottom-0
@@ -131,11 +131,11 @@ export default function Home() {
             from-transparent
             via-[#F5F0E7]/45
             to-[#F5F0E7]
-          "
+          `}
         />
 
         <div
-          className="
+          className={`
             relative
             z-10
             mx-auto
@@ -152,12 +152,12 @@ export default function Home() {
             text-center
             sm:px-6
             md:pb-28
-          "
+          `}
         >
 
           {/* LOGO */}
           <div
-            className="
+            className={`
               relative
               h-[190px]
               w-full
@@ -165,7 +165,7 @@ export default function Home() {
               md:h-[235px]
               lg:h-[250px]
               xl:h-[265px]
-            "
+            `}
           >
             <Image
               src="/willow-tallow-logo.PNG"
@@ -173,20 +173,20 @@ export default function Home() {
               fill
               priority
               sizes="100vw"
-              className="
+              className={`
                 object-contain
                 scale-[1.08]
                 sm:scale-[1.15]
                 md:scale-[1.22]
                 lg:scale-[1.28]
                 xl:scale-[1.32]
-              "
+              `}
             />
           </div>
 
           <div className="animate-[heroFade_1s_ease-out_0.15s_both]">
             <p
-              className="
+              className={`
                 font-serif
                 text-xl
                 italic
@@ -194,7 +194,7 @@ export default function Home() {
                 text-[#69715F]
                 sm:text-2xl
                 md:text-[1.7rem]
-              "
+              `}
             >
               Rooted in Nature. Crafted with Tallow.
             </p>
@@ -202,7 +202,7 @@ export default function Home() {
 
           <div className="animate-[heroFade_1s_ease-out_0.3s_both]">
             <p
-              className="
+              className={`
                 mx-auto
                 mt-6
                 max-w-2xl
@@ -212,7 +212,7 @@ export default function Home() {
                 sm:text-[17px]
                 sm:leading-8
                 md:text-lg
-              "
+              `}
             >
               Simple, nourishing skincare made with thoughtfully selected
               ingredients and a slower approach to everyday care.
@@ -222,7 +222,7 @@ export default function Home() {
           <div className="animate-[heroFade_1s_ease-out_0.45s_both]">
             <Link
               href="/shop"
-              className="
+              className={`
                 group
                 mt-9
                 inline-flex
@@ -243,16 +243,16 @@ export default function Home() {
                 duration-300
                 hover:-translate-y-0.5
                 hover:bg-[#E9E3D8]/90
-              "
+              `}
             >
               Discover the Collection
 
               <span
-                className="
+                className={`
                   transition-transform
                   duration-300
                   group-hover:translate-x-1
-                "
+                `}
               >
                 →
               </span>
@@ -266,7 +266,7 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className="
+        className={`
           bg-[#F5F0E7]
           px-5
           pb-28
@@ -274,13 +274,13 @@ export default function Home() {
           md:px-10
           md:pb-36
           md:pt-20
-        "
+        `}
       >
         <Reveal>
           <div className="mx-auto max-w-4xl text-center">
 
             <span
-              className="
+              className={`
                 inline-flex
                 rounded-full
                 border
@@ -292,13 +292,13 @@ export default function Home() {
                 uppercase
                 tracking-[0.36em]
                 text-[#7A806E]
-              "
+              `}
             >
               Thoughtful by Nature
             </span>
 
             <h2
-              className="
+              className={`
                 mx-auto
                 mt-7
                 max-w-3xl
@@ -308,13 +308,13 @@ export default function Home() {
                 text-[#363C33]
                 md:text-5xl
                 lg:text-[3.4rem]
-              "
+              `}
             >
               A return to simpler skincare.
             </h2>
 
             <p
-              className="
+              className={`
                 mx-auto
                 mt-7
                 max-w-2xl
@@ -322,7 +322,7 @@ export default function Home() {
                 leading-8
                 text-[#6A7064]
                 md:text-lg
-              "
+              `}
             >
               Inspired by traditional ingredients and everyday rituals,
               Willow & Tallow creates nourishing skincare designed to feel
@@ -339,19 +339,19 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className="
+        className={`
           bg-[#E9E1D5]
           px-5
           py-20
           md:px-10
           md:py-28
-        "
+        `}
       >
         <div className="mx-auto max-w-7xl">
 
           <Reveal>
             <div
-              className="
+              className={`
                 grid
                 overflow-hidden
                 rounded-[36px]
@@ -360,38 +360,38 @@ export default function Home() {
                 bg-[#F1EBE2]
                 shadow-[0_18px_60px_rgba(71,64,53,0.07)]
                 lg:grid-cols-[1.08fr_0.92fr]
-              "
+              `}
             >
 
               {/* FEATURED IMAGE */}
               <div
-                className="
+                className={`
                   group
                   relative
                   min-h-[430px]
                   overflow-hidden
                   sm:min-h-[520px]
                   lg:min-h-[650px]
-                "
+                `}
               >
                 <Image
                   src="/whipped-tallow-balm.png"
                   alt="Willow & Tallow Whipped Tallow Balm"
                   fill
                   sizes="(max-width: 1024px) 100vw, 55vw"
-                  className="
+                  className={`
                     object-cover
                     transition-transform
                     duration-[1200ms]
                     ease-out
                     group-hover:scale-[1.035]
-                  "
+                  `}
                 />
               </div>
 
               {/* FEATURED CONTENT */}
               <div
-                className="
+                className={`
                   flex
                   items-center
                   px-7
@@ -399,12 +399,12 @@ export default function Home() {
                   sm:px-10
                   md:px-14
                   lg:px-16
-                "
+                `}
               >
                 <div className="max-w-xl">
 
                   <span
-                    className="
+                    className={`
                       inline-flex
                       rounded-full
                       border
@@ -416,13 +416,13 @@ export default function Home() {
                       uppercase
                       tracking-[0.32em]
                       text-[#7D826F]
-                    "
+                    `}
                   >
                     Featured Product
                   </span>
 
                   <h2
-                    className="
+                    className={`
                       mt-7
                       font-serif
                       text-5xl
@@ -430,30 +430,30 @@ export default function Home() {
                       tracking-[-0.03em]
                       text-[#353B32]
                       md:text-6xl
-                    "
+                    `}
                   >
                     Whipped Tallow Balm
                   </h2>
 
                   <p
-                    className="
+                    className={`
                       mt-4
                       font-serif
                       text-xl
                       italic
                       text-[#747B68]
-                    "
+                    `}
                   >
                     Nourish · Protect · Restore
                   </p>
 
                   <p
-                    className="
+                    className={`
                       mt-7
                       text-[17px]
                       leading-8
                       text-[#62685D]
-                    "
+                    `}
                   >
                     A rich, comforting balm created to deeply nourish and
                     soften the skin. Its whipped texture melts effortlessly
@@ -463,64 +463,64 @@ export default function Home() {
                   <div className="mt-8 grid grid-cols-2 gap-3">
 
                     <div
-                      className="
+                      className={`
                         rounded-[20px]
                         border
                         border-[#D3CBC0]
                         bg-[#F8F3EB]/65
                         p-5
-                      "
+                      `}
                     >
                       <p
-                        className="
+                        className={`
                           text-[9px]
                           uppercase
                           tracking-[0.25em]
                           text-[#8B8E7F]
-                        "
+                        `}
                       >
                         Texture
                       </p>
 
                       <p
-                        className="
+                        className={`
                           mt-2
                           font-serif
                           text-lg
                           text-[#4F574B]
-                        "
+                        `}
                       >
                         Soft & whipped
                       </p>
                     </div>
 
                     <div
-                      className="
+                      className={`
                         rounded-[20px]
                         border
                         border-[#D3CBC0]
                         bg-[#F8F3EB]/65
                         p-5
-                      "
+                      `}
                     >
                       <p
-                        className="
+                        className={`
                           text-[9px]
                           uppercase
                           tracking-[0.25em]
                           text-[#8B8E7F]
-                        "
+                        `}
                       >
                         Ritual
                       </p>
 
                       <p
-                        className="
+                        className={`
                           mt-2
                           font-serif
                           text-lg
                           text-[#4F574B]
-                        "
+                        `}
                       >
                         Deep nourishment
                       </p>
@@ -529,7 +529,7 @@ export default function Home() {
 
                   <Link
                     href="/shop"
-                    className="
+                    className={`
                       group
                       mt-8
                       inline-flex
@@ -547,16 +547,16 @@ export default function Home() {
                       duration-300
                       hover:-translate-y-0.5
                       hover:bg-[#414A3C]
-                    "
+                    `}
                   >
                     Shop Whipped Tallow Balm
 
                     <span
-                      className="
+                      className={`
                         transition-transform
                         duration-300
                         group-hover:translate-x-1
-                      "
+                      `}
                     >
                       →
                     </span>
@@ -573,27 +573,27 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className="
+        className={`
           bg-[#F5F0E7]
           px-5
           py-20
           md:px-10
           md:py-28
-        "
+        `}
       >
         <div
-          className="
+          className={`
             mx-auto
             grid
             max-w-7xl
             gap-5
             lg:grid-cols-2
-          "
+          `}
         >
 
           <Reveal>
             <div
-              className="
+              className={`
                 flex
                 min-h-[430px]
                 items-center
@@ -605,12 +605,12 @@ export default function Home() {
                 px-8
                 py-16
                 text-center
-              "
+              `}
             >
               <div className="max-w-md">
 
                 <span
-                  className="
+                  className={`
                     inline-flex
                     rounded-full
                     border
@@ -622,20 +622,20 @@ export default function Home() {
                     uppercase
                     tracking-[0.34em]
                     text-[#838878]
-                  "
+                  `}
                 >
                   Our Philosophy
                 </span>
 
                 <h2
-                  className="
+                  className={`
                     mt-7
                     font-serif
                     text-4xl
                     leading-[1.12]
                     text-[#3B4137]
                     md:text-5xl
-                  "
+                  `}
                 >
                   Fewer ingredients.
                   <br />
@@ -647,7 +647,7 @@ export default function Home() {
 
           <Reveal delay={130}>
             <div
-              className="
+              className={`
                 flex
                 min-h-[430px]
                 items-center
@@ -659,12 +659,12 @@ export default function Home() {
                 py-16
                 md:px-14
                 lg:px-16
-              "
+              `}
             >
               <div className="max-w-xl">
 
                 <span
-                  className="
+                  className={`
                     inline-flex
                     rounded-full
                     border
@@ -676,32 +676,32 @@ export default function Home() {
                     uppercase
                     tracking-[0.34em]
                     text-[#7C816F]
-                  "
+                  `}
                 >
                   Thoughtfully Made
                 </span>
 
                 <p
-                  className="
+                  className={`
                     mt-7
                     font-serif
                     text-2xl
                     leading-relaxed
                     text-[#454C40]
                     md:text-3xl
-                  "
+                  `}
                 >
                   We believe skincare should feel simple, familiar, and
                   beautifully uncomplicated.
                 </p>
 
                 <p
-                  className="
+                  className={`
                     mt-6
                     text-[17px]
                     leading-8
                     text-[#666C60]
-                  "
+                  `}
                 >
                   Our approach is rooted in traditional ingredients, gentle
                   rituals, and choosing only what serves a purpose. Nothing
@@ -710,7 +710,7 @@ export default function Home() {
 
                 <Link
                   href="/about"
-                  className="
+                  className={`
                     group
                     mt-8
                     inline-flex
@@ -728,16 +728,16 @@ export default function Home() {
                     transition-all
                     duration-300
                     hover:bg-[#F5F0E7]/70
-                  "
+                  `}
                 >
                   Discover Our Approach
 
                   <span
-                    className="
+                    className={`
                       transition-transform
                       duration-300
                       group-hover:translate-x-1
-                    "
+                    `}
                   >
                     →
                   </span>
@@ -753,13 +753,13 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className="
+        className={`
           bg-[#EEE8DE]
           px-5
           py-24
           md:px-10
           md:py-32
-        "
+        `}
       >
         <div className="mx-auto max-w-7xl">
 
@@ -767,7 +767,7 @@ export default function Home() {
             <div className="text-center">
 
               <span
-                className="
+                className={`
                   inline-flex
                   rounded-full
                   border
@@ -779,33 +779,33 @@ export default function Home() {
                   uppercase
                   tracking-[0.36em]
                   text-[#7C8270]
-                "
+                `}
               >
                 The Collection
               </span>
 
               <h2
-                className="
+                className={`
                   mt-7
                   font-serif
                   text-4xl
                   leading-tight
                   text-[#363C33]
                   md:text-5xl
-                "
+                `}
               >
                 Everyday essentials, made simply.
               </h2>
 
               <p
-                className="
+                className={`
                   mx-auto
                   mt-5
                   max-w-xl
                   text-[17px]
                   leading-7
                   text-[#6B7065]
-                "
+                `}
               >
                 A small collection of nourishing essentials created for
                 simple, intentional everyday care.
@@ -823,7 +823,7 @@ export default function Home() {
                 className="h-full"
               >
                 <article
-                  className="
+                  className={`
                     group
                     flex
                     h-full
@@ -839,37 +839,37 @@ export default function Home() {
                     duration-500
                     hover:-translate-y-2
                     hover:shadow-[0_22px_60px_rgba(70,64,55,0.10)]
-                  "
+                  `}
                 >
 
                   {/* IMAGE */}
                   <div
-                    className="
+                    className={`
                       relative
                       aspect-[4/5]
                       overflow-hidden
                       rounded-[24px]
                       bg-[#E5DED2]
-                    "
+                    `}
                   >
                     <Image
                       src={product.image}
                       alt={product.name}
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
-                      className="
+                      className={`
                         object-cover
                         transition-transform
                         duration-[1000ms]
                         ease-out
                         group-hover:scale-[1.04]
-                      "
+                      `}
                     />
                   </div>
 
                   {/* PRODUCT INFO */}
                   <div
-                    className="
+                    className={`
                       flex
                       flex-1
                       flex-col
@@ -878,27 +878,27 @@ export default function Home() {
                       pb-7
                       pt-7
                       text-center
-                    "
+                    `}
                   >
                     <p
-                      className="
+                      className={`
                         text-[9px]
                         uppercase
                         tracking-[0.32em]
                         text-[#888C7C]
-                      "
+                      `}
                     >
                       {product.subtitle}
                     </p>
 
                     <h3
-                      className="
+                      className={`
                         mt-4
                         font-serif
                         text-[1.8rem]
                         leading-tight
                         text-[#394036]
-                      "
+                      `}
                     >
                       {product.name}
                     </h3>
@@ -906,7 +906,7 @@ export default function Home() {
                     <div className="mt-auto pt-7">
                       <Link
                         href="/shop"
-                        className="
+                        className={`
                           group/button
                           inline-flex
                           items-center
@@ -923,16 +923,16 @@ export default function Home() {
                           transition-all
                           duration-300
                           hover:bg-[#E9E3D8]
-                        "
+                        `}
                       >
                         Shop Product
 
                         <span
-                          className="
+                          className={`
                             transition-transform
                             duration-300
                             group-hover/button:translate-x-1
-                          "
+                          `}
                         >
                           →
                         </span>
@@ -948,7 +948,7 @@ export default function Home() {
             <div className="mt-14 text-center">
               <Link
                 href="/shop"
-                className="
+                className={`
                   inline-flex
                   items-center
                   gap-3
@@ -964,7 +964,7 @@ export default function Home() {
                   duration-300
                   hover:-translate-y-0.5
                   hover:bg-[#485143]
-                "
+                `}
               >
                 View the Full Collection
                 <span>→</span>
@@ -979,17 +979,17 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className="
+        className={`
           bg-[#F5F0E7]
           px-5
           py-20
           md:px-10
           md:py-28
-        "
+        `}
       >
         <Reveal>
           <div
-            className="
+            className={`
               relative
               mx-auto
               min-h-[620px]
@@ -1000,7 +1000,7 @@ export default function Home() {
               bg-center
               bg-no-repeat
               shadow-[0_20px_60px_rgba(65,59,50,0.08)]
-            "
+            `}
             style={{
               backgroundImage: "url('/willow-background.png')",
             }}
@@ -1008,7 +1008,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-[#F4EEE4]/5" />
 
             <div
-              className="
+              className={`
                 relative
                 z-10
                 flex
@@ -1017,10 +1017,10 @@ export default function Home() {
                 p-5
                 sm:p-8
                 md:p-12
-              "
+              `}
             >
               <div
-                className="
+                className={`
                   max-w-xl
                   rounded-[28px]
                   border
@@ -1030,11 +1030,11 @@ export default function Home() {
                   shadow-[0_15px_45px_rgba(60,55,48,0.08)]
                   backdrop-blur-md
                   md:p-11
-                "
+                `}
               >
 
                 <span
-                  className="
+                  className={`
                     inline-flex
                     rounded-full
                     border
@@ -1046,31 +1046,31 @@ export default function Home() {
                     uppercase
                     tracking-[0.34em]
                     text-[#757C69]
-                  "
+                  `}
                 >
                   Our Ritual
                 </span>
 
                 <h2
-                  className="
+                  className={`
                     mt-6
                     font-serif
                     text-4xl
                     leading-tight
                     text-[#353C32]
                     md:text-5xl
-                  "
+                  `}
                 >
                   Care that feels a little slower.
                 </h2>
 
                 <p
-                  className="
+                  className={`
                     mt-5
                     text-[17px]
                     leading-8
                     text-[#676D61]
-                  "
+                  `}
                 >
                   Thoughtful ingredients, comforting textures, and products
                   designed to make everyday skincare feel like a moment worth
@@ -1087,20 +1087,20 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className="
+        className={`
           bg-[#ECE6DC]
           px-5
           py-24
           md:px-10
           md:py-28
-        "
+        `}
       >
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-5 md:grid-cols-3">
 
             <Reveal>
               <div
-                className="
+                className={`
                   rounded-[28px]
                   border
                   border-[#D2CBC0]
@@ -1108,17 +1108,17 @@ export default function Home() {
                   px-8
                   py-10
                   text-center
-                "
+                `}
               >
                 <div
-                  className="
+                  className={`
                     mx-auto
                     mb-6
                     h-1.5
                     w-1.5
                     rounded-full
                     bg-[#727866]
-                  "
+                  `}
                 />
 
                 <h3 className="font-serif text-2xl text-[#3A4036]">
@@ -1133,7 +1133,7 @@ export default function Home() {
 
             <Reveal delay={120}>
               <div
-                className="
+                className={`
                   rounded-[28px]
                   border
                   border-[#D2CBC0]
@@ -1141,17 +1141,17 @@ export default function Home() {
                   px-8
                   py-10
                   text-center
-                "
+                `}
               >
                 <div
-                  className="
+                  className={`
                     mx-auto
                     mb-6
                     h-1.5
                     w-1.5
                     rounded-full
                     bg-[#727866]
-                  "
+                  `}
                 />
 
                 <h3 className="font-serif text-2xl text-[#3A4036]">
@@ -1166,7 +1166,7 @@ export default function Home() {
 
             <Reveal delay={240}>
               <div
-                className="
+                className={`
                   rounded-[28px]
                   border
                   border-[#D2CBC0]
@@ -1174,17 +1174,17 @@ export default function Home() {
                   px-8
                   py-10
                   text-center
-                "
+                `}
               >
                 <div
-                  className="
+                  className={`
                     mx-auto
                     mb-6
                     h-1.5
                     w-1.5
                     rounded-full
                     bg-[#727866]
-                  "
+                  `}
                 />
 
                 <h3 className="font-serif text-2xl text-[#3A4036]">
@@ -1205,17 +1205,17 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className="
+        className={`
           bg-[#F5F0E7]
           px-5
           py-20
           md:px-10
           md:py-28
-        "
+        `}
       >
         <Reveal>
           <div
-            className="
+            className={`
               mx-auto
               max-w-6xl
               rounded-[38px]
@@ -1228,11 +1228,11 @@ export default function Home() {
               shadow-[0_15px_50px_rgba(65,60,50,0.05)]
               md:px-12
               md:py-24
-            "
+            `}
           >
 
             <span
-              className="
+              className={`
                 inline-flex
                 rounded-full
                 border
@@ -1244,13 +1244,13 @@ export default function Home() {
                 uppercase
                 tracking-[0.36em]
                 text-[#7B816E]
-              "
+              `}
             >
               Willow & Tallow
             </span>
 
             <h2
-              className="
+              className={`
                 mx-auto
                 mt-7
                 max-w-3xl
@@ -1259,13 +1259,13 @@ export default function Home() {
                 leading-tight
                 text-[#363C33]
                 md:text-6xl
-              "
+              `}
             >
               Made for the moments you slow down.
             </h2>
 
             <p
-              className="
+              className={`
                 mx-auto
                 mt-7
                 max-w-2xl
@@ -1273,7 +1273,7 @@ export default function Home() {
                 leading-8
                 text-[#686E62]
                 md:text-lg
-              "
+              `}
             >
               Thoughtful skincare inspired by simple ingredients,
               traditional care, and the beauty of everyday rituals.
@@ -1281,7 +1281,7 @@ export default function Home() {
 
             <Link
               href="/shop"
-              className="
+              className={`
                 group
                 mt-9
                 inline-flex
@@ -1299,16 +1299,16 @@ export default function Home() {
                 duration-300
                 hover:-translate-y-0.5
                 hover:bg-[#454E40]
-              "
+              `}
             >
               Shop Willow & Tallow
 
               <span
-                className="
+                className={`
                   transition-transform
                   duration-300
                   group-hover:translate-x-1
-                "
+                `}
               >
                 →
               </span>
