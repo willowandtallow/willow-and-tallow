@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Reveal from "@/components/Reveal";
+import Reveal from "./components/Reveal";
 
 /* =========================================================
    PRODUCTS
