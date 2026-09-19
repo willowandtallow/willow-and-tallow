@@ -4,10 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./components/Reveal";
 
-/* =========================================================
-   PRODUCTS
-========================================================= */
-
 const products = [
   {
     name: "Whipped Tallow Balm",
@@ -32,10 +28,6 @@ const products = [
   },
 ];
 
-/* =========================================================
-   VALUES
-========================================================= */
-
 const values = [
   {
     number: "01",
@@ -57,10 +49,6 @@ const values = [
   },
 ];
 
-/* =========================================================
-   HOME
-========================================================= */
-
 export default function Home() {
   return (
     <main className="overflow-x-hidden bg-[#F5F0E7] text-[#343A31]">
@@ -69,24 +57,22 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className={`
+        className="
           relative
           min-h-[90vh]
           overflow-hidden
           bg-cover
           bg-center
           bg-no-repeat
-        `}
+        "
         style={{
           backgroundImage: "url('/willow-background.png')",
         }}
       >
-        {/* SOFT OVERLAY */}
         <div className="absolute inset-0 bg-[#F7F1E7]/10" />
 
-        {/* BOTTOM FADE */}
         <div
-          className={`
+          className="
             absolute
             inset-x-0
             bottom-0
@@ -95,11 +81,11 @@ export default function Home() {
             from-transparent
             via-[#F5F0E7]/45
             to-[#F5F0E7]
-          `}
+          "
         />
 
         <div
-          className={`
+          className="
             relative
             z-10
             mx-auto
@@ -116,20 +102,20 @@ export default function Home() {
             text-center
             sm:px-6
             md:pb-28
-          `}
+          "
         >
           {/* LOGO */}
           <div
-            className={`
+            className="
+              hero-logo
               relative
               h-[230px]
               w-full
-              animate-[heroFade_1400ms_cubic-bezier(0.16,1,0.3,1)_0s_both]
               sm:h-[270px]
               md:h-[310px]
               lg:h-[340px]
               xl:h-[365px]
-            `}
+            "
           >
             <Image
               src="/willow-tallow-logo.PNG"
@@ -137,21 +123,21 @@ export default function Home() {
               fill
               priority
               sizes="100vw"
-              className={`
+              className="
                 object-contain
                 scale-[1.22]
                 sm:scale-[1.35]
                 md:scale-[1.48]
                 lg:scale-[1.58]
                 xl:scale-[1.68]
-              `}
+              "
             />
           </div>
 
           {/* TAGLINE */}
-          <div className="animate-[heroFade_1400ms_cubic-bezier(0.16,1,0.3,1)_0.12s_both]">
+          <div className="hero-tagline">
             <p
-              className={`
+              className="
                 font-serif
                 text-xl
                 italic
@@ -159,16 +145,16 @@ export default function Home() {
                 text-[#69715F]
                 sm:text-2xl
                 md:text-[1.7rem]
-              `}
+              "
             >
               Rooted in Nature. Crafted with Tallow.
             </p>
           </div>
 
           {/* DESCRIPTION */}
-          <div className="animate-[heroFade_1400ms_cubic-bezier(0.16,1,0.3,1)_0.22s_both]">
+          <div className="hero-description">
             <p
-              className={`
+              className="
                 mx-auto
                 mt-6
                 max-w-2xl
@@ -178,7 +164,7 @@ export default function Home() {
                 sm:text-[17px]
                 sm:leading-8
                 md:text-lg
-              `}
+              "
             >
               Simple, nourishing skincare made with thoughtfully selected
               ingredients and a slower approach to everyday care.
@@ -186,10 +172,10 @@ export default function Home() {
           </div>
 
           {/* CTA */}
-          <div className="animate-[heroFade_1400ms_cubic-bezier(0.16,1,0.3,1)_0.32s_both]">
+          <div className="hero-button">
             <Link
               href="/shop"
-              className={`
+              className="
                 group
                 mt-9
                 inline-flex
@@ -206,22 +192,20 @@ export default function Home() {
                 tracking-[0.28em]
                 text-[#46503F]
                 backdrop-blur-md
-                transition-all
+                transition-colors
                 duration-500
-                ease-out
-                hover:-translate-y-0.5
                 hover:bg-[#E9E3D8]/90
-              `}
+              "
             >
               Discover the Collection
 
               <span
-                className={`
+                className="
                   transition-transform
                   duration-500
                   ease-out
                   group-hover:translate-x-1
-                `}
+                "
               >
                 →
               </span>
@@ -235,7 +219,7 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className={`
+        className="
           bg-[#F5F0E7]
           px-5
           pb-28
@@ -243,12 +227,12 @@ export default function Home() {
           md:px-10
           md:pb-36
           md:pt-20
-        `}
+        "
       >
         <Reveal>
           <div className="mx-auto max-w-4xl text-center">
             <span
-              className={`
+              className="
                 inline-flex
                 rounded-full
                 border
@@ -260,13 +244,13 @@ export default function Home() {
                 uppercase
                 tracking-[0.36em]
                 text-[#7A806E]
-              `}
+              "
             >
               Thoughtful by Nature
             </span>
 
             <h2
-              className={`
+              className="
                 mx-auto
                 mt-7
                 max-w-3xl
@@ -276,13 +260,13 @@ export default function Home() {
                 text-[#363C33]
                 md:text-5xl
                 lg:text-[3.4rem]
-              `}
+              "
             >
               A return to simpler skincare.
             </h2>
 
             <p
-              className={`
+              className="
                 mx-auto
                 mt-7
                 max-w-2xl
@@ -290,7 +274,7 @@ export default function Home() {
                 leading-8
                 text-[#6A7064]
                 md:text-lg
-              `}
+              "
             >
               Inspired by traditional ingredients and everyday rituals,
               Willow & Tallow creates nourishing skincare designed to feel
@@ -307,18 +291,18 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className={`
+        className="
           bg-[#E9E1D5]
           px-5
           py-20
           md:px-10
           md:py-28
-        `}
+        "
       >
         <div className="mx-auto max-w-7xl">
           <Reveal>
             <div
-              className={`
+              className="
                 grid
                 overflow-hidden
                 rounded-[38px]
@@ -327,37 +311,37 @@ export default function Home() {
                 bg-[#F1EBE2]
                 shadow-[0_18px_60px_rgba(71,64,53,0.07)]
                 lg:grid-cols-[1.08fr_0.92fr]
-              `}
+              "
             >
               {/* IMAGE */}
               <div
-                className={`
+                className="
                   group
                   relative
                   min-h-[430px]
                   overflow-hidden
                   sm:min-h-[520px]
                   lg:min-h-[650px]
-                `}
+                "
               >
                 <Image
                   src="/whipped-tallow-balm.png"
                   alt="Willow & Tallow Whipped Tallow Balm"
                   fill
                   sizes="(max-width: 1024px) 100vw, 55vw"
-                  className={`
+                  className="
                     object-cover
                     transition-transform
-                    duration-[1400ms]
+                    duration-[1600ms]
                     ease-[cubic-bezier(0.16,1,0.3,1)]
-                    group-hover:scale-[1.025]
-                  `}
+                    group-hover:scale-[1.02]
+                  "
                 />
               </div>
 
               {/* CONTENT */}
               <div
-                className={`
+                className="
                   flex
                   items-center
                   px-7
@@ -365,11 +349,11 @@ export default function Home() {
                   sm:px-10
                   md:px-14
                   lg:px-16
-                `}
+                "
               >
                 <div className="max-w-xl">
                   <span
-                    className={`
+                    className="
                       inline-flex
                       rounded-full
                       border
@@ -381,13 +365,13 @@ export default function Home() {
                       uppercase
                       tracking-[0.32em]
                       text-[#7D826F]
-                    `}
+                    "
                   >
                     Featured Essential
                   </span>
 
                   <h2
-                    className={`
+                    className="
                       mt-7
                       font-serif
                       text-5xl
@@ -395,97 +379,96 @@ export default function Home() {
                       tracking-[-0.03em]
                       text-[#353B32]
                       md:text-6xl
-                    `}
+                    "
                   >
                     Whipped Tallow Balm
                   </h2>
 
                   <p
-                    className={`
+                    className="
                       mt-4
                       font-serif
                       text-xl
                       italic
                       text-[#747B68]
-                    `}
+                    "
                   >
                     Nourish · Protect · Restore
                   </p>
 
                   <p
-                    className={`
+                    className="
                       mt-7
                       text-[17px]
                       leading-8
                       text-[#62685D]
-                    `}
+                    "
                   >
                     A rich, comforting balm created to deeply nourish and
                     soften the skin. Its whipped texture melts effortlessly
                     into the skin for simple, everyday moisture.
                   </p>
 
-                  {/* DETAILS */}
                   <div className="mt-8 grid grid-cols-2 gap-3">
                     <div
-                      className={`
+                      className="
                         rounded-[22px]
                         border
                         border-[#D3CBC0]
                         bg-[#F8F3EB]/65
                         p-5
-                      `}
+                      "
                     >
                       <p
-                        className={`
+                        className="
                           text-[9px]
                           uppercase
                           tracking-[0.25em]
                           text-[#8B8E7F]
-                        `}
+                        "
                       >
                         Texture
                       </p>
 
                       <p
-                        className={`
+                        className="
                           mt-2
                           font-serif
                           text-lg
                           text-[#4F574B]
-                        `}
+                        "
                       >
                         Soft & whipped
                       </p>
                     </div>
 
                     <div
-                      className={`
+                      className="
                         rounded-[22px]
                         border
                         border-[#D3CBC0]
                         bg-[#F8F3EB]/65
                         p-5
-                      `}
+                      "
                     >
                       <p
-                        className={`
+                        className="
                           text-[9px]
                           uppercase
                           tracking-[0.25em]
                           text-[#8B8E7F]
-                        `}
+                        "
                       >
                         Ritual
                       </p>
 
                       <p
-                        className={`
+                        className="
                           mt-2
                           font-serif
                           text-lg
                           text-[#4F574B]
-                        `}
+                        "
                       >
                         Deep nourishment
                       </p>
@@ -494,7 +477,7 @@ export default function Home() {
 
                   <Link
                     href="/shop"
-                    className={`
+                    className="
                       group
                       mt-8
                       inline-flex
@@ -508,22 +491,20 @@ export default function Home() {
                       uppercase
                       tracking-[0.25em]
                       text-[#F7F2EA]
-                      transition-all
+                      transition-colors
                       duration-500
-                      ease-out
-                      hover:-translate-y-0.5
                       hover:bg-[#414A3C]
-                    `}
+                    "
                   >
                     Explore the Collection
 
                     <span
-                      className={`
+                      className="
                         transition-transform
                         duration-500
                         ease-out
                         group-hover:translate-x-1
-                      `}
+                      "
                     >
                       →
                     </span>
@@ -540,26 +521,26 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className={`
+        className="
           bg-[#F5F0E7]
           px-5
           py-20
           md:px-10
           md:py-28
-        `}
+        "
       >
         <div
-          className={`
+          className="
             mx-auto
             grid
             max-w-7xl
             gap-5
             lg:grid-cols-2
-          `}
+          "
         >
           <Reveal className="h-full">
             <div
-              className={`
+              className="
                 flex
                 h-full
                 min-h-[430px]
@@ -573,15 +554,11 @@ export default function Home() {
                 py-16
                 text-center
                 shadow-[0_12px_40px_rgba(70,64,55,0.035)]
-                transition-shadow
-                duration-700
-                ease-out
-                hover:shadow-[0_18px_50px_rgba(70,64,55,0.055)]
-              `}
+              "
             >
               <div className="max-w-md">
                 <span
-                  className={`
+                  className="
                     inline-flex
                     rounded-full
                     border
@@ -593,20 +570,20 @@ export default function Home() {
                     uppercase
                     tracking-[0.34em]
                     text-[#838878]
-                  `}
+                  "
                 >
                   Our Philosophy
                 </span>
 
                 <h2
-                  className={`
+                  className="
                     mt-7
                     font-serif
                     text-4xl
                     leading-[1.12]
                     text-[#3B4137]
                     md:text-5xl
-                  `}
+                  "
                 >
                   Fewer ingredients.
                   <br />
@@ -616,9 +593,9 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <Reveal delay={90} className="h-full">
+          <Reveal delay={25} className="h-full">
             <div
-              className={`
+              className="
                 flex
                 h-full
                 min-h-[430px]
@@ -630,17 +607,13 @@ export default function Home() {
                 px-8
                 py-16
                 shadow-[0_12px_40px_rgba(70,64,55,0.035)]
-                transition-shadow
-                duration-700
-                ease-out
-                hover:shadow-[0_18px_50px_rgba(70,64,55,0.055)]
                 md:px-14
                 lg:px-16
-              `}
+              "
             >
               <div className="max-w-xl">
                 <span
-                  className={`
+                  className="
                     inline-flex
                     rounded-full
                     border
@@ -652,32 +625,32 @@ export default function Home() {
                     uppercase
                     tracking-[0.34em]
                     text-[#7C816F]
-                  `}
+                  "
                 >
                   Thoughtfully Made
                 </span>
 
                 <p
-                  className={`
+                  className="
                     mt-7
                     font-serif
                     text-2xl
                     leading-relaxed
                     text-[#454C40]
                     md:text-3xl
-                  `}
+                  "
                 >
                   We believe skincare should feel simple, familiar, and
                   beautifully uncomplicated.
                 </p>
 
                 <p
-                  className={`
+                  className="
                     mt-6
                     text-[17px]
                     leading-8
                     text-[#666C60]
-                  `}
+                  "
                 >
                   Our approach is rooted in traditional ingredients, gentle
                   rituals, and choosing only what serves a purpose. Nothing
@@ -686,7 +659,7 @@ export default function Home() {
 
                 <Link
                   href="/about"
-                  className={`
+                  className="
                     group
                     mt-8
                     inline-flex
@@ -701,22 +674,20 @@ export default function Home() {
                     uppercase
                     tracking-[0.24em]
                     text-[#4C5547]
-                    transition-all
+                    transition-colors
                     duration-500
-                    ease-out
-                    hover:-translate-y-0.5
                     hover:bg-[#F5F0E7]/70
-                  `}
+                  "
                 >
                   Discover Our Approach
 
                   <span
-                    className={`
+                    className="
                       transition-transform
                       duration-500
                       ease-out
                       group-hover:translate-x-1
-                    `}
+                    "
                   >
                     →
                   </span>
@@ -732,19 +703,19 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className={`
+        className="
           bg-[#EEE8DE]
           px-5
           py-24
           md:px-10
           md:py-32
-        `}
+        "
       >
         <div className="mx-auto max-w-7xl">
           <Reveal>
             <div className="text-center">
               <span
-                className={`
+                className="
                   inline-flex
                   rounded-full
                   border
@@ -756,33 +727,33 @@ export default function Home() {
                   uppercase
                   tracking-[0.36em]
                   text-[#7C8270]
-                `}
+                "
               >
                 The Collection
               </span>
 
               <h2
-                className={`
+                className="
                   mt-7
                   font-serif
                   text-4xl
                   leading-tight
                   text-[#363C33]
                   md:text-5xl
-                `}
+                "
               >
                 Everyday essentials, made simply.
               </h2>
 
               <p
-                className={`
+                className="
                   mx-auto
                   mt-5
                   max-w-xl
                   text-[17px]
                   leading-7
                   text-[#6B7065]
-                `}
+                "
               >
                 A small collection of nourishing essentials created for
                 simple, intentional everyday care.
@@ -790,16 +761,15 @@ export default function Home() {
             </div>
           </Reveal>
 
-          {/* PRODUCT CARDS */}
           <div className="mt-16 grid gap-6 md:grid-cols-3">
             {products.map((product, index) => (
               <Reveal
                 key={product.name}
-                delay={index * 80}
+                delay={index * 25}
                 className="h-full"
               >
                 <article
-                  className={`
+                  className="
                     group
                     flex
                     h-full
@@ -811,79 +781,76 @@ export default function Home() {
                     bg-[#F8F4EC]
                     p-3
                     shadow-[0_12px_40px_rgba(70,64,55,0.04)]
-                    transition-all
+                    transition-shadow
                     duration-700
-                    ease-[cubic-bezier(0.16,1,0.3,1)]
-                    hover:-translate-y-1
-                    hover:shadow-[0_22px_60px_rgba(70,64,55,0.09)]
-                  `}
+                    ease-out
+                    hover:shadow-[0_22px_60px_rgba(70,64,55,0.085)]
+                  "
                 >
-                  {/* IMAGE */}
                   <div
-                    className={`
+                    className="
                       relative
                       aspect-[4/5]
                       overflow-hidden
                       rounded-[25px]
                       bg-[#E5DED2]
-                    `}
+                    "
                   >
                     <Image
                       src={product.image}
                       alt={product.name}
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
-                      className={`
+                      className="
                         object-cover
                         transition-transform
-                        duration-[1400ms]
+                        duration-[1600ms]
                         ease-[cubic-bezier(0.16,1,0.3,1)]
-                        group-hover:scale-[1.025]
-                      `}
+                        group-hover:scale-[1.02]
+                      "
                     />
                   </div>
 
-                  {/* PRODUCT INFO */}
                   <div
-                    className={`
+                    className="
                       flex
                       flex-1
                       flex-col
                       px-5
                       pb-7
                       pt-7
-                    `}
+                    "
                   >
                     <p
-                      className={`
+                      className="
                         text-[9px]
                         uppercase
                         tracking-[0.3em]
                         text-[#888C7C]
-                      `}
+                      "
                     >
                       {product.subtitle}
                     </p>
 
                     <h3
-                      className={`
+                      className="
                         mt-3
                         font-serif
                         text-[1.9rem]
                         leading-tight
                         text-[#394036]
-                      `}
+                      "
                     >
                       {product.name}
                     </h3>
 
                     <p
-                      className={`
+                      className="
                         mt-4
                         text-[15px]
                         leading-7
                         text-[#696F63]
-                      `}
+                      "
                     >
                       {product.description}
                     </p>
@@ -891,7 +858,7 @@ export default function Home() {
                     <div className="mt-auto pt-7">
                       <Link
                         href="/shop"
-                        className={`
+                        className="
                           group/button
                           inline-flex
                           items-center
@@ -905,21 +872,20 @@ export default function Home() {
                           uppercase
                           tracking-[0.25em]
                           text-[#50594A]
-                          transition-all
+                          transition-colors
                           duration-500
-                          ease-out
                           hover:bg-[#E9E3D8]
-                        `}
+                        "
                       >
                         Explore
 
                         <span
-                          className={`
+                          className="
                             transition-transform
                             duration-500
                             ease-out
                             group-hover/button:translate-x-1
-                          `}
+                          "
                         >
                           →
                         </span>
@@ -931,12 +897,11 @@ export default function Home() {
             ))}
           </div>
 
-          {/* VIEW COLLECTION */}
-          <Reveal delay={100}>
+          <Reveal>
             <div className="mt-14 text-center">
               <Link
                 href="/shop"
-                className={`
+                className="
                   group
                   inline-flex
                   items-center
@@ -949,22 +914,20 @@ export default function Home() {
                   uppercase
                   tracking-[0.27em]
                   text-[#F7F2EA]
-                  transition-all
+                  transition-colors
                   duration-500
-                  ease-out
-                  hover:-translate-y-0.5
                   hover:bg-[#485143]
-                `}
+                "
               >
                 View the Collection
 
                 <span
-                  className={`
+                  className="
                     transition-transform
                     duration-500
                     ease-out
                     group-hover:translate-x-1
-                  `}
+                  "
                 >
                   →
                 </span>
@@ -975,21 +938,21 @@ export default function Home() {
       </section>
 
       {/* =====================================================
-          BOTANICAL / BRAND STORY
+          BRAND STORY
       ===================================================== */}
 
       <section
-        className={`
+        className="
           bg-[#F5F0E7]
           px-5
           py-20
           md:px-10
           md:py-28
-        `}
+        "
       >
         <Reveal>
           <div
-            className={`
+            className="
               relative
               mx-auto
               min-h-[620px]
@@ -1000,7 +963,7 @@ export default function Home() {
               bg-center
               bg-no-repeat
               shadow-[0_20px_60px_rgba(65,59,50,0.08)]
-            `}
+            "
             style={{
               backgroundImage: "url('/willow-background.png')",
             }}
@@ -1008,7 +971,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-[#F4EEE4]/5" />
 
             <div
-              className={`
+              className="
                 relative
                 z-10
                 flex
@@ -1017,10 +980,10 @@ export default function Home() {
                 p-5
                 sm:p-8
                 md:p-12
-              `}
+              "
             >
               <div
-                className={`
+                className="
                   max-w-xl
                   rounded-[30px]
                   border
@@ -1030,10 +993,10 @@ export default function Home() {
                   shadow-[0_15px_45px_rgba(60,55,48,0.08)]
                   backdrop-blur-md
                   md:p-11
-                `}
+                "
               >
                 <span
-                  className={`
+                  className="
                     inline-flex
                     rounded-full
                     border
@@ -1045,31 +1008,31 @@ export default function Home() {
                     uppercase
                     tracking-[0.34em]
                     text-[#757C69]
-                  `}
+                  "
                 >
                   Our Ritual
                 </span>
 
                 <h2
-                  className={`
+                  className="
                     mt-6
                     font-serif
                     text-4xl
                     leading-tight
                     text-[#353C32]
                     md:text-5xl
-                  `}
+                  "
                 >
                   Care that feels a little slower.
                 </h2>
 
                 <p
-                  className={`
+                  className="
                     mt-5
                     text-[17px]
                     leading-8
                     text-[#676D61]
-                  `}
+                  "
                 >
                   Thoughtful ingredients, comforting textures, and products
                   designed to make everyday skincare feel like a moment worth
@@ -1078,7 +1041,7 @@ export default function Home() {
 
                 <Link
                   href="/about"
-                  className={`
+                  className="
                     group
                     mt-8
                     inline-flex
@@ -1094,21 +1057,20 @@ export default function Home() {
                     uppercase
                     tracking-[0.24em]
                     text-[#4C5547]
-                    transition-all
+                    transition-colors
                     duration-500
-                    ease-out
                     hover:bg-[#F5F0E7]/70
-                  `}
+                  "
                 >
                   Our Story
 
                   <span
-                    className={`
+                    className="
                       transition-transform
                       duration-500
                       ease-out
                       group-hover:translate-x-1
-                    `}
+                    "
                   >
                     →
                   </span>
@@ -1124,19 +1086,19 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className={`
+        className="
           bg-[#ECE6DC]
           px-5
           py-24
           md:px-10
           md:py-28
-        `}
+        "
       >
         <div className="mx-auto max-w-7xl">
           <Reveal>
             <div className="mb-14 text-center">
               <span
-                className={`
+                className="
                   inline-flex
                   rounded-full
                   border
@@ -1148,33 +1110,33 @@ export default function Home() {
                   uppercase
                   tracking-[0.36em]
                   text-[#7C8270]
-                `}
+                "
               >
                 At Our Core
               </span>
 
               <h2
-                className={`
+                className="
                   mt-7
                   font-serif
                   text-4xl
                   leading-tight
                   text-[#373E34]
                   md:text-5xl
-                `}
+                "
               >
                 Made with intention.
               </h2>
 
               <p
-                className={`
+                className="
                   mx-auto
                   mt-5
                   max-w-xl
                   text-[16px]
                   leading-7
                   text-[#6B7065]
-                `}
+                "
               >
                 A few simple ideas guide the way we think about skincare.
               </p>
@@ -1185,11 +1147,11 @@ export default function Home() {
             {values.map((value, index) => (
               <Reveal
                 key={value.title}
-                delay={index * 80}
+                delay={index * 25}
                 className="h-full"
               >
                 <div
-                  className={`
+                  className="
                     group
                     flex
                     h-full
@@ -1201,17 +1163,16 @@ export default function Home() {
                     bg-[#F5F0E7]/70
                     p-8
                     shadow-[0_10px_35px_rgba(70,64,55,0.035)]
-                    transition-all
+                    transition-shadow
                     duration-700
-                    ease-[cubic-bezier(0.16,1,0.3,1)]
-                    hover:-translate-y-1
-                    hover:shadow-[0_20px_50px_rgba(70,64,55,0.08)]
+                    ease-out
+                    hover:shadow-[0_20px_50px_rgba(70,64,55,0.075)]
                     sm:p-9
-                  `}
+                  "
                 >
                   <div className="flex items-center justify-between">
                     <span
-                      className={`
+                      className="
                         inline-flex
                         rounded-full
                         border
@@ -1223,56 +1184,49 @@ export default function Home() {
                         uppercase
                         tracking-[0.28em]
                         text-[#7C8270]
-                      `}
+                      "
                     >
                       Our Values
                     </span>
 
-                    <span
-                      className={`
-                        font-serif
-                        text-lg
-                        italic
-                        text-[#A0A294]
-                      `}
-                    >
+                    <span className="font-serif text-lg italic text-[#A0A294]">
                       {value.number}
                     </span>
                   </div>
 
                   <h3
-                    className={`
+                    className="
                       mt-10
                       font-serif
                       text-3xl
                       text-[#3A4036]
-                    `}
+                    "
                   >
                     {value.title}
                   </h3>
 
                   <p
-                    className={`
+                    className="
                       mt-5
                       text-[15px]
                       leading-7
                       text-[#6A7064]
-                    `}
+                    "
                   >
                     {value.description}
                   </p>
 
                   <div className="mt-auto pt-9">
                     <div
-                      className={`
+                      className="
                         h-px
                         w-10
                         bg-[#AEB0A0]
-                        transition-all
+                        transition-[width]
                         duration-700
                         ease-out
                         group-hover:w-16
-                      `}
+                      "
                     />
                   </div>
                 </div>
@@ -1287,17 +1241,17 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className={`
+        className="
           bg-[#F5F0E7]
           px-5
           py-20
           md:px-10
           md:py-28
-        `}
+        "
       >
         <Reveal>
           <div
-            className={`
+            className="
               mx-auto
               grid
               max-w-6xl
@@ -1308,10 +1262,10 @@ export default function Home() {
               bg-[#EEE8DE]
               shadow-[0_15px_50px_rgba(65,60,50,0.05)]
               lg:grid-cols-[0.85fr_1.15fr]
-            `}
+            "
           >
             <div
-              className={`
+              className="
                 flex
                 items-center
                 justify-center
@@ -1321,11 +1275,11 @@ export default function Home() {
                 text-center
                 md:px-12
                 md:py-20
-              `}
+              "
             >
               <div>
                 <span
-                  className={`
+                  className="
                     inline-flex
                     rounded-full
                     border
@@ -1337,20 +1291,20 @@ export default function Home() {
                     uppercase
                     tracking-[0.36em]
                     text-[#7B816E]
-                  `}
+                  "
                 >
                   The Journal
                 </span>
 
                 <p
-                  className={`
+                  className="
                     mt-7
                     font-serif
                     text-2xl
                     italic
                     leading-relaxed
                     text-[#586052]
-                  `}
+                  "
                 >
                   Notes on skin, ingredients, rituals, and slower living.
                 </p>
@@ -1358,35 +1312,35 @@ export default function Home() {
             </div>
 
             <div
-              className={`
+              className="
                 flex
                 items-center
                 px-8
                 py-16
                 md:px-14
                 md:py-20
-              `}
+              "
             >
               <div className="max-w-xl">
                 <h2
-                  className={`
+                  className="
                     font-serif
                     text-4xl
                     leading-tight
                     text-[#373D34]
                     md:text-5xl
-                  `}
+                  "
                 >
                   A little more to explore.
                 </h2>
 
                 <p
-                  className={`
+                  className="
                     mt-6
                     text-[17px]
                     leading-8
                     text-[#686E62]
-                  `}
+                  "
                 >
                   Explore thoughtful reading on traditional ingredients,
                   simple skincare, everyday rituals, and the ideas that inspire
@@ -1395,7 +1349,7 @@ export default function Home() {
 
                 <Link
                   href="/journal"
-                  className={`
+                  className="
                     group
                     mt-8
                     inline-flex
@@ -1410,21 +1364,20 @@ export default function Home() {
                     uppercase
                     tracking-[0.24em]
                     text-[#4C5547]
-                    transition-all
+                    transition-colors
                     duration-500
-                    ease-out
                     hover:bg-[#F5F0E7]/70
-                  `}
+                  "
                 >
                   Read the Journal
 
                   <span
-                    className={`
+                    className="
                       transition-transform
                       duration-500
                       ease-out
                       group-hover:translate-x-1
-                    `}
+                    "
                   >
                     →
                   </span>
@@ -1440,7 +1393,7 @@ export default function Home() {
       ===================================================== */}
 
       <section
-        className={`
+        className="
           bg-[#F5F0E7]
           px-5
           pb-28
@@ -1448,11 +1401,11 @@ export default function Home() {
           md:px-10
           md:pb-32
           md:pt-8
-        `}
+        "
       >
         <Reveal>
           <div
-            className={`
+            className="
               mx-auto
               max-w-6xl
               rounded-[38px]
@@ -1465,10 +1418,10 @@ export default function Home() {
               shadow-[0_15px_50px_rgba(65,60,50,0.05)]
               md:px-12
               md:py-24
-            `}
+            "
           >
             <span
-              className={`
+              className="
                 inline-flex
                 rounded-full
                 border
@@ -1480,13 +1433,13 @@ export default function Home() {
                 uppercase
                 tracking-[0.36em]
                 text-[#7B816E]
-              `}
+              "
             >
               Willow & Tallow
             </span>
 
             <h2
-              className={`
+              className="
                 mx-auto
                 mt-7
                 max-w-3xl
@@ -1495,13 +1448,13 @@ export default function Home() {
                 leading-tight
                 text-[#363C33]
                 md:text-6xl
-              `}
+              "
             >
               Made for the moments you slow down.
             </h2>
 
             <p
-              className={`
+              className="
                 mx-auto
                 mt-7
                 max-w-2xl
@@ -1509,14 +1462,14 @@ export default function Home() {
                 leading-8
                 text-[#686E62]
                 md:text-lg
-              `}
+              "
             >
               Thoughtful skincare inspired by simple ingredients, traditional
               care, and the beauty of everyday rituals.
             </p>
 
             <div
-              className={`
+              className="
                 mt-10
                 flex
                 flex-col
@@ -1524,11 +1477,11 @@ export default function Home() {
                 justify-center
                 gap-3
                 sm:flex-row
-              `}
+              "
             >
               <Link
                 href="/shop"
-                className={`
+                className="
                   group
                   inline-flex
                   items-center
@@ -1541,22 +1494,20 @@ export default function Home() {
                   uppercase
                   tracking-[0.27em]
                   text-[#F7F2EA]
-                  transition-all
+                  transition-colors
                   duration-500
-                  ease-out
-                  hover:-translate-y-0.5
                   hover:bg-[#454E40]
-                `}
+                "
               >
                 View the Collection
 
                 <span
-                  className={`
+                  className="
                     transition-transform
                     duration-500
                     ease-out
                     group-hover:translate-x-1
-                  `}
+                  "
                 >
                   →
                 </span>
@@ -1564,7 +1515,7 @@ export default function Home() {
 
               <Link
                 href="/about"
-                className={`
+                className="
                   group
                   inline-flex
                   items-center
@@ -1578,22 +1529,20 @@ export default function Home() {
                   uppercase
                   tracking-[0.27em]
                   text-[#46503F]
-                  transition-all
+                  transition-colors
                   duration-500
-                  ease-out
-                  hover:-translate-y-0.5
                   hover:bg-[#F5F0E7]/70
-                `}
+                "
               >
                 Our Story
 
                 <span
-                  className={`
+                  className="
                     transition-transform
                     duration-500
                     ease-out
                     group-hover:translate-x-1
-                  `}
+                  "
                 >
                   →
                 </span>
@@ -1604,20 +1553,46 @@ export default function Home() {
       </section>
 
       {/* =====================================================
-          ANIMATIONS
+          HERO ANIMATION ONLY
       ===================================================== */}
 
       <style jsx global>{`
-        @keyframes heroFade {
+        @keyframes willowHeroReveal {
           0% {
             opacity: 0;
-            transform: translate3d(0, 8px, 0);
+            transform: translate3d(0, 10px, 0);
+            filter: blur(2px);
           }
 
           100% {
             opacity: 1;
             transform: translate3d(0, 0, 0);
+            filter: blur(0);
           }
+        }
+
+        .hero-logo {
+          opacity: 0;
+          animation: willowHeroReveal 1.4s
+            cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+        }
+
+        .hero-tagline {
+          opacity: 0;
+          animation: willowHeroReveal 1.35s
+            cubic-bezier(0.16, 1, 0.3, 1) 0.16s forwards;
+        }
+
+        .hero-description {
+          opacity: 0;
+          animation: willowHeroReveal 1.35s
+            cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+        }
+
+        .hero-button {
+          opacity: 0;
+          animation: willowHeroReveal 1.35s
+            cubic-bezier(0.16, 1, 0.3, 1) 0.34s forwards;
         }
 
         html {
@@ -1625,12 +1600,20 @@ export default function Home() {
         }
 
         @media (prefers-reduced-motion: reduce) {
+          .hero-logo,
+          .hero-tagline,
+          .hero-description,
+          .hero-button {
+            opacity: 1;
+            animation: none !important;
+            transform: none !important;
+            filter: none !important;
+          }
+
           *,
           *::before,
           *::after {
             scroll-behavior: auto !important;
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
             transition-duration: 0.01ms !important;
           }
         }
