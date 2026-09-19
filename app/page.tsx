@@ -81,8 +81,10 @@ export default function Home() {
           backgroundImage: "url('/willow-background.png')",
         }}
       >
+        {/* SOFT OVERLAY */}
         <div className="absolute inset-0 bg-[#F7F1E7]/10" />
 
+        {/* BOTTOM FADE */}
         <div
           className={`
             absolute
@@ -122,7 +124,7 @@ export default function Home() {
               relative
               h-[230px]
               w-full
-              animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0s_both]
+              animate-[heroFade_1400ms_cubic-bezier(0.16,1,0.3,1)_0s_both]
               sm:h-[270px]
               md:h-[310px]
               lg:h-[340px]
@@ -147,7 +149,7 @@ export default function Home() {
           </div>
 
           {/* TAGLINE */}
-          <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.12s_both]">
+          <div className="animate-[heroFade_1400ms_cubic-bezier(0.16,1,0.3,1)_0.12s_both]">
             <p
               className={`
                 font-serif
@@ -164,7 +166,7 @@ export default function Home() {
           </div>
 
           {/* DESCRIPTION */}
-          <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.22s_both]">
+          <div className="animate-[heroFade_1400ms_cubic-bezier(0.16,1,0.3,1)_0.22s_both]">
             <p
               className={`
                 mx-auto
@@ -183,8 +185,8 @@ export default function Home() {
             </p>
           </div>
 
-          {/* HERO CTA */}
-          <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.32s_both]">
+          {/* CTA */}
+          <div className="animate-[heroFade_1400ms_cubic-bezier(0.16,1,0.3,1)_0.32s_both]">
             <Link
               href="/shop"
               className={`
@@ -205,7 +207,8 @@ export default function Home() {
                 text-[#46503F]
                 backdrop-blur-md
                 transition-all
-                duration-300
+                duration-500
+                ease-out
                 hover:-translate-y-0.5
                 hover:bg-[#E9E3D8]/90
               `}
@@ -215,7 +218,8 @@ export default function Home() {
               <span
                 className={`
                   transition-transform
-                  duration-300
+                  duration-500
+                  ease-out
                   group-hover:translate-x-1
                 `}
               >
@@ -344,9 +348,9 @@ export default function Home() {
                   className={`
                     object-cover
                     transition-transform
-                    duration-[1200ms]
-                    ease-out
-                    group-hover:scale-[1.035]
+                    duration-[1400ms]
+                    ease-[cubic-bezier(0.16,1,0.3,1)]
+                    group-hover:scale-[1.025]
                   `}
                 />
               </div>
@@ -421,7 +425,7 @@ export default function Home() {
                     into the skin for simple, everyday moisture.
                   </p>
 
-                  {/* PRODUCT DETAILS */}
+                  {/* DETAILS */}
                   <div className="mt-8 grid grid-cols-2 gap-3">
                     <div
                       className={`
@@ -505,7 +509,8 @@ export default function Home() {
                       tracking-[0.25em]
                       text-[#F7F2EA]
                       transition-all
-                      duration-300
+                      duration-500
+                      ease-out
                       hover:-translate-y-0.5
                       hover:bg-[#414A3C]
                     `}
@@ -515,7 +520,8 @@ export default function Home() {
                     <span
                       className={`
                         transition-transform
-                        duration-300
+                        duration-500
+                        ease-out
                         group-hover:translate-x-1
                       `}
                     >
@@ -567,6 +573,10 @@ export default function Home() {
                 py-16
                 text-center
                 shadow-[0_12px_40px_rgba(70,64,55,0.035)]
+                transition-shadow
+                duration-700
+                ease-out
+                hover:shadow-[0_18px_50px_rgba(70,64,55,0.055)]
               `}
             >
               <div className="max-w-md">
@@ -606,7 +616,7 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <Reveal delay={100} className="h-full">
+          <Reveal delay={90} className="h-full">
             <div
               className={`
                 flex
@@ -620,6 +630,10 @@ export default function Home() {
                 px-8
                 py-16
                 shadow-[0_12px_40px_rgba(70,64,55,0.035)]
+                transition-shadow
+                duration-700
+                ease-out
+                hover:shadow-[0_18px_50px_rgba(70,64,55,0.055)]
                 md:px-14
                 lg:px-16
               `}
@@ -688,7 +702,8 @@ export default function Home() {
                     tracking-[0.24em]
                     text-[#4C5547]
                     transition-all
-                    duration-300
+                    duration-500
+                    ease-out
                     hover:-translate-y-0.5
                     hover:bg-[#F5F0E7]/70
                   `}
@@ -698,7 +713,8 @@ export default function Home() {
                   <span
                     className={`
                       transition-transform
-                      duration-300
+                      duration-500
+                      ease-out
                       group-hover:translate-x-1
                     `}
                   >
@@ -779,7 +795,7 @@ export default function Home() {
             {products.map((product, index) => (
               <Reveal
                 key={product.name}
-                delay={index * 100}
+                delay={index * 80}
                 className="h-full"
               >
                 <article
@@ -796,12 +812,13 @@ export default function Home() {
                     p-3
                     shadow-[0_12px_40px_rgba(70,64,55,0.04)]
                     transition-all
-                    duration-500
+                    duration-700
+                    ease-[cubic-bezier(0.16,1,0.3,1)]
                     hover:-translate-y-1
                     hover:shadow-[0_22px_60px_rgba(70,64,55,0.09)]
                   `}
                 >
-                  {/* PRODUCT IMAGE */}
+                  {/* IMAGE */}
                   <div
                     className={`
                       relative
@@ -819,9 +836,9 @@ export default function Home() {
                       className={`
                         object-cover
                         transition-transform
-                        duration-[1000ms]
-                        ease-out
-                        group-hover:scale-[1.035]
+                        duration-[1400ms]
+                        ease-[cubic-bezier(0.16,1,0.3,1)]
+                        group-hover:scale-[1.025]
                       `}
                     />
                   </div>
@@ -889,7 +906,8 @@ export default function Home() {
                           tracking-[0.25em]
                           text-[#50594A]
                           transition-all
-                          duration-300
+                          duration-500
+                          ease-out
                           hover:bg-[#E9E3D8]
                         `}
                       >
@@ -898,7 +916,8 @@ export default function Home() {
                         <span
                           className={`
                             transition-transform
-                            duration-300
+                            duration-500
+                            ease-out
                             group-hover/button:translate-x-1
                           `}
                         >
@@ -912,7 +931,8 @@ export default function Home() {
             ))}
           </div>
 
-          <Reveal delay={120}>
+          {/* VIEW COLLECTION */}
+          <Reveal delay={100}>
             <div className="mt-14 text-center">
               <Link
                 href="/shop"
@@ -930,7 +950,8 @@ export default function Home() {
                   tracking-[0.27em]
                   text-[#F7F2EA]
                   transition-all
-                  duration-300
+                  duration-500
+                  ease-out
                   hover:-translate-y-0.5
                   hover:bg-[#485143]
                 `}
@@ -940,7 +961,8 @@ export default function Home() {
                 <span
                   className={`
                     transition-transform
-                    duration-300
+                    duration-500
+                    ease-out
                     group-hover:translate-x-1
                   `}
                 >
@@ -1073,7 +1095,8 @@ export default function Home() {
                     tracking-[0.24em]
                     text-[#4C5547]
                     transition-all
-                    duration-300
+                    duration-500
+                    ease-out
                     hover:bg-[#F5F0E7]/70
                   `}
                 >
@@ -1082,7 +1105,8 @@ export default function Home() {
                   <span
                     className={`
                       transition-transform
-                      duration-300
+                      duration-500
+                      ease-out
                       group-hover:translate-x-1
                     `}
                   >
@@ -1161,7 +1185,7 @@ export default function Home() {
             {values.map((value, index) => (
               <Reveal
                 key={value.title}
-                delay={index * 100}
+                delay={index * 80}
                 className="h-full"
               >
                 <div
@@ -1178,7 +1202,8 @@ export default function Home() {
                     p-8
                     shadow-[0_10px_35px_rgba(70,64,55,0.035)]
                     transition-all
-                    duration-500
+                    duration-700
+                    ease-[cubic-bezier(0.16,1,0.3,1)]
                     hover:-translate-y-1
                     hover:shadow-[0_20px_50px_rgba(70,64,55,0.08)]
                     sm:p-9
@@ -1244,7 +1269,8 @@ export default function Home() {
                         w-10
                         bg-[#AEB0A0]
                         transition-all
-                        duration-500
+                        duration-700
+                        ease-out
                         group-hover:w-16
                       `}
                     />
@@ -1284,7 +1310,6 @@ export default function Home() {
               lg:grid-cols-[0.85fr_1.15fr]
             `}
           >
-            {/* LEFT */}
             <div
               className={`
                 flex
@@ -1332,7 +1357,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* RIGHT */}
             <div
               className={`
                 flex
@@ -1387,7 +1411,8 @@ export default function Home() {
                     tracking-[0.24em]
                     text-[#4C5547]
                     transition-all
-                    duration-300
+                    duration-500
+                    ease-out
                     hover:bg-[#F5F0E7]/70
                   `}
                 >
@@ -1396,7 +1421,8 @@ export default function Home() {
                   <span
                     className={`
                       transition-transform
-                      duration-300
+                      duration-500
+                      ease-out
                       group-hover:translate-x-1
                     `}
                   >
@@ -1516,7 +1542,8 @@ export default function Home() {
                   tracking-[0.27em]
                   text-[#F7F2EA]
                   transition-all
-                  duration-300
+                  duration-500
+                  ease-out
                   hover:-translate-y-0.5
                   hover:bg-[#454E40]
                 `}
@@ -1526,7 +1553,8 @@ export default function Home() {
                 <span
                   className={`
                     transition-transform
-                    duration-300
+                    duration-500
+                    ease-out
                     group-hover:translate-x-1
                   `}
                 >
@@ -1551,7 +1579,8 @@ export default function Home() {
                   tracking-[0.27em]
                   text-[#46503F]
                   transition-all
-                  duration-300
+                  duration-500
+                  ease-out
                   hover:-translate-y-0.5
                   hover:bg-[#F5F0E7]/70
                 `}
@@ -1561,7 +1590,8 @@ export default function Home() {
                 <span
                   className={`
                     transition-transform
-                    duration-300
+                    duration-500
+                    ease-out
                     group-hover:translate-x-1
                   `}
                 >
@@ -1581,12 +1611,12 @@ export default function Home() {
         @keyframes heroFade {
           0% {
             opacity: 0;
-            transform: translateY(12px);
+            transform: translate3d(0, 8px, 0);
           }
 
           100% {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate3d(0, 0, 0);
           }
         }
 
