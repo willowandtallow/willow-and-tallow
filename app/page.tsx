@@ -60,8 +60,8 @@ function Reveal({
         }
       },
       {
-        threshold: 0.12,
-        rootMargin: "0px 0px -45px 0px",
+        threshold: 0.08,
+        rootMargin: "0px 0px -20px 0px",
       }
     );
 
@@ -75,16 +75,17 @@ function Reveal({
       ref={ref}
       style={{
         transitionDelay: `${delay}ms`,
+        transitionDuration: "1100ms",
+        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
       }}
       className={`
         transform-gpu
-        transition-all
-        duration-[900ms]
-        ease-out
+        will-change-transform
+        transition-[opacity,transform]
         ${
           visible
-            ? "translate-y-0 opacity-100"
-            : "translate-y-8 opacity-0"
+            ? "translate-y-0 scale-100 opacity-100"
+            : "translate-y-5 scale-[0.995] opacity-0"
         }
         ${className}
       `}
@@ -159,12 +160,12 @@ export default function Home() {
           <div
             className={`
               relative
-              h-[190px]
+              h-[230px]
               w-full
-              sm:h-[215px]
-              md:h-[235px]
-              lg:h-[250px]
-              xl:h-[265px]
+              sm:h-[270px]
+              md:h-[310px]
+              lg:h-[340px]
+              xl:h-[365px]
             `}
           >
             <Image
@@ -175,11 +176,11 @@ export default function Home() {
               sizes="100vw"
               className={`
                 object-contain
-                scale-[1.08]
-                sm:scale-[1.15]
-                md:scale-[1.22]
-                lg:scale-[1.28]
-                xl:scale-[1.32]
+                scale-[1.22]
+                sm:scale-[1.35]
+                md:scale-[1.48]
+                lg:scale-[1.58]
+                xl:scale-[1.68]
               `}
             />
           </div>
@@ -1323,14 +1324,16 @@ export default function Home() {
 
       <style jsx global>{`
         @keyframes heroFade {
-          from {
+          0% {
             opacity: 0;
-            transform: translateY(18px);
+            transform: translateY(14px);
+            filter: blur(2px);
           }
 
-          to {
+          100% {
             opacity: 1;
             transform: translateY(0);
+            filter: blur(0);
           }
         }
 
