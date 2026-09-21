@@ -88,515 +88,260 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <main className="overflow-x-hidden bg-[#F5F0E7] text-[#343A31]">
+    <main className="overflow-x-hidden bg-[#FAF9F5] text-[#343A31]">
       {/* =====================================================
           HERO
       ===================================================== */}
-      <section
-        className={`
-          relative
-          min-h-[58vh]
-          overflow-hidden
-          bg-cover
-          bg-center
-          bg-no-repeat
-        `}
-        style={{
-          backgroundImage: "url('/willow-background.png')",
-        }}
-      >
-        <div className="absolute inset-0 bg-[#F6F0E6]/20" />
 
-        <div
-          className={`
-            absolute
-            inset-x-0
-            bottom-0
-            h-48
-            bg-gradient-to-b
-            from-transparent
-            via-[#F5F0E7]/45
-            to-[#F5F0E7]
-          `}
-        />
+      <section className="relative overflow-hidden border-b border-[#E1E2DB] bg-[#FAF9F5] px-6 pb-14 pt-32 sm:px-10 sm:pt-36 lg:px-14 lg:pb-16 lg:pt-36 xl:px-20">
+        <div className="mx-auto max-w-[1400px]">
+          <Reveal>
+            <div className="mx-auto max-w-[950px] text-center">
+              <div className="flex items-center justify-center gap-3">
+                <span className="h-px w-7 bg-[#A4AA9C]" />
 
-        <div
-          className={`
-            relative
-            z-10
-            mx-auto
-            flex
-            min-h-[58vh]
-            max-w-7xl
-            items-center
-            justify-center
-            px-6
-            pb-16
-            pt-32
-            text-center
-            md:px-10
-          `}
-        >
-          <div className="max-w-4xl">
-            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.1s_both]">
-              <span
-                className={`
-                  inline-flex
-                  rounded-full
-                  border
-                  border-[#B9B8A8]/70
-                  bg-[#F5F0E7]/55
-                  px-5
-                  py-2
-                  text-[9px]
-                  uppercase
-                  tracking-[0.36em]
-                  text-[#747B68]
-                  backdrop-blur-sm
-                `}
-              >
-                Willow & Tallow
-              </span>
-            </div>
+                <span className="text-[7px] font-medium uppercase tracking-[0.42em] text-[#777E72]">
+                  Good to Know
+                </span>
 
-            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.2s_both]">
-              <h1
-                className={`
-                  mt-7
-                  font-serif
-                  text-5xl
-                  leading-[1.05]
-                  tracking-[-0.035em]
-                  text-[#363D33]
-                  sm:text-6xl
-                  md:text-7xl
-                `}
-              >
-                Frequently Asked
+                <span className="h-px w-7 bg-[#A4AA9C]" />
+              </div>
+
+              <h1 className="mt-5 font-serif text-[3.4rem] font-normal leading-[0.94] tracking-[-0.05em] text-[#333933] sm:text-[4.2rem] lg:text-[5rem]">
+                Questions,
                 <br />
-                Questions
+                <span className="italic text-[#747C6A]">
+                  answered simply.
+                </span>
               </h1>
-            </div>
 
-            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.3s_both]">
-              <p
-                className={`
-                  mx-auto
-                  mt-7
-                  max-w-xl
-                  text-[17px]
-                  leading-8
-                  text-[#60675A]
-                  md:text-lg
-                `}
-              >
-                Everything you need to know about our products, ingredients,
-                care, and orders.
+              <p className="mx-auto mt-6 max-w-[560px] text-[13px] leading-6 text-[#686F66] sm:text-[14px]">
+                Everything you need to know about our ingredients, products,
+                care, shipping, and orders.
               </p>
             </div>
-          </div>
+          </Reveal>
+        </div>
+
+        <div className="absolute bottom-0 left-1/2 h-[3px] w-20 -translate-x-1/2 bg-[#B7BDAE]" />
+      </section>
+
+      {/* =====================================================
+          FAQ INTRO
+      ===================================================== */}
+
+      <section className="bg-[#F5F3ED] px-6 py-14 sm:px-10 lg:px-14 lg:py-16 xl:px-20">
+        <div className="mx-auto grid max-w-[1280px] gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
+          <Reveal>
+            <div>
+              <p className="text-[8px] font-medium uppercase tracking-[0.38em] text-[#7C8377]">
+                Frequently Asked
+              </p>
+
+              <div className="mt-4 h-px w-12 bg-[#AEB3A6]" />
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <div className="max-w-[760px]">
+              <h2 className="font-serif text-[2.6rem] leading-[1.04] tracking-[-0.04em] text-[#383E38] sm:text-[3.2rem] lg:text-[3.6rem]">
+                Everything you need,
+                <br />
+                <span className="italic text-[#747C6A]">
+                  all in one place.
+                </span>
+              </h2>
+
+              <p className="mt-6 max-w-[590px] text-[14px] leading-7 text-[#686E65] sm:text-[15px]">
+                Start with the most common questions about tallow skincare,
+                then find details about product care, shipping, orders, and
+                more below.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* =====================================================
-          INTRO
+          FAQ LIST
       ===================================================== */}
-      <section
-        className={`
-          bg-[#F5F0E7]
-          px-6
-          pb-20
-          pt-10
-          text-center
-          md:px-10
-          md:pb-24
-          md:pt-14
-        `}
-      >
-        <Reveal>
-          <div className="mx-auto max-w-3xl">
-            <span
-              className={`
-                inline-flex
-                rounded-full
-                border
-                border-[#C7C2B6]
-                bg-[#EEE8DE]/70
-                px-5
-                py-2
-                text-[9px]
-                uppercase
-                tracking-[0.36em]
-                text-[#7C8270]
-              `}
-            >
-              Good to Know
-            </span>
 
-            <h2
-              className={`
-                mt-7
-                font-serif
-                text-4xl
-                leading-tight
-                text-[#383E35]
-                md:text-5xl
-              `}
-            >
-              Questions, answered simply.
-            </h2>
+      <section className="bg-[#FAF9F5] px-6 py-16 sm:px-10 lg:px-14 lg:py-20 xl:px-20">
+        <div className="mx-auto max-w-[1100px]">
+          {/* SECTION HEADER */}
 
-            <p
-              className={`
-                mx-auto
-                mt-6
-                max-w-2xl
-                text-[17px]
-                leading-8
-                text-[#696F63]
-              `}
-            >
-              Explore answers about our ingredients, products, care,
-              shipping, and orders.
-            </p>
-
-            <div className="mx-auto mt-10 h-px w-14 bg-[#A8AA99]" />
-          </div>
-        </Reveal>
-      </section>
-
-      {/* =====================================================
-          FAQ SECTION
-      ===================================================== */}
-      <section
-        className={`
-          bg-[#EEE8DE]
-          px-5
-          py-20
-          md:px-10
-          md:py-28
-        `}
-      >
-        <div className="mx-auto max-w-5xl">
           <Reveal>
-            <div className="mb-12 text-center">
-              <span
-                className={`
-                  inline-flex
-                  rounded-full
-                  border
-                  border-[#C7C2B6]
-                  bg-[#F5F0E7]/60
-                  px-5
-                  py-2
-                  text-[9px]
-                  uppercase
-                  tracking-[0.36em]
-                  text-[#7C8270]
-                `}
-              >
-                Frequently Asked
-              </span>
+            <div className="grid gap-6 border-b border-[#D4D6CE] pb-8 md:grid-cols-[0.65fr_1.35fr] md:items-end">
+              <div>
+                <p className="text-[8px] font-medium uppercase tracking-[0.38em] text-[#7B8276]">
+                  FAQ
+                </p>
+              </div>
 
-              <h2
-                className={`
-                  mt-7
-                  font-serif
-                  text-4xl
-                  text-[#373E34]
-                  md:text-5xl
-                `}
-              >
-                Everything in one place.
-              </h2>
+              <div>
+                <h2 className="font-serif text-[2.6rem] leading-[1] tracking-[-0.04em] text-[#383E38] sm:text-[3.2rem]">
+                  A few things worth{" "}
+                  <span className="italic text-[#747C6A]">
+                    knowing.
+                  </span>
+                </h2>
+              </div>
             </div>
           </Reveal>
 
-          {/* FAQ CARDS */}
-          <div className="space-y-3">
+          {/* QUESTIONS */}
+
+          <div>
             {faqs.map((faq, index) => (
-              <Reveal
+              <div
                 key={faq.question}
-                delay={(index % 4) * 55}
+                className="border-b border-[#D4D6CE]"
               >
-                <details
-                  className={`
-                    group
-                    overflow-hidden
-                    rounded-[24px]
-                    border
-                    border-[#D5CEC2]
-                    bg-[#F8F4EC]
-                    shadow-[0_8px_30px_rgba(70,64,55,0.035)]
-                    transition-all
-                    duration-500
-                    open:shadow-[0_15px_40px_rgba(70,64,55,0.07)]
-                  `}
-                >
-                  <summary
-                    className={`
-                      flex
-                      cursor-pointer
-                      list-none
-                      items-center
-                      justify-between
-                      gap-6
-                      px-6
-                      py-6
-                      marker:hidden
-                      sm:px-8
-                      md:py-7
-                    `}
-                  >
-                    <div className="flex items-center gap-5">
-                      <span
-                        className={`
-                          hidden
-                          min-w-[28px]
-                          text-[9px]
-                          tracking-[0.2em]
-                          text-[#9A9D8E]
-                          sm:block
-                        `}
-                      >
+                <Reveal delay={(index % 4) * 45}>
+                  <details className="group">
+                    <summary className="grid cursor-pointer list-none items-center gap-5 py-6 marker:hidden sm:py-7 md:grid-cols-[65px_1fr_44px] md:gap-8">
+                      {/* NUMBER */}
+
+                      <span className="hidden font-serif text-[13px] italic text-[#9CA196] md:block">
                         {String(index + 1).padStart(2, "0")}
                       </span>
 
-                      <span
-                        className={`
-                          font-serif
-                          text-xl
-                          leading-snug
-                          text-[#3B4238]
-                          md:text-[1.4rem]
-                        `}
-                      >
+                      {/* QUESTION */}
+
+                      <h3 className="pr-3 font-serif text-[1.3rem] font-normal leading-[1.25] tracking-[-0.015em] text-[#3A413A] sm:text-[1.45rem]">
                         {faq.question}
+                      </h3>
+
+                      {/* PLUS / MINUS */}
+
+                      <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#A8AEA1] text-[#596158] transition-all duration-300 group-open:border-[#747C69] group-open:bg-[#747C69] group-open:text-[#FAF9F5]">
+                        <span className="absolute h-px w-3.5 bg-current" />
+
+                        <span className="absolute h-3.5 w-px bg-current transition-all duration-300 group-open:rotate-90 group-open:opacity-0" />
                       </span>
+                    </summary>
+
+                    {/* ANSWER */}
+
+                    <div className="pb-7 md:grid md:grid-cols-[65px_1fr_44px] md:gap-8 md:pb-8">
+                      <div />
+
+                      <div className="max-w-[760px] border-l border-[#C7CBC0] pl-5 sm:pl-6">
+                        <p className="text-[14px] leading-7 text-[#666D64] sm:text-[15px]">
+                          {faq.answer}
+                        </p>
+                      </div>
+
+                      <div />
                     </div>
-
-                    {/* PLUS / MINUS */}
-                    <span
-                      className={`
-                        relative
-                        flex
-                        h-10
-                        w-10
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-full
-                        border
-                        border-[#B6B5A5]
-                        bg-[#F5F0E7]/65
-                        text-[#596252]
-                        transition-all
-                        duration-300
-                        group-open:rotate-180
-                        group-open:bg-[#E9E3D8]
-                      `}
-                    >
-                      <span className="absolute h-px w-3.5 bg-current" />
-
-                      <span
-                        className={`
-                          absolute
-                          h-3.5
-                          w-px
-                          bg-current
-                          transition-all
-                          duration-300
-                          group-open:rotate-90
-                          group-open:opacity-0
-                        `}
-                      />
-                    </span>
-                  </summary>
-
-                  <div
-                    className={`
-                      border-t
-                      border-[#DED7CB]
-                      px-6
-                      pb-7
-                      pt-6
-                      sm:px-8
-                      sm:pl-[76px]
-                      md:pb-8
-                    `}
-                  >
-                    <p
-                      className={`
-                        max-w-3xl
-                        text-[15px]
-                        leading-8
-                        text-[#666C60]
-                        md:text-[16px]
-                      `}
-                    >
-                      {faq.answer}
-                    </p>
-                  </div>
-                </details>
-              </Reveal>
+                  </details>
+                </Reveal>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* =====================================================
-          CONTACT CTA
+          SUPPORT STATEMENT
       ===================================================== */}
-      <section
-        className={`
-          bg-[#F5F0E7]
-          px-5
-          py-20
-          md:px-10
-          md:py-28
-        `}
-      >
+
+      <section className="bg-[#F5F3ED] px-5 py-16 sm:px-10 lg:px-14 lg:py-20 xl:px-20">
+        <div className="mx-auto max-w-[1280px]">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-[34px] bg-[#747C69] px-8 py-14 sm:px-12 lg:px-16 lg:py-18">
+              {/* ABSTRACT DETAILS */}
+
+              <div className="pointer-events-none absolute -right-28 -top-40 h-[390px] w-[390px] rounded-full border border-[#A3AA99]/45" />
+
+              <div className="pointer-events-none absolute -bottom-44 -right-10 h-[340px] w-[340px] rounded-full bg-[#818978]/45" />
+
+              <div className="relative z-10 grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+                <div>
+                  <p className="text-[8px] font-medium uppercase tracking-[0.38em] text-[#DDE1D7]">
+                    Here to Help
+                  </p>
+
+                  <div className="mt-4 h-px w-10 bg-[#D4D9CE]/70" />
+                </div>
+
+                <div className="max-w-[720px]">
+                  <h2 className="font-serif text-[2.7rem] leading-[1.02] tracking-[-0.04em] text-[#FAF9F5] sm:text-[3.4rem] lg:text-[3.9rem]">
+                    Still have
+                    <br />
+                    <span className="italic text-[#E4E7DF]">
+                      a question?
+                    </span>
+                  </h2>
+
+                  <p className="mt-6 max-w-[540px] text-[14px] leading-7 text-[#E2E5DD] sm:text-[15px]">
+                    If you cannot find what you are looking for, send us a
+                    message. We are happy to help with products, ingredients,
+                    orders, or anything else you would like to know.
+                  </p>
+
+                  <Link
+                    href="/contact"
+                    className="group mt-7 inline-flex items-center gap-4"
+                  >
+                    <span className="text-[8px] font-medium uppercase tracking-[0.3em] text-[#F2F3EE]">
+                      Contact Us
+                    </span>
+
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#C7CCC1]/70 text-[#F5F6F2] transition-all duration-300 group-hover:bg-[#F4F4EF] group-hover:text-[#596158]">
+                      <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                        →
+                      </span>
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* =====================================================
+          FINAL CONTACT
+      ===================================================== */}
+
+      <section className="border-t border-[#E1E1DA] bg-[#FAF9F5] px-6 py-14 sm:px-10 lg:px-14 lg:py-16 xl:px-20">
         <Reveal>
-          <div
-            className={`
-              mx-auto
-              max-w-6xl
-              rounded-[38px]
-              border
-              border-[#D5CEC2]
-              bg-[#EEE8DE]
-              px-7
-              py-20
-              text-center
-              shadow-[0_15px_50px_rgba(65,60,50,0.05)]
-              md:px-12
-              md:py-24
-            `}
-          >
-            <span
-              className={`
-                inline-flex
-                rounded-full
-                border
-                border-[#C6C1B4]
-                bg-[#F5F0E7]/60
-                px-5
-                py-2
-                text-[9px]
-                uppercase
-                tracking-[0.36em]
-                text-[#7B816E]
-              `}
-            >
-              Need a Little More Help?
-            </span>
+          <div className="mx-auto flex max-w-[1000px] flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
+            <div>
+              <p className="text-[8px] font-medium uppercase tracking-[0.36em] text-[#7C8377]">
+                Willow &amp; Tallow Support
+              </p>
 
-            <h2
-              className={`
-                mx-auto
-                mt-7
-                max-w-3xl
-                font-serif
-                text-4xl
-                leading-tight
-                text-[#373D34]
-                md:text-5xl
-              `}
-            >
-              We would love to hear from you.
-            </h2>
-
-            <p
-              className={`
-                mx-auto
-                mt-7
-                max-w-xl
-                text-[17px]
-                leading-8
-                text-[#686E62]
-                md:text-lg
-              `}
-            >
-              Send us a message about our products, ingredients, or anything
-              else you would like to know.
-            </p>
-
-            <Link
-              href="/contact"
-              className={`
-                group
-                mt-9
-                inline-flex
-                items-center
-                gap-3
-                rounded-full
-                bg-[#56604E]
-                px-8
-                py-4
-                text-[9px]
-                uppercase
-                tracking-[0.27em]
-                text-[#F7F2EA]
-                transition-all
-                duration-300
-                hover:-translate-y-0.5
-                hover:bg-[#454E40]
-              `}
-            >
-              Contact Us
-
-              <span
-                className={`
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                `}
-              >
-                →
-              </span>
-            </Link>
+              <p className="mt-3 font-serif text-[1.8rem] tracking-[-0.025em] text-[#373D37] sm:text-[2rem]">
+                We&apos;re happy to help.
+              </p>
+            </div>
 
             <a
               href="mailto:contact@willowandtallow.com"
-              className={`
-                mx-auto
-                mt-6
-                block
-                w-fit
-                text-sm
-                text-[#626A5B]
-                underline
-                decoration-[#A6AA99]
-                underline-offset-4
-                transition-colors
-                duration-300
-                hover:text-[#3F473B]
-              `}
+              className="group inline-flex items-center gap-4 border-b border-[#9DA497] pb-2"
             >
-              contact@willowandtallow.com
+              <span className="text-[11px] tracking-[0.05em] text-[#596158]">
+                contact@willowandtallow.com
+              </span>
+
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
             </a>
           </div>
         </Reveal>
       </section>
 
-      {/* =====================================================
-          HERO ANIMATION
-      ===================================================== */}
       <style jsx global>{`
-        @keyframes heroFade {
-          0% {
-            opacity: 0;
-            transform: translateY(12px);
-          }
-
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
         summary::-webkit-details-marker {
           display: none;
+        }
+
+        summary::marker {
+          display: none;
+          content: "";
         }
 
         @media (prefers-reduced-motion: reduce) {
