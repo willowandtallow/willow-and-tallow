@@ -4,26 +4,24 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./components/Reveal";
 
+/* =====================================================
+   DATA
+===================================================== */
+
 const products = [
   {
     name: "Whipped Tallow Balm",
-    subtitle: "Deep Nourishment",
-    description:
-      "A rich, comforting balm created for simple everyday moisture and nourishing care.",
+    subtitle: "Deep nourishment for everyday care.",
     image: "/whipped-tallow-balm.png",
   },
   {
     name: "Tallow Lip Balm",
-    subtitle: "Everyday Protection",
-    description:
-      "A simple everyday essential designed to keep lips feeling soft, smooth, and protected.",
+    subtitle: "Simple, everyday protection.",
     image: "/tallow-lip-balm.png",
   },
   {
     name: "Tallow Soap",
-    subtitle: "Gentle Cleansing",
-    description:
-      "A thoughtfully made cleansing bar inspired by traditional ingredients and simple routines.",
+    subtitle: "A gentle, nourishing cleanse.",
     image: "/tallow-soap.png",
   },
 ];
@@ -31,141 +29,191 @@ const products = [
 const values = [
   {
     number: "01",
-    title: "Simple",
-    description:
-      "Purposeful ingredients without unnecessary complexity.",
+    title: "Natural Ingredients",
+    text: "Pure. Simple. Purposeful.",
   },
   {
     number: "02",
-    title: "Natural",
-    description:
-      "Inspired by traditional ingredients, botanical elements, and simple care.",
+    title: "Skin-First Formulas",
+    text: "Nourish. Support. Protect.",
   },
   {
     number: "03",
-    title: "Intentional",
-    description:
-      "Thoughtfully created for everyday rituals and lasting use.",
+    title: "Thoughtfully Made",
+    text: "Created with intention.",
+  },
+  {
+    number: "04",
+    title: "Simple by Nature",
+    text: "Less noise. More care.",
   },
 ];
 
 export default function Home() {
   return (
-    <main className="overflow-x-hidden bg-[#F5F0E7] text-[#343A31]">
-      {/* HERO */}
+    <main className="overflow-hidden bg-[#FAF8F3] text-[#353A32]">
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
       <section
         className={`
           relative
-          min-h-[90vh]
+          min-h-[760px]
           overflow-hidden
-          bg-cover
-          bg-center
-          bg-no-repeat
+          bg-[#FAF8F3]
+          lg:min-h-[820px]
         `}
-        style={{
-          backgroundImage: "url('/willow-background.png')",
-        }}
       >
-        <div className="absolute inset-0 bg-[#F7F1E7]/10" />
+        {/* DESKTOP HERO BACKGROUND */}
+        <div
+          className={`
+            absolute
+            inset-y-0
+            right-0
+            hidden
+            w-[58%]
+            lg:block
+          `}
+        >
+          <Image
+            src="/willow-hero-new.png"
+            alt=""
+            fill
+            priority
+            sizes="58vw"
+            className="object-cover object-right"
+          />
+        </div>
 
+        {/* MOBILE HERO BACKGROUND */}
         <div
           className={`
             absolute
             inset-x-0
             bottom-0
-            h-56
-            bg-gradient-to-b
-            from-transparent
-            via-[#F5F0E7]/45
-            to-[#F5F0E7]
+            h-[46%]
+            lg:hidden
           `}
+        >
+          <Image
+            src="/willow-hero-new.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-right"
+          />
+
+          <div
+            className={`
+              absolute
+              inset-0
+              bg-gradient-to-b
+              from-[#FAF8F3]
+              via-[#FAF8F3]/25
+              to-transparent
+            `}
+          />
+        </div>
+
+        {/* ORGANIC HERO DIVIDER */}
+        <div
+          className={`
+            pointer-events-none
+            absolute
+            bottom-0
+            left-0
+            top-0
+            z-[1]
+            hidden
+            w-[56%]
+            bg-[#FAF8F3]
+            lg:block
+          `}
+          style={{
+            clipPath:
+              "polygon(0 0, 100% 0, 92% 9%, 83% 19%, 76% 30%, 72% 41%, 74% 52%, 79% 63%, 80% 75%, 76% 87%, 68% 100%, 0 100%)",
+          }}
         />
 
+        {/* HERO CONTENT */}
         <div
           className={`
             relative
             z-10
             mx-auto
             flex
-            min-h-[90vh]
-            w-full
+            min-h-[760px]
             max-w-[1500px]
-            flex-col
-            items-center
-            justify-center
-            px-5
-            pb-24
-            pt-28
-            text-center
-            sm:px-6
-            md:pb-28
+            items-start
+            px-6
+            pb-[350px]
+            pt-24
+            sm:px-10
+            sm:pt-28
+            lg:min-h-[820px]
+            lg:items-center
+            lg:px-14
+            lg:pb-20
+            lg:pt-20
+            xl:px-20
           `}
         >
-          <div
-            className={`
-              hero-logo
-              relative
-              h-[230px]
-              w-full
-              sm:h-[270px]
-              md:h-[310px]
-              lg:h-[340px]
-              xl:h-[365px]
-            `}
-          >
-            <Image
-              src="/willow-tallow-logo.PNG"
-              alt="Willow & Tallow"
-              fill
-              priority
-              sizes="100vw"
-              className={`
-                object-contain
-                scale-[1.22]
-                sm:scale-[1.35]
-                md:scale-[1.48]
-                lg:scale-[1.58]
-                xl:scale-[1.68]
-              `}
-            />
-          </div>
-
-          <div className="hero-tagline">
+          <div className="max-w-[650px] lg:w-[46%]">
             <p
               className={`
+                text-[10px]
+                font-medium
+                uppercase
+                tracking-[0.42em]
+                text-[#777D6D]
+                sm:text-[11px]
+              `}
+            >
+              Natural Skincare
+            </p>
+
+            <h1
+              className={`
+                mt-7
                 font-serif
-                text-xl
-                italic
-                tracking-[0.025em]
-                text-[#69715F]
-                sm:text-2xl
-                md:text-[1.7rem]
+                text-[3.7rem]
+                font-normal
+                leading-[0.94]
+                tracking-[-0.045em]
+                text-[#333831]
+                sm:text-[4.8rem]
+                lg:text-[5.7rem]
+                xl:text-[6.4rem]
               `}
             >
-              Rooted in Nature. Crafted with Tallow.
-            </p>
-          </div>
+              Simple
+              <br />
+              Ingredients.
+              <br />
+              Lasting{" "}
+              <span className="italic text-[#737B69]">
+                Care.
+              </span>
+            </h1>
 
-          <div className="hero-description">
             <p
               className={`
-                mx-auto
-                mt-6
-                max-w-2xl
-                text-[16px]
+                mt-8
+                max-w-[500px]
+                text-[15px]
                 leading-7
-                text-[#5E6556]
-                sm:text-[17px]
+                text-[#666C61]
+                sm:text-[16px]
                 sm:leading-8
-                md:text-lg
               `}
             >
-              Simple, nourishing skincare made with thoughtfully selected
-              ingredients and a slower approach to everyday care.
+              Thoughtfully created skincare made with tallow,
+              botanicals, and simple ingredients for everyday
+              nourishment and uncomplicated care.
             </p>
-          </div>
 
-          <div className="hero-button">
             <Link
               href="/shop"
               className={`
@@ -173,30 +221,29 @@ export default function Home() {
                 mt-9
                 inline-flex
                 items-center
-                gap-3
+                gap-5
                 rounded-full
                 border
-                border-[#69715F]/60
-                bg-[#F7F1E7]/55
+                border-[#72796B]
                 px-7
-                py-3.5
+                py-4
                 text-[9px]
+                font-medium
                 uppercase
                 tracking-[0.28em]
-                text-[#46503F]
-                backdrop-blur-md
-                transition-colors
+                text-[#4C5348]
+                transition-all
                 duration-500
-                hover:bg-[#E9E3D8]/90
+                hover:bg-[#596251]
+                hover:text-white
               `}
             >
-              Discover the Collection
+              Shop the Collection
 
               <span
                 className={`
                   transition-transform
                   duration-500
-                  ease-out
                   group-hover:translate-x-1
                 `}
               >
@@ -205,424 +252,234 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
 
-      {/* INTRO */}
-      <section
-        className={`
-          bg-[#F5F0E7]
-          px-5
-          pb-28
-          pt-16
-          md:px-10
-          md:pb-36
-          md:pt-20
-        `}
-      >
-        <Reveal>
-          <div className="mx-auto max-w-4xl text-center">
-            <span
-              className={`
-                inline-flex
-                rounded-full
-                border
-                border-[#B9B8A8]/70
-                bg-[#EEE8DE]/70
-                px-5
-                py-2
-                text-[9px]
-                uppercase
-                tracking-[0.36em]
-                text-[#7A806E]
-              `}
-            >
-              Thoughtful by Nature
-            </span>
-
-            <h2
-              className={`
-                mx-auto
-                mt-7
-                max-w-3xl
-                font-serif
-                text-4xl
-                leading-[1.12]
-                text-[#363C33]
-                md:text-5xl
-                lg:text-[3.4rem]
-              `}
-            >
-              A return to simpler skincare.
-            </h2>
-
-            <p
-              className={`
-                mx-auto
-                mt-7
-                max-w-2xl
-                text-[17px]
-                leading-8
-                text-[#6A7064]
-                md:text-lg
-              `}
-            >
-              Inspired by traditional ingredients and everyday rituals,
-              Willow & Tallow creates nourishing skincare designed to feel
-              uncomplicated, comforting, and intentional.
-            </p>
-
-            <div className="mx-auto mt-11 h-px w-14 bg-[#A8AA99]" />
-          </div>
-        </Reveal>
-      </section>
-
-      {/* FEATURED PRODUCT */}
-      <section
-        className={`
-          bg-[#E9E1D5]
-          px-5
-          py-20
-          md:px-10
-          md:py-28
-        `}
-      >
-        <div className="mx-auto max-w-7xl">
-          <Reveal>
-            <div
-              className={`
-                grid
-                overflow-hidden
-                rounded-[38px]
-                border
-                border-[#D1C8BA]
-                bg-[#F1EBE2]
-                shadow-[0_18px_60px_rgba(71,64,53,0.07)]
-                lg:grid-cols-[1.08fr_0.92fr]
-              `}
-            >
-              <div
-                className={`
-                  group
-                  relative
-                  min-h-[430px]
-                  overflow-hidden
-                  sm:min-h-[520px]
-                  lg:min-h-[650px]
-                `}
-              >
-                <Image
-                  src="/whipped-tallow-balm.png"
-                  alt="Willow & Tallow Whipped Tallow Balm"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 55vw"
-                  className={`
-                    object-cover
-                    transition-transform
-                    duration-[1600ms]
-                    ease-[cubic-bezier(0.16,1,0.3,1)]
-                    group-hover:scale-[1.02]
-                  `}
-                />
-              </div>
-
-              <div
-                className={`
-                  flex
-                  items-center
-                  px-7
-                  py-14
-                  sm:px-10
-                  md:px-14
-                  lg:px-16
-                `}
-              >
-                <div className="max-w-xl">
-                  <span
-                    className={`
-                      inline-flex
-                      rounded-full
-                      border
-                      border-[#B8B3A6]
-                      bg-[#F7F2EA]/70
-                      px-4
-                      py-2
-                      text-[9px]
-                      uppercase
-                      tracking-[0.32em]
-                      text-[#7D826F]
-                    `}
-                  >
-                    Featured Essential
-                  </span>
-
-                  <h2
-                    className={`
-                      mt-7
-                      font-serif
-                      text-5xl
-                      leading-[1.02]
-                      tracking-[-0.03em]
-                      text-[#353B32]
-                      md:text-6xl
-                    `}
-                  >
-                    Whipped Tallow Balm
-                  </h2>
-
-                  <p
-                    className={`
-                      mt-4
-                      font-serif
-                      text-xl
-                      italic
-                      text-[#747B68]
-                    `}
-                  >
-                    Nourish · Protect · Restore
-                  </p>
-
-                  <p
-                    className={`
-                      mt-7
-                      text-[17px]
-                      leading-8
-                      text-[#62685D]
-                    `}
-                  >
-                    A rich, comforting balm created to deeply nourish and
-                    soften the skin. Its whipped texture melts effortlessly
-                    into the skin for simple, everyday moisture.
-                  </p>
-
-                  <div className="mt-8 grid grid-cols-2 gap-3">
-                    <div
-                      className={`
-                        rounded-[22px]
-                        border
-                        border-[#D3CBC0]
-                        bg-[#F8F3EB]/65
-                        p-5
-                      `}
-                    >
-                      <p
-                        className={`
-                          text-[9px]
-                          uppercase
-                          tracking-[0.25em]
-                          text-[#8B8E7F]
-                        `}
-                      >
-                        Texture
-                      </p>
-
-                      <p className="mt-2 font-serif text-lg text-[#4F574B]">
-                        Soft & whipped
-                      </p>
-                    </div>
-
-                    <div
-                      className={`
-                        rounded-[22px]
-                        border
-                        border-[#D3CBC0]
-                        bg-[#F8F3EB]/65
-                        p-5
-                      `}
-                    >
-                      <p
-                        className={`
-                          text-[9px]
-                          uppercase
-                          tracking-[0.25em]
-                          text-[#8B8E7F]
-                        `}
-                      >
-                        Ritual
-                      </p>
-
-                      <p className="mt-2 font-serif text-lg text-[#4F574B]">
-                        Deep nourishment
-                      </p>
-                    </div>
-                  </div>
-
-                  <Link
-                    href="/shop"
-                    className={`
-                      group
-                      mt-8
-                      inline-flex
-                      items-center
-                      gap-3
-                      rounded-full
-                      bg-[#505A4A]
-                      px-7
-                      py-4
-                      text-[9px]
-                      uppercase
-                      tracking-[0.25em]
-                      text-[#F7F2EA]
-                      transition-colors
-                      duration-500
-                      hover:bg-[#414A3C]
-                    `}
-                  >
-                    Explore the Collection
-
-                    <span
-                      className={`
-                        transition-transform
-                        duration-500
-                        ease-out
-                        group-hover:translate-x-1
-                      `}
-                    >
-                      →
-                    </span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </Reveal>
+        {/* HERO SIDE NOTE */}
+        <div
+          className={`
+            absolute
+            bottom-24
+            right-[4%]
+            z-10
+            hidden
+            max-w-[150px]
+            font-serif
+            text-[19px]
+            italic
+            leading-relaxed
+            text-[#69705F]
+            xl:block
+          `}
+        >
+          Skincare
+          <br />
+          in harmony
+          <br />
+          with nature.
         </div>
       </section>
 
-      {/* PHILOSOPHY */}
+      {/* =====================================================
+          VALUES STRIP
+      ===================================================== */}
+
       <section
         className={`
-          bg-[#F5F0E7]
-          px-5
-          py-20
-          md:px-10
-          md:py-28
+          border-y
+          border-[#E4E0D8]
+          bg-[#FCFAF6]
         `}
       >
         <div
           className={`
             mx-auto
             grid
-            max-w-7xl
-            gap-5
-            lg:grid-cols-2
+            max-w-[1500px]
+            grid-cols-2
+            md:grid-cols-4
           `}
         >
-          <Reveal className="h-full">
+          {values.map((value, index) => (
             <div
+              key={value.title}
               className={`
-                flex
-                h-full
-                min-h-[430px]
-                items-center
-                justify-center
-                rounded-[34px]
-                border
-                border-[#D7D0C4]
-                bg-[#EEE8DE]
-                px-8
-                py-16
+                relative
+                px-5
+                py-9
                 text-center
-                shadow-[0_12px_40px_rgba(70,64,55,0.035)]
+                sm:px-8
+                md:py-11
+                ${
+                  index !== values.length - 1
+                    ? "md:border-r md:border-[#DDD9D0]"
+                    : ""
+                }
               `}
             >
-              <div className="max-w-md">
-                <span
+              <div
+                className={`
+                  mx-auto
+                  flex
+                  h-11
+                  w-11
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-[#F1EFE8]
+                  font-serif
+                  text-sm
+                  italic
+                  text-[#747B6B]
+                `}
+              >
+                {value.number}
+              </div>
+
+              <p
+                className={`
+                  mt-5
+                  text-[8px]
+                  font-medium
+                  uppercase
+                  tracking-[0.28em]
+                  text-[#4F554C]
+                `}
+              >
+                {value.title}
+              </p>
+
+              <p
+                className={`
+                  mt-2
+                  text-[12px]
+                  text-[#777C73]
+                `}
+              >
+                {value.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* =====================================================
+          PHILOSOPHY
+      ===================================================== */}
+
+      <section
+        className={`
+          relative
+          overflow-hidden
+          bg-[#F8F5EF]
+        `}
+      >
+        <div
+          className={`
+            relative
+            mx-auto
+            min-h-[720px]
+            w-full
+            max-w-[1800px]
+            lg:min-h-[760px]
+          `}
+        >
+          <Image
+            src="/willow-philosophy.png"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+
+          <div
+            className={`
+              relative
+              z-10
+              mx-auto
+              flex
+              min-h-[720px]
+              max-w-[1500px]
+              items-end
+              px-6
+              pb-12
+              pt-[470px]
+              sm:px-10
+              lg:min-h-[760px]
+              lg:items-center
+              lg:px-14
+              lg:pb-0
+              lg:pt-0
+              xl:px-20
+            `}
+          >
+            <div
+              className={`
+                ml-auto
+                w-full
+                rounded-[30px]
+                bg-[#FAF8F3]/90
+                p-7
+                backdrop-blur-[2px]
+                sm:p-9
+                lg:w-[52%]
+                lg:max-w-[650px]
+                lg:rounded-none
+                lg:bg-transparent
+                lg:p-0
+                lg:backdrop-blur-none
+              `}
+            >
+              <Reveal>
+                <p
                   className={`
-                    inline-flex
-                    rounded-full
-                    border
-                    border-[#C8C3B6]
-                    bg-[#F5F0E7]/60
-                    px-4
-                    py-2
                     text-[9px]
+                    font-medium
                     uppercase
-                    tracking-[0.34em]
-                    text-[#838878]
+                    tracking-[0.42em]
+                    text-[#818777]
                   `}
                 >
                   Our Philosophy
-                </span>
+                </p>
 
                 <h2
                   className={`
-                    mt-7
-                    font-serif
-                    text-4xl
-                    leading-[1.12]
-                    text-[#3B4137]
-                    md:text-5xl
-                  `}
-                >
-                  Fewer ingredients.
-                  <br />
-                  More intention.
-                </h2>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={25} className="h-full">
-            <div
-              className={`
-                flex
-                h-full
-                min-h-[430px]
-                items-center
-                rounded-[34px]
-                border
-                border-[#D7D0C4]
-                bg-[#E8E1D6]
-                px-8
-                py-16
-                shadow-[0_12px_40px_rgba(70,64,55,0.035)]
-                md:px-14
-                lg:px-16
-              `}
-            >
-              <div className="max-w-xl">
-                <span
-                  className={`
-                    inline-flex
-                    rounded-full
-                    border
-                    border-[#C5BFB2]
-                    bg-[#F5F0E7]/50
-                    px-4
-                    py-2
-                    text-[9px]
-                    uppercase
-                    tracking-[0.34em]
-                    text-[#7C816F]
-                  `}
-                >
-                  Thoughtfully Made
-                </span>
-
-                <p
-                  className={`
-                    mt-7
-                    font-serif
-                    text-2xl
-                    leading-relaxed
-                    text-[#454C40]
-                    md:text-3xl
-                  `}
-                >
-                  We believe skincare should feel simple, familiar, and
-                  beautifully uncomplicated.
-                </p>
-
-                <p
-                  className={`
                     mt-6
-                    text-[17px]
-                    leading-8
-                    text-[#666C60]
+                    font-serif
+                    text-[3.4rem]
+                    font-normal
+                    leading-[0.96]
+                    tracking-[-0.04em]
+                    text-[#363B34]
+                    sm:text-[4rem]
+                    lg:text-[4.8rem]
+                    xl:text-[5.2rem]
                   `}
                 >
-                  Our approach is rooted in traditional ingredients, gentle
-                  rituals, and choosing only what serves a purpose. Nothing
-                  excessive. Nothing added simply for the sake of more.
+                  Care that
+                  <br />
+                  feels{" "}
+                  <span className="italic text-[#737B69]">
+                    good.
+                  </span>
+                </h2>
+
+                <p
+                  className={`
+                    mt-7
+                    max-w-[540px]
+                    text-[15px]
+                    leading-7
+                    text-[#666D62]
+                    sm:text-[16px]
+                    sm:leading-8
+                  `}
+                >
+                  We believe skincare should be simple,
+                  effective, and beautifully thoughtful.
+                  That&apos;s why we create products with
+                  purposeful ingredients and uncomplicated
+                  formulas designed to make everyday care feel a
+                  little more intentional.
                 </p>
 
                 <Link
@@ -632,133 +489,176 @@ export default function Home() {
                     mt-8
                     inline-flex
                     items-center
-                    gap-3
+                    gap-5
                     rounded-full
                     border
-                    border-[#68705E]
-                    px-6
-                    py-3
+                    border-[#858B7E]
+                    px-7
+                    py-4
                     text-[9px]
+                    font-medium
                     uppercase
-                    tracking-[0.24em]
-                    text-[#4C5547]
-                    transition-colors
+                    tracking-[0.28em]
+                    text-[#50574D]
+                    transition-all
                     duration-500
-                    hover:bg-[#F5F0E7]/70
+                    hover:bg-[#596251]
+                    hover:text-white
                   `}
                 >
-                  Discover Our Approach
+                  Our Story
 
                   <span
                     className={`
                       transition-transform
                       duration-500
-                      ease-out
                       group-hover:translate-x-1
                     `}
                   >
                     →
                   </span>
                 </Link>
-              </div>
+
+                <div
+                  className={`
+                    mt-12
+                    flex
+                    items-center
+                    gap-5
+                  `}
+                >
+                  <div className="h-px w-10 bg-[#A5A99D]" />
+
+                  <p
+                    className={`
+                      text-[8px]
+                      uppercase
+                      leading-5
+                      tracking-[0.3em]
+                      text-[#7B8174]
+                    `}
+                  >
+                    People
+                    <br />
+                    Animals
+                    <br />
+                    The Planet
+                  </p>
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
-      {/* COLLECTION */}
+      {/* =====================================================
+          COLLECTION
+      ===================================================== */}
+
       <section
         className={`
-          bg-[#EEE8DE]
-          px-5
+          bg-[#F6F2EA]
+          px-6
           py-24
-          md:px-10
-          md:py-32
+          sm:px-10
+          lg:px-14
+          lg:py-32
         `}
       >
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1450px]">
           <Reveal>
-            <div className="text-center">
-              <span
+            <div
+              className={`
+                flex
+                flex-col
+                justify-between
+                gap-8
+                sm:flex-row
+                sm:items-end
+              `}
+            >
+              <div>
+                <p
+                  className={`
+                    text-[9px]
+                    font-medium
+                    uppercase
+                    tracking-[0.42em]
+                    text-[#838878]
+                  `}
+                >
+                  The Essentials
+                </p>
+
+                <h2
+                  className={`
+                    mt-5
+                    max-w-[650px]
+                    font-serif
+                    text-[3.4rem]
+                    font-normal
+                    leading-[0.98]
+                    tracking-[-0.035em]
+                    text-[#373C35]
+                    md:text-[4.5rem]
+                  `}
+                >
+                  Everyday rituals,
+                  <br />
+                  made simple.
+                </h2>
+              </div>
+
+              <Link
+                href="/shop"
                 className={`
+                  group
                   inline-flex
-                  rounded-full
-                  border
-                  border-[#C7C2B6]
-                  bg-[#F5F0E7]/60
-                  px-5
-                  py-2
+                  items-center
+                  gap-3
+                  pb-2
                   text-[9px]
                   uppercase
-                  tracking-[0.36em]
-                  text-[#7C8270]
+                  tracking-[0.28em]
+                  text-[#596054]
                 `}
               >
-                The Collection
-              </span>
+                Shop All
 
-              <h2
-                className={`
-                  mt-7
-                  font-serif
-                  text-4xl
-                  leading-tight
-                  text-[#363C33]
-                  md:text-5xl
-                `}
-              >
-                Everyday essentials, made simply.
-              </h2>
-
-              <p
-                className={`
-                  mx-auto
-                  mt-5
-                  max-w-xl
-                  text-[17px]
-                  leading-7
-                  text-[#6B7065]
-                `}
-              >
-                A small collection of nourishing essentials created for
-                simple, intentional everyday care.
-              </p>
+                <span
+                  className={`
+                    transition-transform
+                    duration-500
+                    group-hover:translate-x-1
+                  `}
+                >
+                  →
+                </span>
+              </Link>
             </div>
           </Reveal>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
+          <div
+            className={`
+              mt-14
+              grid
+              gap-10
+              md:grid-cols-3
+            `}
+          >
             {products.map((product, index) => (
               <Reveal
                 key={product.name}
                 delay={index * 25}
-                className="h-full"
               >
-                <article
-                  className={`
-                    group
-                    flex
-                    h-full
-                    flex-col
-                    overflow-hidden
-                    rounded-[32px]
-                    border
-                    border-[#D5CEC2]
-                    bg-[#F8F4EC]
-                    p-3
-                    shadow-[0_12px_40px_rgba(70,64,55,0.04)]
-                    transition-shadow
-                    duration-700
-                    ease-out
-                    hover:shadow-[0_22px_60px_rgba(70,64,55,0.085)]
-                  `}
-                >
+                <article className="group">
                   <div
                     className={`
                       relative
-                      aspect-[4/5]
+                      aspect-[1.05/1]
                       overflow-hidden
-                      rounded-[25px]
-                      bg-[#E5DED2]
+                      rounded-[46%_46%_24px_24px]
+                      bg-[#ECE6DC]
                     `}
                   >
                     <Image
@@ -769,41 +669,19 @@ export default function Home() {
                       className={`
                         object-cover
                         transition-transform
-                        duration-[1600ms]
-                        ease-[cubic-bezier(0.16,1,0.3,1)]
-                        group-hover:scale-[1.02]
+                        duration-[1400ms]
+                        ease-out
+                        group-hover:scale-[1.025]
                       `}
                     />
                   </div>
 
-                  <div
-                    className={`
-                      flex
-                      flex-1
-                      flex-col
-                      px-5
-                      pb-7
-                      pt-7
-                    `}
-                  >
-                    <p
-                      className={`
-                        text-[9px]
-                        uppercase
-                        tracking-[0.3em]
-                        text-[#888C7C]
-                      `}
-                    >
-                      {product.subtitle}
-                    </p>
-
+                  <div className="px-2 pt-7 text-center">
                     <h3
                       className={`
-                        mt-3
                         font-serif
-                        text-[1.9rem]
-                        leading-tight
-                        text-[#394036]
+                        text-[1.65rem]
+                        text-[#3D423B]
                       `}
                     >
                       {product.name}
@@ -811,105 +689,428 @@ export default function Home() {
 
                     <p
                       className={`
-                        mt-4
-                        text-[15px]
-                        leading-7
-                        text-[#696F63]
+                        mt-2
+                        text-[13px]
+                        leading-6
+                        text-[#747970]
                       `}
                     >
-                      {product.description}
+                      {product.subtitle}
                     </p>
 
-                    <div className="mt-auto pt-7">
-                      <Link
-                        href="/shop"
+                    <Link
+                      href="/shop"
+                      className={`
+                        group/link
+                        mt-6
+                        inline-flex
+                        items-center
+                        gap-3
+                        border-b
+                        border-[#999D91]
+                        pb-1.5
+                        text-[8px]
+                        uppercase
+                        tracking-[0.3em]
+                        text-[#555C51]
+                      `}
+                    >
+                      Explore
+
+                      <span
                         className={`
-                          group/button
-                          inline-flex
-                          items-center
-                          gap-3
-                          rounded-full
-                          border
-                          border-[#8A9080]
-                          px-5
-                          py-3
-                          text-[9px]
-                          uppercase
-                          tracking-[0.25em]
-                          text-[#50594A]
-                          transition-colors
+                          transition-transform
                           duration-500
-                          hover:bg-[#E9E3D8]
+                          group-hover/link:translate-x-1
                         `}
                       >
-                        Explore
-
-                        <span
-                          className={`
-                            transition-transform
-                            duration-500
-                            ease-out
-                            group-hover/button:translate-x-1
-                          `}
-                        >
-                          →
-                        </span>
-                      </Link>
-                    </div>
+                        →
+                      </span>
+                    </Link>
                   </div>
                 </article>
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
 
-          <Reveal>
-            <div className="mt-14 text-center">
-              <Link
-                href="/shop"
+      {/* =====================================================
+          IMPACT / A BRIGHTER TOMORROW
+      ===================================================== */}
+
+      <section
+        className={`
+          relative
+          min-h-[560px]
+          overflow-hidden
+          bg-[#858A76]
+          lg:min-h-[620px]
+        `}
+      >
+        <Image
+          src="/willow-impact.png"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+
+        <div
+          className={`
+            relative
+            z-10
+            mx-auto
+            flex
+            min-h-[560px]
+            max-w-[1500px]
+            items-end
+            px-6
+            pb-10
+            pt-[360px]
+            sm:px-10
+            lg:min-h-[620px]
+            lg:items-center
+            lg:px-14
+            lg:pb-0
+            lg:pt-0
+            xl:px-20
+          `}
+        >
+          <div
+            className={`
+              ml-auto
+              w-full
+              rounded-[28px]
+              bg-[#777D6B]/92
+              p-7
+              text-[#F8F5ED]
+              backdrop-blur-[2px]
+              sm:p-9
+              lg:w-[50%]
+              lg:max-w-[620px]
+              lg:rounded-none
+              lg:bg-transparent
+              lg:p-0
+              lg:backdrop-blur-none
+            `}
+          >
+            <Reveal>
+              <p
                 className={`
-                  group
-                  inline-flex
-                  items-center
-                  gap-3
-                  rounded-full
-                  bg-[#596251]
-                  px-8
-                  py-4
                   text-[9px]
+                  font-medium
                   uppercase
-                  tracking-[0.27em]
-                  text-[#F7F2EA]
-                  transition-colors
-                  duration-500
-                  hover:bg-[#485143]
+                  tracking-[0.42em]
+                  text-[#EEECE3]
                 `}
               >
-                View the Collection
+                A Brighter Tomorrow
+              </p>
+
+              <h2
+                className={`
+                  mt-6
+                  font-serif
+                  text-[3.3rem]
+                  font-normal
+                  leading-[0.98]
+                  tracking-[-0.035em]
+                  text-[#FAF8F2]
+                  sm:text-[3.8rem]
+                  lg:text-[4.4rem]
+                  xl:text-[4.8rem]
+                `}
+              >
+                Small choices
+                <br />
+                make a big difference.
+              </h2>
+
+              <p
+                className={`
+                  mt-7
+                  max-w-[500px]
+                  text-[15px]
+                  leading-7
+                  text-[#F1EFE8]/90
+                  sm:text-[16px]
+                  sm:leading-8
+                `}
+              >
+                We&apos;re committed to creating thoughtful
+                skincare with simple ingredients, intentional
+                formulas, and a gentler approach to everyday
+                care.
+              </p>
+
+              <Link
+                href="/about"
+                className={`
+                  group
+                  mt-9
+                  inline-flex
+                  items-center
+                  gap-5
+                  rounded-full
+                  border
+                  border-white/60
+                  px-7
+                  py-4
+                  text-[9px]
+                  font-medium
+                  uppercase
+                  tracking-[0.28em]
+                  text-white
+                  transition-all
+                  duration-500
+                  hover:bg-white
+                  hover:text-[#626A59]
+                `}
+              >
+                Our Philosophy
 
                 <span
                   className={`
                     transition-transform
                     duration-500
-                    ease-out
                     group-hover:translate-x-1
                   `}
                 >
                   →
                 </span>
               </Link>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          SIMPLE BY NATURE — EDITORIAL
+      ===================================================== */}
+
+      <section
+        className={`
+          relative
+          overflow-hidden
+          bg-[#F8F5EF]
+          px-6
+          py-16
+          sm:px-10
+          lg:px-14
+          lg:py-20
+        `}
+      >
+        {/* SOFT ABSTRACT SHAPE — LEFT */}
+        <div
+          className={`
+            pointer-events-none
+            absolute
+            -left-[170px]
+            -top-[210px]
+            h-[460px]
+            w-[460px]
+            rounded-[45%_55%_60%_40%/55%_40%_60%_45%]
+            bg-[#EAE6DD]
+            lg:h-[540px]
+            lg:w-[540px]
+          `}
+        />
+
+        {/* SAGE ABSTRACT SHAPE — RIGHT */}
+        <div
+          className={`
+            pointer-events-none
+            absolute
+            -right-[170px]
+            -bottom-[240px]
+            h-[480px]
+            w-[480px]
+            rotate-[-10deg]
+            rounded-[58%_42%_38%_62%/46%_58%_42%_54%]
+            bg-[#DDE0D4]
+            lg:h-[560px]
+            lg:w-[560px]
+          `}
+        />
+
+        {/* THIN ABSTRACT OVAL */}
+        <div
+          className={`
+            pointer-events-none
+            absolute
+            -right-[20px]
+            top-[5%]
+            hidden
+            h-[350px]
+            w-[175px]
+            rotate-[17deg]
+            rounded-[50%]
+            border
+            border-[#ADB2A4]/40
+            lg:block
+          `}
+        />
+
+        <div
+          className={`
+            relative
+            z-10
+            mx-auto
+            max-w-[1250px]
+          `}
+        >
+          <Reveal>
+            <div
+              className={`
+                grid
+                gap-10
+                lg:grid-cols-[0.55fr_1.45fr]
+                lg:items-center
+                lg:gap-16
+              `}
+            >
+              {/* LEFT */}
+              <div>
+                <p
+                  className={`
+                    text-[8px]
+                    font-medium
+                    uppercase
+                    tracking-[0.42em]
+                    text-[#7E8475]
+                  `}
+                >
+                  The Willow &amp; Tallow Way
+                </p>
+
+                <div className="mt-5 h-px w-14 bg-[#A2A79A]" />
+
+                <p
+                  className={`
+                    mt-6
+                    max-w-[230px]
+                    font-serif
+                    text-[1.1rem]
+                    italic
+                    leading-[1.5]
+                    text-[#767D6E]
+                  `}
+                >
+                  Thoughtful ingredients.
+                  <br />
+                  Simple rituals.
+                  <br />
+                  Intentional care.
+                </p>
+              </div>
+
+              {/* RIGHT */}
+              <div>
+                <h2
+                  className={`
+                    max-w-[780px]
+                    font-serif
+                    text-[3.2rem]
+                    font-normal
+                    leading-[0.94]
+                    tracking-[-0.045em]
+                    text-[#373C35]
+                    sm:text-[4rem]
+                    lg:text-[4.8rem]
+                  `}
+                >
+                  Simple by{" "}
+                  <span className="italic text-[#747C6A]">
+                    nature.
+                  </span>
+                </h2>
+
+                <p
+                  className={`
+                    mt-6
+                    max-w-[620px]
+                    text-[14px]
+                    leading-7
+                    text-[#686F64]
+                    sm:text-[15px]
+                  `}
+                >
+                  We believe skincare feels better when it&apos;s
+                  uncomplicated. From thoughtful ingredients to slower
+                  everyday rituals, Willow &amp; Tallow is rooted in
+                  simplicity, nature, and care that feels intentional.
+                </p>
+
+                <Link
+                  href="/journal"
+                  className={`
+                    group
+                    mt-7
+                    inline-flex
+                    items-center
+                    gap-4
+                    text-[8px]
+                    font-medium
+                    uppercase
+                    tracking-[0.28em]
+                    text-[#4F564C]
+                  `}
+                >
+                  <span
+                    className={`
+                      border-b
+                      border-[#8F9588]
+                      pb-1.5
+                      transition-colors
+                      duration-500
+                      group-hover:border-[#4F564C]
+                    `}
+                  >
+                    Explore the Journal
+                  </span>
+
+                  <span
+                    className={`
+                      flex
+                      h-9
+                      w-9
+                      items-center
+                      justify-center
+                      rounded-full
+                      border
+                      border-[#979C90]
+                      text-sm
+                      transition-all
+                      duration-500
+                      group-hover:translate-x-1
+                      group-hover:bg-[#596251]
+                      group-hover:text-white
+                    `}
+                  >
+                    →
+                  </span>
+                </Link>
+              </div>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* BRAND STORY */}
+      {/* =====================================================
+          FINAL CTA — SAGE STATEMENT CARD
+      ===================================================== */}
+
       <section
         className={`
-          bg-[#F5F0E7]
+          relative
+          overflow-hidden
+          bg-[#FAF8F3]
           px-5
-          py-20
-          md:px-10
-          md:py-28
+          py-14
+          sm:px-8
+          lg:px-12
+          lg:py-16
         `}
       >
         <Reveal>
@@ -917,414 +1118,204 @@ export default function Home() {
             className={`
               relative
               mx-auto
-              min-h-[620px]
-              max-w-7xl
+              max-w-[1350px]
               overflow-hidden
-              rounded-[38px]
-              bg-cover
-              bg-center
-              bg-no-repeat
-              shadow-[0_20px_60px_rgba(65,59,50,0.08)]
+              rounded-[36px]
+              bg-[#747C69]
+              px-7
+              py-14
+              text-[#F8F5EF]
+              sm:px-12
+              lg:min-h-[430px]
+              lg:rounded-[52px]
+              lg:px-16
+              lg:py-16
+              xl:px-20
             `}
-            style={{
-              backgroundImage: "url('/willow-background.png')",
-            }}
           >
-            <div className="absolute inset-0 bg-[#F4EEE4]/5" />
+            {/* LARGE ABSTRACT CIRCLE */}
+            <div
+              className={`
+                pointer-events-none
+                absolute
+                -right-[120px]
+                -top-[170px]
+                h-[390px]
+                w-[390px]
+                rounded-full
+                bg-[#E6E4D9]/15
+                sm:h-[470px]
+                sm:w-[470px]
+                lg:-right-[80px]
+                lg:-top-[230px]
+                lg:h-[600px]
+                lg:w-[600px]
+              `}
+            />
 
+            {/* INNER OUTLINE CIRCLE */}
+            <div
+              className={`
+                pointer-events-none
+                absolute
+                -right-[30px]
+                top-[35px]
+                hidden
+                h-[320px]
+                w-[320px]
+                rounded-full
+                border
+                border-[#F6F3EB]/20
+                lg:block
+              `}
+            />
+
+            {/* SMALL FLOATING CREAM CIRCLE */}
+            <div
+              className={`
+                pointer-events-none
+                absolute
+                right-[12%]
+                top-[23%]
+                hidden
+                h-20
+                w-20
+                rounded-full
+                bg-[#F0EDE4]
+                lg:block
+              `}
+            >
+              <div
+                className={`
+                  absolute
+                  left-1/2
+                  top-1/2
+                  h-[1px]
+                  w-7
+                  -translate-x-1/2
+                  -translate-y-1/2
+                  rotate-[-35deg]
+                  bg-[#747C69]
+                `}
+              />
+            </div>
+
+            {/* CONTENT */}
             <div
               className={`
                 relative
                 z-10
                 flex
-                min-h-[620px]
-                items-end
-                p-5
-                sm:p-8
-                md:p-12
+                min-h-[300px]
+                flex-col
+                justify-between
+                lg:min-h-[300px]
               `}
             >
-              <div
-                className={`
-                  max-w-xl
-                  rounded-[30px]
-                  border
-                  border-white/30
-                  bg-[#F4EFE6]/88
-                  p-8
-                  shadow-[0_15px_45px_rgba(60,55,48,0.08)]
-                  backdrop-blur-md
-                  md:p-11
-                `}
-              >
-                <span
-                  className={`
-                    inline-flex
-                    rounded-full
-                    border
-                    border-[#BFC0B0]
-                    bg-[#F7F2EA]/50
-                    px-4
-                    py-2
-                    text-[9px]
-                    uppercase
-                    tracking-[0.34em]
-                    text-[#757C69]
-                  `}
-                >
-                  Our Ritual
-                </span>
-
-                <h2
-                  className={`
-                    mt-6
-                    font-serif
-                    text-4xl
-                    leading-tight
-                    text-[#353C32]
-                    md:text-5xl
-                  `}
-                >
-                  Care that feels a little slower.
-                </h2>
-
+              {/* TOP LABEL */}
+              <div className="flex items-center gap-4">
                 <p
                   className={`
-                    mt-5
-                    text-[17px]
-                    leading-8
-                    text-[#676D61]
+                    text-[8px]
+                    font-medium
+                    uppercase
+                    tracking-[0.42em]
+                    text-[#ECEAE2]/80
                   `}
                 >
-                  Thoughtful ingredients, comforting textures, and products
-                  designed to make everyday skincare feel like a moment worth
-                  slowing down for.
+                  Willow &amp; Tallow
                 </p>
 
-                <Link
-                  href="/about"
-                  className={`
-                    group
-                    mt-8
-                    inline-flex
-                    items-center
-                    gap-3
-                    rounded-full
-                    border
-                    border-[#68705E]
-                    bg-[#F5F0E7]/30
-                    px-6
-                    py-3
-                    text-[9px]
-                    uppercase
-                    tracking-[0.24em]
-                    text-[#4C5547]
-                    transition-colors
-                    duration-500
-                    hover:bg-[#F5F0E7]/70
-                  `}
-                >
-                  Our Story
+                <div className="h-px w-10 bg-[#ECEAE2]/40" />
+              </div>
 
-                  <span
+              {/* MAIN CONTENT */}
+              <div
+                className={`
+                  mt-14
+                  flex
+                  flex-col
+                  gap-10
+                  lg:mt-10
+                  lg:flex-row
+                  lg:items-end
+                  lg:justify-between
+                `}
+              >
+                <div>
+                  <h2
                     className={`
-                      transition-transform
-                      duration-500
-                      ease-out
-                      group-hover:translate-x-1
+                      max-w-[760px]
+                      font-serif
+                      text-[3.4rem]
+                      font-normal
+                      leading-[0.91]
+                      tracking-[-0.05em]
+                      text-[#FAF8F3]
+                      sm:text-[4.4rem]
+                      lg:text-[5.2rem]
                     `}
                   >
-                    →
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-      </section>
+                    Your skin.
+                    <br />
 
-      {/* VALUES */}
-      <section
-        className={`
-          bg-[#ECE6DC]
-          px-5
-          py-24
-          md:px-10
-          md:py-28
-        `}
-      >
-        <div className="mx-auto max-w-7xl">
-          <Reveal>
-            <div className="mb-14 text-center">
-              <span
-                className={`
-                  inline-flex
-                  rounded-full
-                  border
-                  border-[#C7C2B6]
-                  bg-[#F5F0E7]/60
-                  px-5
-                  py-2
-                  text-[9px]
-                  uppercase
-                  tracking-[0.36em]
-                  text-[#7C8270]
-                `}
-              >
-                At Our Core
-              </span>
-
-              <h2
-                className={`
-                  mt-7
-                  font-serif
-                  text-4xl
-                  leading-tight
-                  text-[#373E34]
-                  md:text-5xl
-                `}
-              >
-                Made with intention.
-              </h2>
-
-              <p
-                className={`
-                  mx-auto
-                  mt-5
-                  max-w-xl
-                  text-[16px]
-                  leading-7
-                  text-[#6B7065]
-                `}
-              >
-                A few simple ideas guide the way we think about skincare.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="grid gap-5 md:grid-cols-3">
-            {values.map((value, index) => (
-              <Reveal
-                key={value.title}
-                delay={index * 25}
-                className="h-full"
-              >
-                <div
-                  className={`
-                    group
-                    flex
-                    h-full
-                    min-h-[300px]
-                    flex-col
-                    rounded-[30px]
-                    border
-                    border-[#D2CBC0]
-                    bg-[#F5F0E7]/70
-                    p-8
-                    shadow-[0_10px_35px_rgba(70,64,55,0.035)]
-                    transition-shadow
-                    duration-700
-                    ease-out
-                    hover:shadow-[0_20px_50px_rgba(70,64,55,0.075)]
-                    sm:p-9
-                  `}
-                >
-                  <div className="flex items-center justify-between">
-                    <span
-                      className={`
-                        inline-flex
-                        rounded-full
-                        border
-                        border-[#D0C9BD]
-                        bg-[#EEE8DE]/70
-                        px-4
-                        py-2
-                        text-[8px]
-                        uppercase
-                        tracking-[0.28em]
-                        text-[#7C8270]
-                      `}
-                    >
-                      Our Values
+                    <span className="italic text-[#E5E4D8]">
+                      Simply cared for.
                     </span>
-
-                    <span className="font-serif text-lg italic text-[#A0A294]">
-                      {value.number}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-10 font-serif text-3xl text-[#3A4036]">
-                    {value.title}
-                  </h3>
+                  </h2>
 
                   <p
                     className={`
-                      mt-5
-                      text-[15px]
+                      mt-6
+                      max-w-[480px]
+                      text-[14px]
                       leading-7
-                      text-[#6A7064]
+                      text-[#F3F0E8]/75
                     `}
                   >
-                    {value.description}
+                    Thoughtfully made essentials for simple,
+                    nourishing everyday care.
                   </p>
-
-                  <div className="mt-auto pt-9">
-                    <div
-                      className={`
-                        h-px
-                        w-10
-                        bg-[#AEB0A0]
-                        transition-[width]
-                        duration-700
-                        ease-out
-                        group-hover:w-16
-                      `}
-                    />
-                  </div>
                 </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* JOURNAL */}
-      <section
-        className={`
-          bg-[#F5F0E7]
-          px-5
-          py-20
-          md:px-10
-          md:py-28
-        `}
-      >
-        <Reveal>
-          <div
-            className={`
-              mx-auto
-              grid
-              max-w-6xl
-              overflow-hidden
-              rounded-[38px]
-              border
-              border-[#D5CEC2]
-              bg-[#EEE8DE]
-              shadow-[0_15px_50px_rgba(65,60,50,0.05)]
-              lg:grid-cols-[0.85fr_1.15fr]
-            `}
-          >
-            <div
-              className={`
-                flex
-                items-center
-                justify-center
-                bg-[#E7E0D5]
-                px-8
-                py-16
-                text-center
-                md:px-12
-                md:py-20
-              `}
-            >
-              <div>
-                <span
-                  className={`
-                    inline-flex
-                    rounded-full
-                    border
-                    border-[#C6C1B4]
-                    bg-[#F5F0E7]/60
-                    px-5
-                    py-2
-                    text-[9px]
-                    uppercase
-                    tracking-[0.36em]
-                    text-[#7B816E]
-                  `}
-                >
-                  The Journal
-                </span>
-
-                <p
-                  className={`
-                    mt-7
-                    font-serif
-                    text-2xl
-                    italic
-                    leading-relaxed
-                    text-[#586052]
-                  `}
-                >
-                  Notes on skin, ingredients, rituals, and slower living.
-                </p>
-              </div>
-            </div>
-
-            <div
-              className={`
-                flex
-                items-center
-                px-8
-                py-16
-                md:px-14
-                md:py-20
-              `}
-            >
-              <div className="max-w-xl">
-                <h2
-                  className={`
-                    font-serif
-                    text-4xl
-                    leading-tight
-                    text-[#373D34]
-                    md:text-5xl
-                  `}
-                >
-                  A little more to explore.
-                </h2>
-
-                <p
-                  className={`
-                    mt-6
-                    text-[17px]
-                    leading-8
-                    text-[#686E62]
-                  `}
-                >
-                  Explore thoughtful reading on traditional ingredients,
-                  simple skincare, everyday rituals, and the ideas that inspire
-                  Willow & Tallow.
-                </p>
 
                 <Link
-                  href="/journal"
+                  href="/shop"
                   className={`
                     group
-                    mt-8
-                    inline-flex
+                    flex
+                    w-fit
                     items-center
-                    gap-3
+                    gap-5
                     rounded-full
-                    border
-                    border-[#68705E]
-                    px-6
-                    py-3
-                    text-[9px]
+                    bg-[#F6F3EC]
+                    py-2
+                    pl-6
+                    pr-2
+                    text-[8px]
+                    font-medium
                     uppercase
-                    tracking-[0.24em]
-                    text-[#4C5547]
-                    transition-colors
+                    tracking-[0.28em]
+                    text-[#4F574B]
+                    transition-all
                     duration-500
-                    hover:bg-[#F5F0E7]/70
+                    hover:bg-white
                   `}
                 >
-                  Read the Journal
+                  Shop Collection
 
                   <span
                     className={`
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-[#747C69]
+                      text-sm
+                      text-white
                       transition-transform
                       duration-500
-                      ease-out
                       group-hover:translate-x-1
                     `}
                   >
@@ -1333,230 +1324,52 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
-        </Reveal>
-      </section>
 
-      {/* FINAL CTA */}
-      <section
-        className={`
-          bg-[#F5F0E7]
-          px-5
-          pb-28
-          pt-4
-          md:px-10
-          md:pb-32
-          md:pt-8
-        `}
-      >
-        <Reveal>
-          <div
-            className={`
-              mx-auto
-              max-w-6xl
-              rounded-[38px]
-              border
-              border-[#D5CEC2]
-              bg-[#EEE8DE]
-              px-7
-              py-20
-              text-center
-              shadow-[0_15px_50px_rgba(65,60,50,0.05)]
-              md:px-12
-              md:py-24
-            `}
-          >
-            <span
-              className={`
-                inline-flex
-                rounded-full
-                border
-                border-[#C6C1B4]
-                bg-[#F5F0E7]/60
-                px-5
-                py-2
-                text-[9px]
-                uppercase
-                tracking-[0.36em]
-                text-[#7B816E]
-              `}
-            >
-              Willow & Tallow
-            </span>
-
-            <h2
-              className={`
-                mx-auto
-                mt-7
-                max-w-3xl
-                font-serif
-                text-4xl
-                leading-tight
-                text-[#363C33]
-                md:text-6xl
-              `}
-            >
-              Made for the moments you slow down.
-            </h2>
-
-            <p
-              className={`
-                mx-auto
-                mt-7
-                max-w-2xl
-                text-[17px]
-                leading-8
-                text-[#686E62]
-                md:text-lg
-              `}
-            >
-              Thoughtful skincare inspired by simple ingredients, traditional
-              care, and the beauty of everyday rituals.
-            </p>
-
+            {/* BOTTOM DETAIL */}
             <div
               className={`
-                mt-10
-                flex
-                flex-col
-                items-center
-                justify-center
-                gap-3
-                sm:flex-row
+                pointer-events-none
+                absolute
+                bottom-6
+                right-8
+                hidden
+                text-[7px]
+                uppercase
+                tracking-[0.34em]
+                text-[#F4F1E9]/40
+                lg:block
               `}
             >
-              <Link
-                href="/shop"
-                className={`
-                  group
-                  inline-flex
-                  items-center
-                  gap-3
-                  rounded-full
-                  bg-[#56604E]
-                  px-8
-                  py-4
-                  text-[9px]
-                  uppercase
-                  tracking-[0.27em]
-                  text-[#F7F2EA]
-                  transition-colors
-                  duration-500
-                  hover:bg-[#454E40]
-                `}
-              >
-                View the Collection
-
-                <span
-                  className={`
-                    transition-transform
-                    duration-500
-                    ease-out
-                    group-hover:translate-x-1
-                  `}
-                >
-                  →
-                </span>
-              </Link>
-
-              <Link
-                href="/about"
-                className={`
-                  group
-                  inline-flex
-                  items-center
-                  gap-3
-                  rounded-full
-                  border
-                  border-[#68705E]
-                  px-8
-                  py-4
-                  text-[9px]
-                  uppercase
-                  tracking-[0.27em]
-                  text-[#46503F]
-                  transition-colors
-                  duration-500
-                  hover:bg-[#F5F0E7]/70
-                `}
-              >
-                Our Story
-
-                <span
-                  className={`
-                    transition-transform
-                    duration-500
-                    ease-out
-                    group-hover:translate-x-1
-                  `}
-                >
-                  →
-                </span>
-              </Link>
+              Naturally Simple · Thoughtfully Made
             </div>
           </div>
         </Reveal>
       </section>
 
-      {/* HERO ANIMATION */}
+      {/* =====================================================
+          GLOBAL HOMEPAGE STYLES
+      ===================================================== */}
+
       <style jsx global>{`
-        @keyframes willowHeroReveal {
-          0% {
-            opacity: 0;
-            transform: translate3d(0, 10px, 0);
-            filter: blur(2px);
-          }
-
-          100% {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-            filter: blur(0);
-          }
-        }
-
-        .hero-logo {
-          opacity: 0;
-          animation: willowHeroReveal 1.4s
-            cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
-        }
-
-        .hero-tagline {
-          opacity: 0;
-          animation: willowHeroReveal 1.35s
-            cubic-bezier(0.16, 1, 0.3, 1) 0.16s forwards;
-        }
-
-        .hero-description {
-          opacity: 0;
-          animation: willowHeroReveal 1.35s
-            cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
-        }
-
-        .hero-button {
-          opacity: 0;
-          animation: willowHeroReveal 1.35s
-            cubic-bezier(0.16, 1, 0.3, 1) 0.34s forwards;
-        }
-
         html {
           scroll-behavior: smooth;
         }
 
+        ::selection {
+          background: #d8d9cc;
+          color: #353a32;
+        }
+
         @media (prefers-reduced-motion: reduce) {
-          .hero-logo,
-          .hero-tagline,
-          .hero-description,
-          .hero-button {
-            opacity: 1;
-            animation: none !important;
-            transform: none !important;
-            filter: none !important;
+          html {
+            scroll-behavior: auto;
           }
 
           *,
           *::before,
           *::after {
-            scroll-behavior: auto !important;
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
             transition-duration: 0.01ms !important;
           }
         }
