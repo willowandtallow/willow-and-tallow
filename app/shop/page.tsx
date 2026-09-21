@@ -4,6 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "../components/Reveal";
 
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
 const products = [
   {
     name: "Whipped Tallow Balm",
@@ -30,278 +34,268 @@ const products = [
 
 export default function ShopPage() {
   return (
-    <main className="overflow-x-hidden bg-[#F5F0E7] text-[#343A31]">
+    <main className="overflow-hidden bg-[#FAF9F5] text-[#343934]">
       {/* =====================================================
           HERO
       ===================================================== */}
-      <section
-        className={`
-          relative
-          min-h-[58vh]
-          overflow-hidden
-          bg-cover
-          bg-center
-          bg-no-repeat
-        `}
-        style={{
-          backgroundImage: "url('/willow-background.png')",
-        }}
-      >
-        <div className="absolute inset-0 bg-[#F6F0E6]/15" />
 
-        <div
+{/* =====================================================
+    SHOP HERO — COMPACT EDITORIAL
+===================================================== */}
+
+<section
+  className={`
+    relative
+    overflow-hidden
+    border-b
+    border-[#E1DFD8]
+    bg-[#FAF9F5]
+    px-6
+    pb-10
+    pt-32
+    sm:px-10
+    sm:pb-12
+    sm:pt-36
+    lg:px-14
+    lg:pb-12
+    lg:pt-36
+    xl:px-20
+  `}
+>
+  <div
+    className={`
+      relative
+      z-10
+      mx-auto
+      max-w-[1450px]
+    `}
+  >
+    <Reveal>
+      {/* LABEL */}
+      <div
+        className={`
+          flex
+          items-center
+          justify-center
+          gap-3
+        `}
+      >
+        <span className="h-px w-7 bg-[#9CA194]" />
+
+        <p
           className={`
-            absolute
-            inset-x-0
-            bottom-0
-            h-48
-            bg-gradient-to-b
-            from-transparent
-            via-[#F5F0E7]/45
-            to-[#F5F0E7]
+            text-[7px]
+            font-medium
+            uppercase
+            tracking-[0.4em]
+            text-[#7C8277]
+          `}
+        >
+          Willow &amp; Tallow
+        </p>
+
+        <span className="h-px w-7 bg-[#9CA194]" />
+      </div>
+
+      {/* HEADING */}
+      <h1
+        className={`
+          mx-auto
+          mt-5
+          max-w-[850px]
+          text-center
+          font-serif
+          text-[3.25rem]
+          font-normal
+          leading-[0.94]
+          tracking-[-0.045em]
+          text-[#333833]
+          sm:text-[4rem]
+          lg:text-[4.7rem]
+        `}
+      >
+        The everyday{" "}
+        <span className="italic text-[#747C6A]">
+          essentials.
+        </span>
+      </h1>
+
+      {/* DESCRIPTION */}
+      <p
+        className={`
+          mx-auto
+          mt-5
+          max-w-[520px]
+          text-center
+          text-[13px]
+          leading-6
+          text-[#6B7168]
+          sm:text-[14px]
+        `}
+      >
+        A considered collection of nourishing skincare,
+        thoughtfully made for simple everyday routines.
+      </p>
+
+      {/* STATUS */}
+      <div
+        className={`
+          mx-auto
+          mt-6
+          flex
+          w-fit
+          items-center
+          gap-3
+        `}
+      >
+        <span
+          className={`
+            h-1.5
+            w-1.5
+            rounded-full
+            bg-[#7D8574]
           `}
         />
 
-        <div
+        <span
           className={`
-            relative
-            z-10
-            mx-auto
-            flex
-            min-h-[58vh]
-            max-w-7xl
-            items-center
-            justify-center
-            px-6
-            pb-16
-            pt-32
-            text-center
-            md:px-10
+            text-[7px]
+            font-medium
+            uppercase
+            tracking-[0.28em]
+            text-[#7D8378]
           `}
         >
-          <div className="max-w-3xl">
-            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.1s_both]">
-              <span
-                className={`
-                  inline-flex
-                  rounded-full
-                  border
-                  border-[#B9B8A8]/70
-                  bg-[#F5F0E7]/55
-                  px-5
-                  py-2
-                  text-[9px]
-                  uppercase
-                  tracking-[0.36em]
-                  text-[#747B68]
-                  backdrop-blur-sm
-                `}
-              >
-                Willow & Tallow
-              </span>
-            </div>
+          Collection Coming Soon
+        </span>
+      </div>
+    </Reveal>
+  </div>
 
-            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.2s_both]">
-              <h1
-                className={`
-                  mt-7
-                  font-serif
-                  text-5xl
-                  leading-[1.05]
-                  tracking-[-0.03em]
-                  text-[#363D33]
-                  sm:text-6xl
-                  md:text-7xl
-                `}
-              >
-                The Collection
-              </h1>
-            </div>
-
-            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.3s_both]">
-              <p
-                className={`
-                  mx-auto
-                  mt-7
-                  max-w-xl
-                  text-[17px]
-                  leading-8
-                  text-[#60675A]
-                  md:text-lg
-                `}
-              >
-                Thoughtful skincare made simply, with nourishing ingredients
-                and an intentional approach to everyday care.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+  {/* BOTTOM ACCENT */}
+  <div
+    className={`
+      absolute
+      bottom-0
+      left-1/2
+      h-[3px]
+      w-20
+      -translate-x-1/2
+      bg-[#B7BDAE]
+    `}
+  />
+</section>
 
       {/* =====================================================
-          INTRO
+          COLLECTION
       ===================================================== */}
+
       <section
         className={`
-          bg-[#F5F0E7]
+          bg-[#FAF9F5]
           px-6
-          pb-20
-          pt-10
-          text-center
-          md:px-10
-          md:pb-24
-          md:pt-14
+          py-20
+          sm:px-10
+          lg:px-14
+          lg:py-28
+          xl:px-20
         `}
       >
-        <Reveal>
-          <div className="mx-auto max-w-3xl">
-            <span
-              className={`
-                inline-flex
-                rounded-full
-                border
-                border-[#C7C2B6]
-                bg-[#EEE8DE]/70
-                px-5
-                py-2
-                text-[9px]
-                uppercase
-                tracking-[0.36em]
-                text-[#7C8270]
-              `}
-            >
-              Shop Willow & Tallow
-            </span>
-
-            <h2
-              className={`
-                mt-7
-                font-serif
-                text-4xl
-                leading-tight
-                text-[#383E35]
-                md:text-5xl
-              `}
-            >
-              Simple essentials for slower routines.
-            </h2>
-
-            <p
-              className={`
-                mx-auto
-                mt-6
-                max-w-2xl
-                text-[17px]
-                leading-8
-                text-[#696F63]
-              `}
-            >
-              Our collection is growing slowly and intentionally, one
-              thoughtful product at a time.
-            </p>
-
-            <div className="mx-auto mt-10 h-px w-14 bg-[#A8AA99]" />
-          </div>
-        </Reveal>
-      </section>
-
-      {/* =====================================================
-          PRODUCTS
-      ===================================================== */}
-      <section
-        className={`
-          bg-[#EEE8DE]
-          px-5
-          py-24
-          md:px-10
-          md:py-32
-        `}
-      >
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1450px]">
+          {/* HEADER */}
           <Reveal>
-            <div className="mb-14 text-center">
-              <span
-                className={`
-                  inline-flex
-                  rounded-full
-                  border
-                  border-[#C7C2B6]
-                  bg-[#F5F0E7]/60
-                  px-5
-                  py-2
-                  text-[9px]
-                  uppercase
-                  tracking-[0.36em]
-                  text-[#7C8270]
-                `}
-              >
-                Our Essentials
-              </span>
+            <div
+              className={`
+                mb-12
+                flex
+                flex-col
+                gap-5
+                sm:flex-row
+                sm:items-end
+                sm:justify-between
+                lg:mb-16
+              `}
+            >
+              <div>
+                <p
+                  className={`
+                    text-[8px]
+                    font-medium
+                    uppercase
+                    tracking-[0.4em]
+                    text-[#82887B]
+                  `}
+                >
+                  Everyday Essentials
+                </p>
 
-              <h2
-                className={`
-                  mt-7
-                  font-serif
-                  text-4xl
-                  leading-tight
-                  text-[#363C33]
-                  md:text-5xl
-                `}
-              >
-                Made for everyday care.
-              </h2>
+                <h2
+                  className={`
+                    mt-4
+                    font-serif
+                    text-[2.9rem]
+                    font-normal
+                    leading-[0.98]
+                    tracking-[-0.04em]
+                    text-[#383D37]
+                    sm:text-[3.7rem]
+                  `}
+                >
+                  Made for the{" "}
+                  <span className="italic text-[#747C6A]">
+                    everyday.
+                  </span>
+                </h2>
+              </div>
 
               <p
                 className={`
-                  mx-auto
-                  mt-5
-                  max-w-xl
-                  text-[16px]
-                  leading-7
-                  text-[#6B7065]
+                  max-w-[380px]
+                  text-[13px]
+                  leading-6
+                  text-[#747A70]
+                  sm:text-right
                 `}
               >
-                A thoughtfully made collection of simple skincare essentials,
-                coming soon.
+                A small collection designed to make your routine
+                feel simple, considered, and nourishing.
               </p>
             </div>
           </Reveal>
 
-          {/* PRODUCT CARDS */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {/* =====================================================
+              PRODUCTS
+          ===================================================== */}
+
+          <div
+            className={`
+              grid
+              gap-x-7
+              gap-y-16
+              md:grid-cols-3
+              lg:gap-x-9
+            `}
+          >
             {products.map((product, index) => (
               <Reveal
                 key={product.name}
-                delay={index * 100}
-                className="h-full"
+                delay={index * 40}
               >
-                <article
-                  className={`
-                    group
-                    flex
-                    h-full
-                    flex-col
-                    overflow-hidden
-                    rounded-[32px]
-                    border
-                    border-[#D5CEC2]
-                    bg-[#F8F4EC]
-                    p-3
-                    shadow-[0_12px_40px_rgba(70,64,55,0.04)]
-                    transition-all
-                    duration-500
-                    hover:-translate-y-1
-                    hover:shadow-[0_22px_60px_rgba(70,64,55,0.09)]
-                  `}
-                >
-                  {/* PRODUCT IMAGE */}
+                <article className="group">
+                  {/* IMAGE */}
                   <div
                     className={`
                       relative
                       aspect-[4/5]
                       overflow-hidden
-                      rounded-[25px]
-                      bg-[#E4DDD1]
+                      bg-[#EFEBE3]
+                      ${
+                        index === 0
+                          ? "rounded-t-[120px]"
+                          : index === 1
+                            ? "rounded-[6px]"
+                            : "rounded-tl-[110px] rounded-br-[110px]"
+                      }
                     `}
                   >
                     <Image
@@ -312,68 +306,42 @@ export default function ShopPage() {
                       className={`
                         object-cover
                         transition-transform
-                        duration-[1000ms]
+                        duration-[1400ms]
                         ease-out
-                        group-hover:scale-[1.035]
+                        group-hover:scale-[1.025]
                       `}
                     />
 
-                    {/* COMING SOON BADGE */}
+                    {/* STATUS */}
                     <div
                       className={`
                         absolute
-                        left-5
-                        top-5
-                        rounded-full
-                        border
-                        border-white/40
-                        bg-[#F5F0E7]/90
+                        bottom-4
+                        left-4
+                        bg-[#FAF9F5]/92
                         px-4
-                        py-2
-                        text-[8px]
+                        py-2.5
+                        text-[7px]
+                        font-medium
                         uppercase
-                        tracking-[0.26em]
-                        text-[#56604E]
-                        shadow-sm
-                        backdrop-blur-md
+                        tracking-[0.27em]
+                        text-[#5F665C]
+                        backdrop-blur-sm
                       `}
                     >
                       Coming Soon
                     </div>
-
-                    {/* SOFT IMAGE OVERLAY */}
-                    <div
-                      className={`
-                        pointer-events-none
-                        absolute
-                        inset-x-0
-                        bottom-0
-                        h-24
-                        bg-gradient-to-t
-                        from-[#4B5147]/10
-                        to-transparent
-                      `}
-                    />
                   </div>
 
-                  {/* PRODUCT CONTENT */}
-                  <div
-                    className={`
-                      flex
-                      flex-1
-                      flex-col
-                      px-4
-                      pb-6
-                      pt-7
-                      sm:px-5
-                    `}
-                  >
+                  {/* PRODUCT COPY */}
+                  <div className="pt-6">
                     <p
                       className={`
-                        text-[9px]
+                        text-[8px]
+                        font-medium
                         uppercase
-                        tracking-[0.3em]
-                        text-[#888C7C]
+                        tracking-[0.31em]
+                        text-[#858B7E]
                       `}
                     >
                       {product.label}
@@ -384,8 +352,10 @@ export default function ShopPage() {
                         mt-3
                         font-serif
                         text-[2rem]
-                        leading-tight
-                        text-[#383F35]
+                        font-normal
+                        tracking-[-0.03em]
+                        text-[#383D37]
+                        lg:text-[2.15rem]
                       `}
                     >
                       {product.name}
@@ -393,34 +363,46 @@ export default function ShopPage() {
 
                     <p
                       className={`
-                        mt-4
-                        text-[15px]
-                        leading-7
-                        text-[#696F63]
+                        mt-3
+                        max-w-[350px]
+                        text-[13px]
+                        leading-6
+                        text-[#70766D]
                       `}
                     >
                       {product.description}
                     </p>
 
-                    <div className="mt-auto pt-7">
+                    <div
+                      className={`
+                        mt-6
+                        flex
+                        items-center
+                        gap-4
+                      `}
+                    >
                       <span
                         className={`
-                          inline-flex
-                          items-center
-                          rounded-full
-                          border
-                          border-[#D0C9BD]
-                          bg-[#EEE8DE]/70
-                          px-5
-                          py-3
-                          text-[9px]
+                          text-[8px]
+                          font-medium
                           uppercase
-                          tracking-[0.25em]
-                          text-[#7E8373]
+                          tracking-[0.27em]
+                          text-[#62695F]
                         `}
                       >
-                        Coming Soon
+                        Launching Soon
                       </span>
+
+                      <span
+                        className={`
+                          h-px
+                          w-9
+                          bg-[#A0A598]
+                          transition-all
+                          duration-500
+                          group-hover:w-14
+                        `}
+                      />
                     </div>
                   </div>
                 </article>
@@ -431,139 +413,246 @@ export default function ShopPage() {
       </section>
 
       {/* =====================================================
-          COMING SOON CTA
+          PHILOSOPHY — SAGE FEATURE
       ===================================================== */}
+
       <section
         className={`
-          bg-[#F5F0E7]
-          px-5
-          py-20
-          md:px-10
-          md:py-28
+          bg-[#FAF9F5]
+          px-6
+          pb-20
+          sm:px-10
+          lg:px-14
+          lg:pb-28
+          xl:px-20
         `}
       >
         <Reveal>
           <div
             className={`
+              relative
               mx-auto
-              max-w-6xl
-              rounded-[38px]
-              border
-              border-[#D5CEC2]
-              bg-[#EEE8DE]
+              max-w-[1450px]
+              overflow-hidden
+              bg-[#E4E7DC]
               px-7
-              py-20
-              text-center
-              shadow-[0_15px_50px_rgba(65,60,50,0.05)]
-              md:px-12
-              md:py-24
+              py-12
+              sm:px-10
+              lg:px-14
+              lg:py-14
             `}
           >
-            <span
+            {/* LARGE TYPOGRAPHIC DETAIL */}
+            <div
               className={`
-                inline-flex
-                rounded-full
-                border
-                border-[#C6C1B4]
-                bg-[#F5F0E7]/60
-                px-5
-                py-2
-                text-[9px]
-                uppercase
-                tracking-[0.36em]
-                text-[#7B816E]
-              `}
-            >
-              Coming Soon
-            </span>
-
-            <h2
-              className={`
-                mx-auto
-                mt-7
-                max-w-3xl
+                pointer-events-none
+                absolute
+                -right-5
+                -top-16
+                hidden
                 font-serif
-                text-4xl
-                leading-tight
-                text-[#373D34]
-                md:text-5xl
+                text-[15rem]
+                italic
+                leading-none
+                text-[#D4D8CB]
+                lg:block
               `}
             >
-              Growing slowly.
-              <br />
-              Making thoughtfully.
-            </h2>
+              W
+            </div>
 
-            <p
+            <div
               className={`
-                mx-auto
-                mt-7
-                max-w-xl
-                text-[17px]
-                leading-8
-                text-[#686E62]
-                md:text-lg
+                relative
+                z-10
+                grid
+                gap-9
+                lg:grid-cols-[0.45fr_1.15fr_0.7fr]
+                lg:items-center
+                lg:gap-14
               `}
             >
-              Our first Willow & Tallow essentials are currently in the works.
-              We&apos;re taking our time to create a collection that feels
-              simple, thoughtful, and worth the wait.
-            </p>
+              <div>
+                <p
+                  className={`
+                    text-[8px]
+                    font-medium
+                    uppercase
+                    tracking-[0.4em]
+                    text-[#72796C]
+                  `}
+                >
+                  Our Approach
+                </p>
 
-            <Link
-              href="/contact"
-              className={`
-                group
-                mt-9
-                inline-flex
-                items-center
-                gap-3
-                rounded-full
-                border
-                border-[#68705E]
-                bg-[#F5F0E7]/40
-                px-7
-                py-4
-                text-[9px]
-                uppercase
-                tracking-[0.27em]
-                text-[#46503F]
-                transition-all
-                duration-300
-                hover:-translate-y-0.5
-                hover:bg-[#F5F0E7]
-              `}
-            >
-              Stay in Touch
+                <div className="mt-5 h-px w-12 bg-[#969D8D]" />
+              </div>
 
-              <span
+              <h2
                 className={`
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
+                  max-w-[660px]
+                  font-serif
+                  text-[2.8rem]
+                  font-normal
+                  leading-[0.97]
+                  tracking-[-0.04em]
+                  text-[#373D36]
+                  sm:text-[3.5rem]
+                  lg:text-[3.9rem]
                 `}
               >
-                →
-              </span>
-            </Link>
+                Good skincare doesn&apos;t
+                <br className="hidden sm:block" />
+                need to feel{" "}
+                <span className="italic text-[#707867]">
+                  complicated.
+                </span>
+              </h2>
+
+              <p
+                className={`
+                  max-w-[350px]
+                  text-[13px]
+                  leading-6
+                  text-[#676E64]
+                `}
+              >
+                Willow &amp; Tallow is built around a smaller,
+                more considered approach — purposeful ingredients
+                and products you&apos;ll actually want to use.
+              </p>
+            </div>
           </div>
         </Reveal>
       </section>
 
       {/* =====================================================
-          HERO ANIMATION
+          LAUNCH / FINAL CTA
       ===================================================== */}
-      <style jsx global>{`
-        @keyframes heroFade {
-          0% {
-            opacity: 0;
-            transform: translateY(12px);
-          }
 
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
+      <section
+        className={`
+          relative
+          overflow-hidden
+          border-t
+          border-[#E1DFD8]
+          bg-[#F5F2EB]
+          px-6
+          py-20
+          sm:px-10
+          lg:px-14
+          lg:py-24
+          xl:px-20
+        `}
+      >
+        <div className="mx-auto max-w-[1450px]">
+          <Reveal>
+            <div
+              className={`
+                grid
+                gap-10
+                lg:grid-cols-[1.2fr_0.8fr]
+                lg:items-end
+                lg:gap-20
+              `}
+            >
+              <div>
+                <p
+                  className={`
+                    text-[8px]
+                    font-medium
+                    uppercase
+                    tracking-[0.42em]
+                    text-[#81877A]
+                  `}
+                >
+                  Coming Soon
+                </p>
+
+                <h2
+                  className={`
+                    mt-5
+                    max-w-[760px]
+                    font-serif
+                    text-[3.2rem]
+                    font-normal
+                    leading-[0.95]
+                    tracking-[-0.045em]
+                    text-[#353A34]
+                    sm:text-[4rem]
+                    lg:text-[4.7rem]
+                  `}
+                >
+                  The beginning of
+                  <br />
+                  something{" "}
+                  <span className="italic text-[#747C6A]">
+                    simple.
+                  </span>
+                </h2>
+              </div>
+
+              <div>
+                <p
+                  className={`
+                    max-w-[430px]
+                    text-[14px]
+                    leading-7
+                    text-[#6D7369]
+                  `}
+                >
+                  Our first collection is currently taking shape.
+                  Stay connected for launch updates and what&apos;s
+                  coming next.
+                </p>
+
+                <Link
+                  href="/contact"
+                  className={`
+                    group
+                    mt-7
+                    inline-flex
+                    items-center
+                    gap-5
+                    bg-[#596251]
+                    px-7
+                    py-4
+                    text-[8px]
+                    font-medium
+                    uppercase
+                    tracking-[0.28em]
+                    text-white
+                    transition-all
+                    duration-500
+                    hover:bg-[#464E41]
+                  `}
+                >
+                  Stay in Touch
+
+                  <span
+                    className={`
+                      transition-transform
+                      duration-500
+                      group-hover:translate-x-1
+                    `}
+                  >
+                    →
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* =====================================================
+          GLOBAL STYLES
+      ===================================================== */}
+
+      <style jsx global>{`
+        ::selection {
+          background: #d8d9cc;
+          color: #353a32;
         }
 
         @media (prefers-reduced-motion: reduce) {
