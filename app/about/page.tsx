@@ -9,223 +9,98 @@ const values = [
     number: "01",
     title: "Simplicity",
     description:
-      "We believe good skincare does not need to feel complicated. Every product should have a clear purpose.",
+      "Good skincare does not need to feel complicated. Every product should have a clear purpose.",
   },
   {
     number: "02",
     title: "Thoughtfulness",
     description:
-      "Ingredients are chosen with intention, not simply to make a formula longer or more impressive.",
+      "Ingredients are chosen with intention, with a focus on what belongs in the formula.",
   },
   {
     number: "03",
     title: "Ritual",
     description:
-      "Everyday care can be simple and still feel special. We want our products to become part of those quieter moments.",
+      "Everyday care can be simple and still feel special — a quieter moment built into your routine.",
   },
 ];
 
 export default function AboutPage() {
   return (
-    <main className="overflow-x-hidden bg-[#F5F0E7] text-[#343A31]">
+    <main className="overflow-x-hidden bg-[#FAF9F5] text-[#343A31]">
       {/* =====================================================
           HERO
       ===================================================== */}
-      <section
-        className={`
-          relative
-          min-h-[68vh]
-          overflow-hidden
-          bg-cover
-          bg-center
-          bg-no-repeat
-        `}
-        style={{
-          backgroundImage: "url('/willow-background.png')",
-        }}
-      >
-        <div className="absolute inset-0 bg-[#F7F1E7]/20" />
 
-        <div
-          className={`
-            absolute
-            inset-x-0
-            bottom-0
-            h-48
-            bg-gradient-to-b
-            from-transparent
-            via-[#F5F0E7]/45
-            to-[#F5F0E7]
-          `}
-        />
+      <section className="relative overflow-hidden border-b border-[#E3E2DC] bg-[#FAF9F5] px-6 pb-14 pt-32 sm:px-10 sm:pt-36 lg:px-14 lg:pb-16 lg:pt-36 xl:px-20">
+        <div className="mx-auto max-w-[1400px]">
+          <Reveal>
+            <div className="mx-auto max-w-[950px] text-center">
+              <div className="flex items-center justify-center gap-3">
+                <span className="h-px w-7 bg-[#A4AA9C]" />
 
-        <div
-          className={`
-            relative
-            z-10
-            mx-auto
-            flex
-            min-h-[68vh]
-            max-w-7xl
-            items-center
-            justify-center
-            px-6
-            pb-20
-            pt-32
-            text-center
-            md:px-10
-          `}
-        >
-          <div className="max-w-4xl">
-            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.1s_both]">
-              <span
-                className={`
-                  inline-flex
-                  rounded-full
-                  border
-                  border-[#B9B8A8]/70
-                  bg-[#F5F0E7]/55
-                  px-5
-                  py-2
-                  text-[9px]
-                  uppercase
-                  tracking-[0.36em]
-                  text-[#747B68]
-                  backdrop-blur-sm
-                `}
-              >
-                Our Story
-              </span>
-            </div>
+                <span className="text-[7px] font-medium uppercase tracking-[0.42em] text-[#777E72]">
+                  Our Story
+                </span>
 
-            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.2s_both]">
-              <h1
-                className={`
-                  mt-7
-                  font-serif
-                  text-5xl
-                  leading-[1.02]
-                  tracking-[-0.035em]
-                  text-[#343A31]
-                  sm:text-6xl
-                  md:text-7xl
-                `}
-              >
-                A return to
+                <span className="h-px w-7 bg-[#A4AA9C]" />
+              </div>
+
+              <h1 className="mt-5 font-serif text-[3.4rem] font-normal leading-[0.94] tracking-[-0.05em] text-[#333933] sm:text-[4.2rem] lg:text-[5rem]">
+                Rooted in simplicity.
                 <br />
-                simpler care.
+                <span className="italic text-[#747C6A]">
+                  Made with intention.
+                </span>
               </h1>
-            </div>
 
-            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.3s_both]">
-              <p
-                className={`
-                  mx-auto
-                  mt-7
-                  max-w-2xl
-                  text-[17px]
-                  leading-8
-                  text-[#60675A]
-                  md:text-lg
-                `}
-              >
-                Willow & Tallow was created around a simple idea: skincare
-                should feel nourishing, intentional, and easy to understand.
+              <p className="mx-auto mt-6 max-w-[570px] text-[13px] leading-6 text-[#686F66] sm:text-[14px]">
+                Willow &amp; Tallow is a return to a more thoughtful kind of
+                skincare — uncomplicated formulas, purposeful ingredients,
+                and everyday care that feels good to come back to.
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* =====================================================
-          OPENING STORY
+          INTRODUCTION
       ===================================================== */}
-      <section
-        className={`
-          bg-[#F5F0E7]
-          px-6
-          pb-24
-          pt-12
-          md:px-10
-          md:pb-32
-          md:pt-20
-        `}
-      >
-        <div
-          className={`
-            mx-auto
-            grid
-            max-w-7xl
-            gap-10
-            lg:grid-cols-[0.65fr_1.35fr]
-            lg:gap-20
-          `}
-        >
+
+      <section className="bg-[#F5F3ED] px-6 py-16 sm:px-10 lg:px-14 lg:py-20 xl:px-20">
+        <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24">
           <Reveal>
             <div>
-              <span
-                className={`
-                  inline-flex
-                  rounded-full
-                  border
-                  border-[#C7C2B6]
-                  bg-[#EEE8DE]/70
-                  px-5
-                  py-2
-                  text-[9px]
-                  uppercase
-                  tracking-[0.36em]
-                  text-[#7C816F]
-                `}
-              >
-                Why Willow & Tallow
-              </span>
+              <p className="text-[8px] font-medium uppercase tracking-[0.38em] text-[#7C8377]">
+                Why Willow &amp; Tallow
+              </p>
+
+              <div className="mt-4 h-px w-12 bg-[#AEB3A6]" />
             </div>
           </Reveal>
 
           <Reveal>
-            <div>
-              <h2
-                className={`
-                  max-w-4xl
-                  font-serif
-                  text-4xl
-                  leading-[1.12]
-                  text-[#383E35]
-                  md:text-5xl
-                `}
-              >
-                Inspired by the way skincare used to be made.
+            <div className="max-w-[780px]">
+              <h2 className="font-serif text-[2.7rem] leading-[1.04] tracking-[-0.04em] text-[#383E38] sm:text-[3.3rem] lg:text-[3.8rem]">
+                Skincare became complicated.
+                <br />
+                <span className="italic text-[#747C6A]">
+                  We wanted to simplify it.
+                </span>
               </h2>
 
-              <div
-                className={`
-                  mt-8
-                  max-w-3xl
-                  space-y-6
-                  text-[17px]
-                  leading-8
-                  text-[#686E62]
-                  md:text-lg
-                `}
-              >
+              <div className="mt-7 grid gap-5 text-[14px] leading-7 text-[#686E65] sm:text-[15px] md:grid-cols-2 md:gap-10">
                 <p>
-                  Before skincare became crowded with endless steps,
-                  complicated routines, and ingredient lists that felt
-                  impossible to understand, care was simpler.
+                  Before endless routines and overwhelming ingredient lists,
+                  everyday care was simpler. Products had a purpose, familiar
+                  ingredients, and a place in daily life.
                 </p>
 
                 <p>
-                  Products were made from familiar ingredients and used with
-                  intention. Willow & Tallow draws inspiration from that slower,
-                  more thoughtful approach.
-                </p>
-
-                <p>
-                  We believe there is something beautiful about returning to
-                  the essentials: nourishing textures, carefully selected
-                  ingredients, and products that feel comforting to use every
-                  day.
+                  Willow &amp; Tallow draws from that philosophy — creating
+                  thoughtful essentials that feel nourishing, comforting, and
+                  easy to understand.
                 </p>
               </div>
             </div>
@@ -234,126 +109,59 @@ export default function AboutPage() {
       </section>
 
       {/* =====================================================
-          IMAGE + STORY
+          PRODUCT / FORMULA STORY
       ===================================================== */}
-      <section
-        className={`
-          bg-[#E9E1D5]
-          px-5
-          py-20
-          md:px-10
-          md:py-28
-        `}
-      >
-        <div className="mx-auto max-w-7xl">
+
+      <section className="bg-[#FAF9F5] px-5 py-16 sm:px-10 lg:px-14 lg:py-20 xl:px-20">
+        <div className="mx-auto max-w-[1280px]">
           <Reveal>
-            <div
-              className={`
-                grid
-                overflow-hidden
-                rounded-[38px]
-                border
-                border-[#D1C8BA]
-                bg-[#F1EBE2]
-                shadow-[0_18px_60px_rgba(71,64,53,0.07)]
-                lg:grid-cols-[1.05fr_0.95fr]
-              `}
-            >
+            <div className="grid overflow-hidden rounded-[30px] bg-[#ECEBE4] lg:grid-cols-[1.08fr_0.92fr]">
               {/* IMAGE */}
-              <div
-                className={`
-                  group
-                  relative
-                  min-h-[430px]
-                  overflow-hidden
-                  sm:min-h-[520px]
-                  lg:min-h-[650px]
-                `}
-              >
+
+              <div className="group relative min-h-[390px] overflow-hidden sm:min-h-[500px] lg:min-h-[600px]">
                 <Image
                   src="/whipped-tallow-balm.png"
                   alt="Willow & Tallow Whipped Tallow Balm"
                   fill
                   sizes="(max-width: 1024px) 100vw, 55vw"
-                  className={`
-                    object-cover
-                    transition-transform
-                    duration-[1200ms]
-                    ease-out
-                    group-hover:scale-[1.035]
-                  `}
+                  className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.025]"
                 />
+
+                <div className="absolute bottom-5 left-5 rounded-full bg-[#FAF9F5]/90 px-4 py-2 backdrop-blur-sm">
+                  <span className="text-[7px] font-medium uppercase tracking-[0.3em] text-[#6E756A]">
+                    Thoughtfully Made
+                  </span>
+                </div>
               </div>
 
-              {/* STORY */}
-              <div
-                className={`
-                  flex
-                  items-center
-                  px-7
-                  py-14
-                  sm:px-10
-                  md:px-14
-                  lg:px-16
-                `}
-              >
-                <div className="max-w-xl">
-                  <span
-                    className={`
-                      inline-flex
-                      rounded-full
-                      border
-                      border-[#B8B3A6]
-                      bg-[#F7F2EA]/70
-                      px-4
-                      py-2
-                      text-[9px]
-                      uppercase
-                      tracking-[0.32em]
-                      text-[#7C816F]
-                    `}
-                  >
+              {/* COPY */}
+
+              <div className="flex items-center px-7 py-12 sm:px-10 lg:px-14 lg:py-16">
+                <div className="max-w-[470px]">
+                  <p className="text-[8px] font-medium uppercase tracking-[0.36em] text-[#7B8276]">
                     The Heart of Our Formulas
-                  </span>
-
-                  <h2
-                    className={`
-                      mt-7
-                      font-serif
-                      text-4xl
-                      leading-[1.1]
-                      text-[#383E35]
-                      md:text-5xl
-                    `}
-                  >
-                    Traditional ingredients, thoughtfully reimagined.
-                  </h2>
-
-                  <p
-                    className={`
-                      mt-7
-                      text-[17px]
-                      leading-8
-                      text-[#62685D]
-                    `}
-                  >
-                    Tallow has long been valued for its rich, comforting
-                    texture. At Willow & Tallow, it becomes the foundation for
-                    a slower kind of skincare—one that feels familiar,
-                    nourishing, and intentionally uncomplicated.
                   </p>
 
-                  <p
-                    className={`
-                      mt-5
-                      text-[17px]
-                      leading-8
-                      text-[#62685D]
-                    `}
-                  >
+                  <h2 className="mt-6 font-serif text-[2.6rem] leading-[1.04] tracking-[-0.04em] text-[#383E38] sm:text-[3.1rem]">
+                    Familiar ingredients,
+                    <br />
+                    <span className="italic text-[#747C6A]">
+                      thoughtfully considered.
+                    </span>
+                  </h2>
+
+                  <p className="mt-6 text-[14px] leading-7 text-[#666D64] sm:text-[15px]">
+                    Tallow has long been valued for its rich, comforting
+                    texture. For us, it represents something even simpler:
+                    returning to ingredients with a clear purpose.
+                  </p>
+
+                  <div className="my-6 h-px w-full bg-[#D1D1C8]" />
+
+                  <p className="text-[14px] leading-7 text-[#666D64] sm:text-[15px]">
                     We pair that philosophy with carefully considered
-                    botanical ingredients and formulas designed to fit
-                    naturally into everyday life.
+                    botanicals to create formulas designed to fit naturally
+                    into everyday routines.
                   </p>
                 </div>
               </div>
@@ -365,409 +173,144 @@ export default function AboutPage() {
       {/* =====================================================
           PHILOSOPHY
       ===================================================== */}
-      <section
-        className={`
-          bg-[#F5F0E7]
-          px-5
-          py-24
-          md:px-10
-          md:py-32
-        `}
-      >
-        <div className="mx-auto max-w-7xl">
+
+      <section className="bg-[#F5F3ED] px-6 py-16 sm:px-10 lg:px-14 lg:py-20 xl:px-20">
+        <div className="mx-auto max-w-[1280px]">
           <Reveal>
-            <div className="text-center">
-              <span
-                className={`
-                  inline-flex
-                  rounded-full
-                  border
-                  border-[#C7C2B6]
-                  bg-[#EEE8DE]/70
-                  px-5
-                  py-2
-                  text-[9px]
-                  uppercase
-                  tracking-[0.36em]
-                  text-[#7A806D]
-                `}
-              >
-                What We Believe
-              </span>
+            <div className="grid gap-8 border-b border-[#D4D5CD] pb-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
+              <div>
+                <p className="text-[8px] font-medium uppercase tracking-[0.38em] text-[#7B8276]">
+                  What We Believe
+                </p>
+              </div>
 
-              <h2
-                className={`
-                  mt-7
-                  font-serif
-                  text-4xl
-                  leading-tight
-                  text-[#383E35]
-                  md:text-6xl
-                `}
-              >
-                Fewer ingredients.
-                <br />
-                More intention.
-              </h2>
-
-              <p
-                className={`
-                  mx-auto
-                  mt-6
-                  max-w-xl
-                  text-[17px]
-                  leading-8
-                  text-[#696F63]
-                `}
-              >
-                A simpler philosophy guides everything we create.
-              </p>
+              <div>
+                <h2 className="font-serif text-[2.8rem] leading-[1] tracking-[-0.045em] text-[#383E38] sm:text-[3.5rem] lg:text-[4rem]">
+                  Fewer ingredients.
+                  <br />
+                  <span className="italic text-[#747C6A]">
+                    More intention.
+                  </span>
+                </h2>
+              </div>
             </div>
           </Reveal>
 
-          {/* VALUE CARDS */}
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
-            {values.map((value, index) => (
-              <Reveal
-                key={value.title}
-                delay={index * 100}
-                className="h-full"
-              >
-                <div
-                  className={`
-                    group
-                    flex
-                    h-full
-                    min-h-[320px]
-                    flex-col
-                    rounded-[30px]
-                    border
-                    border-[#D5CEC2]
-                    bg-[#F8F4EC]
-                    p-8
-                    shadow-[0_12px_40px_rgba(70,64,55,0.04)]
-                    transition-all
-                    duration-500
-                    hover:-translate-y-1
-                    hover:shadow-[0_22px_60px_rgba(70,64,55,0.09)]
-                    sm:p-9
-                  `}
-                >
-                  <div className="flex items-center justify-between">
-                    <span
-                      className={`
-                        inline-flex
-                        rounded-full
-                        border
-                        border-[#D0C9BD]
-                        bg-[#EEE8DE]/70
-                        px-4
-                        py-2
-                        text-[8px]
-                        uppercase
-                        tracking-[0.28em]
-                        text-[#7C8270]
-                      `}
-                    >
-                      Our Values
-                    </span>
+          {/* VALUES */}
 
-                    <span
-                      className={`
-                        font-serif
-                        text-lg
-                        italic
-                        text-[#A0A294]
-                      `}
-                    >
+          <div className="grid md:grid-cols-3">
+            {values.map((value, index) => (
+              <div
+                key={value.title}
+                className="border-b border-[#D4D5CD] py-9 md:border-b-0 md:border-r md:px-8 md:py-10 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
+              >
+                <Reveal delay={index * 100}>
+                  <div className="flex min-h-[220px] flex-col">
+                    <span className="font-serif text-[14px] italic text-[#969D91]">
                       {value.number}
                     </span>
+
+                    <h3 className="mt-8 font-serif text-[2rem] tracking-[-0.03em] text-[#3B423B]">
+                      {value.title}
+                    </h3>
+
+                    <p className="mt-4 max-w-[320px] text-[13px] leading-6 text-[#6B7169] sm:text-[14px]">
+                      {value.description}
+                    </p>
+
+                    <div className="mt-auto pt-7">
+                      <div className="h-px w-8 bg-[#92998D]" />
+                    </div>
                   </div>
-
-                  <h3
-                    className={`
-                      mt-10
-                      font-serif
-                      text-3xl
-                      text-[#3C4339]
-                    `}
-                  >
-                    {value.title}
-                  </h3>
-
-                  <p
-                    className={`
-                      mt-5
-                      text-[15px]
-                      leading-7
-                      text-[#6A7064]
-                    `}
-                  >
-                    {value.description}
-                  </p>
-
-                  <div
-                    className={`
-                      mt-auto
-                      pt-9
-                    `}
-                  >
-                    <div
-                      className={`
-                        h-px
-                        w-10
-                        bg-[#AEB0A0]
-                        transition-all
-                        duration-500
-                        group-hover:w-16
-                      `}
-                    />
-                  </div>
-                </div>
-              </Reveal>
+                </Reveal>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* =====================================================
-          BOTANICAL BREAK
+          BRAND STATEMENT
       ===================================================== */}
-      <section
-        className={`
-          relative
-          min-h-[620px]
-          overflow-hidden
-          bg-cover
-          bg-center
-          bg-no-repeat
-        `}
-        style={{
-          backgroundImage: "url('/willow-background.png')",
-        }}
-      >
-        <div className="absolute inset-0 bg-[#F3ECE1]/10" />
 
-        <div
-          className={`
-            relative
-            z-10
-            mx-auto
-            flex
-            min-h-[620px]
-            max-w-7xl
-            items-end
-            px-5
-            pb-10
-            md:px-10
-            md:pb-14
-          `}
-        >
-          <Reveal className="w-full">
-            <div
-              className={`
-                max-w-2xl
-                rounded-[34px]
-                border
-                border-white/35
-                bg-[#F5F0E7]/88
-                p-8
-                shadow-[0_18px_55px_rgba(65,60,50,0.08)]
-                backdrop-blur-md
-                md:p-12
-              `}
-            >
-              <span
-                className={`
-                  inline-flex
-                  rounded-full
-                  border
-                  border-[#BEB9AC]
-                  bg-[#EEE8DE]/60
-                  px-4
-                  py-2
-                  text-[9px]
-                  uppercase
-                  tracking-[0.34em]
-                  text-[#737A67]
-                `}
-              >
-                Our Inspiration
-              </span>
+      <section className="bg-[#FAF9F5] px-5 py-16 sm:px-10 lg:px-14 lg:py-20 xl:px-20">
+        <div className="mx-auto max-w-[1280px]">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-[34px] bg-[#747C69] px-8 py-16 sm:px-12 lg:px-16 lg:py-20">
+              {/* DECORATIVE CIRCLES */}
 
-              <h2
-                className={`
-                  mt-7
-                  font-serif
-                  text-4xl
-                  leading-tight
-                  text-[#343B31]
-                  md:text-5xl
-                `}
-              >
-                Nature has always known how to keep things simple.
-              </h2>
+              <div className="pointer-events-none absolute -right-28 -top-40 h-[390px] w-[390px] rounded-full border border-[#A3AA99]/45" />
 
-              <p
-                className={`
-                  mt-6
-                  text-[17px]
-                  leading-8
-                  text-[#656B5F]
-                  md:text-lg
-                `}
-              >
-                Willow & Tallow is inspired by natural textures, botanical
-                ingredients, old-world rituals, and the idea that everyday care
-                should feel grounding rather than overwhelming.
-              </p>
+              <div className="pointer-events-none absolute -bottom-44 -right-10 h-[340px] w-[340px] rounded-full bg-[#818978]/45" />
+
+              <div className="relative z-10 grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
+                <div>
+                  <p className="text-[8px] font-medium uppercase tracking-[0.38em] text-[#DDE1D7]">
+                    Our Approach
+                  </p>
+
+                  <div className="mt-4 h-px w-10 bg-[#D4D9CE]/70" />
+                </div>
+
+                <div className="max-w-[720px]">
+                  <h2 className="font-serif text-[2.8rem] leading-[1.02] tracking-[-0.04em] text-[#FAF9F5] sm:text-[3.5rem] lg:text-[4.1rem]">
+                    Care should feel
+                    <br />
+                    <span className="italic text-[#E4E7DF]">
+                      grounding, not overwhelming.
+                    </span>
+                  </h2>
+
+                  <p className="mt-6 max-w-[560px] text-[14px] leading-7 text-[#E2E5DD] sm:text-[15px]">
+                    We are inspired by natural textures, botanical ingredients,
+                    familiar rituals, and a slower approach to everyday care.
+                    Nothing excessive. Nothing complicated. Just thoughtful
+                    skincare designed to belong in your routine.
+                  </p>
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>
       </section>
 
       {/* =====================================================
-          CLOSING STORY
+          CLOSING
       ===================================================== */}
-      <section
-        className={`
-          bg-[#F5F0E7]
-          px-5
-          py-20
-          md:px-10
-          md:py-28
-        `}
-      >
-        <Reveal>
-          <div
-            className={`
-              mx-auto
-              max-w-6xl
-              rounded-[38px]
-              border
-              border-[#D5CEC2]
-              bg-[#EEE8DE]
-              px-7
-              py-20
-              text-center
-              shadow-[0_15px_50px_rgba(65,60,50,0.05)]
-              md:px-12
-              md:py-24
-            `}
-          >
-            <span
-              className={`
-                inline-flex
-                rounded-full
-                border
-                border-[#C6C1B4]
-                bg-[#F5F0E7]/60
-                px-5
-                py-2
-                text-[9px]
-                uppercase
-                tracking-[0.36em]
-                text-[#797F6D]
-              `}
-            >
-              Willow & Tallow
-            </span>
 
-            <h2
-              className={`
-                mx-auto
-                mt-7
-                max-w-4xl
-                font-serif
-                text-4xl
-                leading-tight
-                text-[#373D34]
-                md:text-6xl
-              `}
-            >
-              Skincare made to feel like a return to something familiar.
+      <section className="border-t border-[#E1E1DA] bg-[#F5F3ED] px-6 py-16 sm:px-10 lg:px-14 lg:py-20 xl:px-20">
+        <Reveal>
+          <div className="mx-auto max-w-[950px] text-center">
+            <p className="text-[8px] font-medium uppercase tracking-[0.4em] text-[#7C8377]">
+              Willow &amp; Tallow
+            </p>
+
+            <h2 className="mx-auto mt-6 max-w-[850px] font-serif text-[2.8rem] leading-[1.02] tracking-[-0.045em] text-[#373D37] sm:text-[3.6rem] lg:text-[4.2rem]">
+              Simple ingredients.
+              <br />
+              <span className="italic text-[#747C6A]">
+                Thoughtful everyday care.
+              </span>
             </h2>
 
-            <p
-              className={`
-                mx-auto
-                mt-7
-                max-w-2xl
-                text-[17px]
-                leading-8
-                text-[#696F63]
-                md:text-lg
-              `}
-            >
-              Simple ingredients. Comforting rituals. Thoughtful care designed
-              to make your routine feel a little slower and a little more
-              intentional.
+            <p className="mx-auto mt-6 max-w-[540px] text-[14px] leading-7 text-[#696F67]">
+              Essentials designed to make skincare feel a little simpler,
+              slower, and more intentional.
             </p>
 
             <Link
               href="/shop"
-              className={`
-                group
-                mt-10
-                inline-flex
-                items-center
-                gap-3
-                rounded-full
-                bg-[#56604E]
-                px-8
-                py-4
-                text-[9px]
-                uppercase
-                tracking-[0.27em]
-                text-[#F7F2EA]
-                transition-all
-                duration-300
-                hover:-translate-y-0.5
-                hover:bg-[#454E40]
-              `}
+              className="group mt-8 inline-flex items-center gap-3 rounded-full bg-[#596252] px-7 py-3.5 text-[8px] font-medium uppercase tracking-[0.28em] text-[#FAF9F5] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#485143]"
             >
               Explore the Collection
 
-              <span
-                className={`
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                `}
-              >
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
             </Link>
           </div>
         </Reveal>
       </section>
-
-      {/* =====================================================
-          HERO ANIMATION
-      ===================================================== */}
-      <style jsx global>{`
-        @keyframes heroFade {
-          0% {
-            opacity: 0;
-            transform: translateY(12px);
-          }
-
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          *,
-          *::before,
-          *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-          }
-        }
-      `}</style>
     </main>
   );
 }
