@@ -51,325 +51,184 @@ const articles = [
 
 export default function JournalPage() {
   return (
-    <main className="overflow-x-hidden bg-[#F5F0E7] text-[#343A31]">
+    <main className="overflow-x-hidden bg-[#FAF9F5] text-[#343A31]">
       {/* =====================================================
           HERO
       ===================================================== */}
-      <section
-        className={`
-          relative
-          min-h-[58vh]
-          overflow-hidden
-          bg-cover
-          bg-center
-          bg-no-repeat
-        `}
-        style={{
-          backgroundImage: "url('/willow-background.png')",
-        }}
-      >
-        <div className="absolute inset-0 bg-[#F6F0E6]/20" />
 
-        <div
-          className={`
-            absolute
-            inset-x-0
-            bottom-0
-            h-48
-            bg-gradient-to-b
-            from-transparent
-            via-[#F5F0E7]/45
-            to-[#F5F0E7]
-          `}
-        />
+      <section className="relative overflow-hidden border-b border-[#E1E2DB] bg-[#FAF9F5] px-6 pb-14 pt-32 sm:px-10 sm:pt-36 lg:px-14 lg:pb-16 lg:pt-36 xl:px-20">
+        <div className="mx-auto max-w-[1400px]">
+          <Reveal>
+            <div className="mx-auto max-w-[950px] text-center">
+              <div className="flex items-center justify-center gap-3">
+                <span className="h-px w-7 bg-[#A4AA9C]" />
 
-        <div
-          className={`
-            relative
-            z-10
-            mx-auto
-            flex
-            min-h-[58vh]
-            max-w-7xl
-            items-center
-            justify-center
-            px-6
-            pb-16
-            pt-32
-            text-center
-            md:px-10
-          `}
-        >
-          <div className="max-w-4xl">
-            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.1s_both]">
-              <span
-                className={`
-                  inline-flex
-                  rounded-full
-                  border
-                  border-[#B9B8A8]/70
-                  bg-[#F5F0E7]/55
-                  px-5
-                  py-2
-                  text-[9px]
-                  uppercase
-                  tracking-[0.36em]
-                  text-[#747B68]
-                  backdrop-blur-sm
-                `}
-              >
-                Willow & Tallow
-              </span>
-            </div>
+                <span className="text-[7px] font-medium uppercase tracking-[0.42em] text-[#777E72]">
+                  The Journal
+                </span>
 
-            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.2s_both]">
-              <h1
-                className={`
-                  mt-7
-                  font-serif
-                  text-5xl
-                  leading-[1.05]
-                  tracking-[-0.035em]
-                  text-[#363D33]
-                  sm:text-6xl
-                  md:text-7xl
-                `}
-              >
-                The Journal
+                <span className="h-px w-7 bg-[#A4AA9C]" />
+              </div>
+
+              <h1 className="mt-5 font-serif text-[3.4rem] font-normal leading-[0.94] tracking-[-0.05em] text-[#333933] sm:text-[4.2rem] lg:text-[5rem]">
+                Notes for a
+                <br />
+                <span className="italic text-[#747C6A]">
+                  slower kind of care.
+                </span>
               </h1>
-            </div>
 
-            <div className="animate-[heroFade_1100ms_cubic-bezier(0.22,1,0.36,1)_0.3s_both]">
-              <p
-                className={`
-                  mx-auto
-                  mt-7
-                  max-w-xl
-                  font-serif
-                  text-xl
-                  italic
-                  leading-8
-                  text-[#65705D]
-                  md:text-2xl
-                `}
-              >
-                Notes on skin, ingredients, rituals, and slower living.
+              <p className="mx-auto mt-6 max-w-[570px] text-[13px] leading-6 text-[#686F66] sm:text-[14px]">
+                Thoughtful reading on ingredients, skin, everyday rituals,
+                and the ideas that shape Willow &amp; Tallow.
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
+
+        <div className="absolute bottom-0 left-1/2 h-[3px] w-20 -translate-x-1/2 bg-[#B7BDAE]" />
       </section>
 
       {/* =====================================================
-          JOURNAL INTRO
+          INTRODUCTION
       ===================================================== */}
-      <section
-        className={`
-          bg-[#F5F0E7]
-          px-6
-          pb-20
-          pt-10
-          text-center
-          md:px-10
-          md:pb-24
-          md:pt-14
-        `}
-      >
-        <Reveal>
-          <div className="mx-auto max-w-3xl">
-            <span
-              className={`
-                inline-flex
-                rounded-full
-                border
-                border-[#C7C2B6]
-                bg-[#EEE8DE]/70
-                px-5
-                py-2
-                text-[9px]
-                uppercase
-                tracking-[0.36em]
-                text-[#7C8270]
-              `}
-            >
-              From the Journal
-            </span>
 
-            <h2
-              className={`
-                mt-7
-                font-serif
-                text-4xl
-                leading-tight
-                text-[#383E35]
-                md:text-5xl
-              `}
-            >
-              A slower place to learn and explore.
-            </h2>
+      <section className="bg-[#F5F3ED] px-6 py-14 sm:px-10 lg:px-14 lg:py-16 xl:px-20">
+        <div className="mx-auto grid max-w-[1280px] gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
+          <Reveal>
+            <div>
+              <p className="text-[8px] font-medium uppercase tracking-[0.38em] text-[#7C8377]">
+                From Willow &amp; Tallow
+              </p>
 
-            <p
-              className={`
-                mx-auto
-                mt-6
-                max-w-2xl
-                text-[17px]
-                leading-8
-                text-[#696F63]
-              `}
-            >
-              Thoughtful notes on traditional ingredients, simple skincare,
-              everyday rituals, and the philosophy behind Willow & Tallow.
-            </p>
+              <div className="mt-4 h-px w-12 bg-[#AEB3A6]" />
+            </div>
+          </Reveal>
 
-            <div className="mx-auto mt-10 h-px w-14 bg-[#A8AA99]" />
-          </div>
-        </Reveal>
+          <Reveal>
+            <div className="max-w-[760px]">
+              <h2 className="font-serif text-[2.6rem] leading-[1.04] tracking-[-0.04em] text-[#383E38] sm:text-[3.2rem] lg:text-[3.6rem]">
+                A place to learn,
+                <br />
+                <span className="italic text-[#747C6A]">
+                  without the noise.
+                </span>
+              </h2>
+
+              <p className="mt-6 max-w-[590px] text-[14px] leading-7 text-[#686E65] sm:text-[15px]">
+                Explore traditional ingredients, uncomplicated skincare,
+                everyday rituals, and a more considered approach to caring
+                for your skin.
+              </p>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* =====================================================
           FEATURED ARTICLE
       ===================================================== */}
-      <section
-        className={`
-          bg-[#E9E1D5]
-          px-5
-          py-20
-          md:px-10
-          md:py-28
-        `}
-      >
-        <div className="mx-auto max-w-7xl">
+
+      <section className="bg-[#FAF9F5] px-5 py-14 sm:px-10 lg:px-14 lg:py-20 xl:px-20">
+        <div className="mx-auto max-w-[1280px]">
           <Reveal>
-            <article
-              className={`
-                grid
-                overflow-hidden
-                rounded-[38px]
-                border
-                border-[#D1C8BA]
-                bg-[#F1EBE2]
-                shadow-[0_18px_60px_rgba(71,64,53,0.07)]
-                lg:grid-cols-[1.08fr_0.92fr]
-              `}
-            >
-              {/* FEATURED IMAGE */}
-              <div
-                className={`
-                  group
-                  relative
-                  min-h-[430px]
-                  overflow-hidden
-                  sm:min-h-[520px]
-                  lg:min-h-[620px]
-                `}
-              >
-                <Image
-                  src="/whipped-tallow-balm.png"
-                  alt="Willow & Tallow Whipped Tallow Balm"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 55vw"
-                  className={`
-                    object-cover
-                    transition-transform
-                    duration-[1200ms]
-                    ease-out
-                    group-hover:scale-[1.035]
-                  `}
-                />
-              </div>
+            <article className="relative overflow-hidden border-y border-[#D9DAD2] py-7 sm:py-9 lg:py-12">
+              <div className="grid items-center gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-16">
+                {/* IMAGE */}
 
-              {/* FEATURED CONTENT */}
-              <div
-                className={`
-                  flex
-                  items-center
-                  px-7
-                  py-14
-                  sm:px-10
-                  md:px-14
-                  lg:px-16
-                `}
-              >
-                <div className="max-w-xl">
-                  <span
-                    className={`
-                      inline-flex
-                      rounded-full
-                      border
-                      border-[#B8B3A6]
-                      bg-[#F7F2EA]/70
-                      px-4
-                      py-2
-                      text-[9px]
-                      uppercase
-                      tracking-[0.32em]
-                      text-[#7D826F]
-                    `}
-                  >
-                    Featured Reading
-                  </span>
+                <Link
+                  href="/journal/what-is-tallow-skincare"
+                  className="group relative block"
+                >
+                  <div className="relative aspect-[1.25/1] overflow-hidden rounded-[22px] bg-[#EEECE5] sm:aspect-[1.35/1] lg:aspect-[1.2/1]">
+                    <Image
+                      src="/journal-tallow-feature.png"
+                      alt="Natural tallow skincare texture with botanical ingredients"
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 58vw"
+                      className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.025]"
+                    />
 
-                  <h2
-                    className={`
-                      mt-7
-                      font-serif
-                      text-4xl
-                      leading-[1.08]
-                      tracking-[-0.025em]
-                      text-[#353B32]
-                      md:text-5xl
-                    `}
-                  >
-                    What Is Tallow Skincare?
+                    <div className="absolute inset-0 bg-[#4D554A]/[0.03]" />
+
+                    <div className="absolute left-5 top-5">
+                      <div className="rounded-full border border-white/40 bg-[#F9F7F1]/90 px-4 py-2 backdrop-blur-md">
+                        <span className="text-[7px] font-medium uppercase tracking-[0.3em] text-[#60685D]">
+                          Featured Reading
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+
+                {/* CONTENT */}
+
+                <div className="relative lg:pr-5">
+                  <div className="flex items-center justify-between border-b border-[#D5D7CE] pb-4">
+                    <div className="flex items-center gap-3">
+                      <span className="h-px w-7 bg-[#9FA698]" />
+
+                      <span className="text-[8px] font-medium uppercase tracking-[0.34em] text-[#747C70]">
+                        Ingredients
+                      </span>
+                    </div>
+
+                    <span className="font-serif text-[13px] italic text-[#A0A59A]">
+                      01
+                    </span>
+                  </div>
+
+                  <h2 className="mt-8 max-w-[500px] font-serif text-[2.8rem] leading-[0.98] tracking-[-0.045em] text-[#373D37] sm:text-[3.3rem] lg:text-[3.7rem]">
+                    What is
+                    <br />
+                    <span className="italic text-[#747C6A]">
+                      tallow skincare?
+                    </span>
                   </h2>
 
-                  <p
-                    className={`
-                      mt-6
-                      text-[17px]
-                      leading-8
-                      text-[#62685D]
-                    `}
-                  >
+                  <p className="mt-6 max-w-[480px] text-[14px] leading-7 text-[#686F66] sm:text-[15px]">
                     Tallow has been used in traditional skin preparations for
                     generations. Explore what it is, why it is used, and how it
                     fits into a simpler approach to everyday skincare.
                   </p>
 
+                  <div className="mt-7 flex items-center gap-5 border-t border-[#D5D7CE] pt-5">
+                    <div>
+                      <p className="text-[7px] uppercase tracking-[0.28em] text-[#989E94]">
+                        Topic
+                      </p>
+
+                      <p className="mt-1 font-serif text-[14px] italic text-[#555D53]">
+                        Ingredients &amp; Formulas
+                      </p>
+                    </div>
+
+                    <span className="h-7 w-px bg-[#D2D4CC]" />
+
+                    <div>
+                      <p className="text-[7px] uppercase tracking-[0.28em] text-[#989E94]">
+                        Reading
+                      </p>
+
+                      <p className="mt-1 font-serif text-[14px] italic text-[#555D53]">
+                        4 min
+                      </p>
+                    </div>
+                  </div>
+
                   <Link
                     href="/journal/what-is-tallow-skincare"
-                    className={`
-                      group
-                      mt-8
-                      inline-flex
-                      items-center
-                      gap-3
-                      rounded-full
-                      bg-[#505A4A]
-                      px-7
-                      py-4
-                      text-[9px]
-                      uppercase
-                      tracking-[0.25em]
-                      text-[#F7F2EA]
-                      transition-all
-                      duration-300
-                      hover:-translate-y-0.5
-                      hover:bg-[#414A3C]
-                    `}
+                    className="group mt-8 inline-flex items-center gap-4"
                   >
-                    Read the Story
+                    <span className="text-[8px] font-medium uppercase tracking-[0.3em] text-[#515A50]">
+                      Read the Story
+                    </span>
 
-                    <span
-                      className={`
-                        transition-transform
-                        duration-300
-                        group-hover:translate-x-1
-                      `}
-                    >
-                      →
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#9CA396] text-[#596158] transition-all duration-300 group-hover:bg-[#747C69] group-hover:text-[#FAF9F5]">
+                      <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                        →
+                      </span>
                     </span>
                   </Link>
                 </div>
@@ -380,413 +239,169 @@ export default function JournalPage() {
       </section>
 
       {/* =====================================================
-          ARTICLES
+          JOURNAL INDEX
       ===================================================== */}
-      <section
-        className={`
-          bg-[#F5F0E7]
-          px-5
-          py-24
-          md:px-10
-          md:py-32
-        `}
-      >
-        <div className="mx-auto max-w-7xl">
+
+      <section className="bg-[#F5F3ED] px-6 py-16 sm:px-10 lg:px-14 lg:py-20 xl:px-20">
+        <div className="mx-auto max-w-[1280px]">
           <Reveal>
-            <div className="mb-14 text-center">
-              <span
-                className={`
-                  inline-flex
-                  rounded-full
-                  border
-                  border-[#C7C2B6]
-                  bg-[#EEE8DE]/70
-                  px-5
-                  py-2
-                  text-[9px]
-                  uppercase
-                  tracking-[0.36em]
-                  text-[#7B816F]
-                `}
-              >
-                From the Journal
-              </span>
+            <div className="grid gap-7 border-b border-[#D4D5CD] pb-9 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+              <div>
+                <p className="text-[8px] font-medium uppercase tracking-[0.38em] text-[#7B8276]">
+                  From the Journal
+                </p>
+              </div>
 
-              <h2
-                className={`
-                  mt-7
-                  font-serif
-                  text-4xl
-                  text-[#373E34]
-                  md:text-5xl
-                `}
-              >
-                A little more to explore.
-              </h2>
-
-              <p
-                className={`
-                  mx-auto
-                  mt-5
-                  max-w-xl
-                  text-[16px]
-                  leading-7
-                  text-[#6B7065]
-                `}
-              >
-                Thoughtful reading for slower routines and more intentional
-                everyday care.
-              </p>
+              <div>
+                <h2 className="font-serif text-[2.7rem] leading-[1] tracking-[-0.045em] text-[#383E38] sm:text-[3.4rem] lg:text-[3.8rem]">
+                  More to{" "}
+                  <span className="italic text-[#747C6A]">
+                    explore.
+                  </span>
+                </h2>
+              </div>
             </div>
           </Reveal>
 
-          {/* ARTICLE CARDS */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div>
             {articles.map((article, index) => (
-              <Reveal
+              <div
                 key={article.title}
-                delay={(index % 3) * 100}
-                className="h-full"
+                className="border-b border-[#D4D5CD]"
               >
-                <article
-                  className={`
-                    group
-                    flex
-                    h-full
-                    min-h-[390px]
-                    flex-col
-                    rounded-[30px]
-                    border
-                    border-[#D5CEC2]
-                    bg-[#F8F4EC]
-                    p-8
-                    shadow-[0_12px_40px_rgba(70,64,55,0.04)]
-                    transition-all
-                    duration-500
-                    hover:-translate-y-1
-                    hover:shadow-[0_22px_60px_rgba(70,64,55,0.09)]
-                    sm:p-9
-                  `}
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <span
-                      className={`
-                        inline-flex
-                        rounded-full
-                        border
-                        border-[#D0C9BD]
-                        bg-[#EEE8DE]/70
-                        px-4
-                        py-2
-                        text-[8px]
-                        uppercase
-                        tracking-[0.28em]
-                        text-[#7C8270]
-                      `}
-                    >
-                      {article.category}
-                    </span>
+                <Reveal delay={(index % 3) * 70}>
+                  <Link
+                    href={article.href}
+                    className="group grid gap-5 py-8 transition-colors duration-300 hover:bg-[#EFEEE8] sm:px-3 lg:grid-cols-[80px_150px_1fr_44px] lg:items-center lg:gap-8 lg:py-9"
+                  >
+                    {/* NUMBER */}
 
-                    <span
-                      className={`
-                        font-serif
-                        text-lg
-                        italic
-                        text-[#A0A294]
-                      `}
-                    >
+                    <span className="font-serif text-[14px] italic text-[#9A9F94]">
                       0{index + 1}
                     </span>
-                  </div>
 
-                  <h3
-                    className={`
-                      mt-8
-                      max-w-lg
-                      font-serif
-                      text-[1.8rem]
-                      leading-[1.15]
-                      text-[#3A4137]
-                    `}
-                  >
-                    {article.title}
-                  </h3>
+                    {/* CATEGORY */}
 
-                  <p
-                    className={`
-                      mt-5
-                      max-w-lg
-                      text-[15px]
-                      leading-7
-                      text-[#696F63]
-                    `}
-                  >
-                    {article.description}
-                  </p>
+                    <p className="text-[8px] font-medium uppercase tracking-[0.28em] text-[#7A8175]">
+                      {article.category}
+                    </p>
 
-                  <div className="mt-auto pt-8">
-                    <Link
-                      href={article.href}
-                      className={`
-                        group/link
-                        inline-flex
-                        items-center
-                        gap-3
-                        rounded-full
-                        border
-                        border-[#8A9080]
-                        px-5
-                        py-3
-                        text-[9px]
-                        uppercase
-                        tracking-[0.25em]
-                        text-[#50594A]
-                        transition-all
-                        duration-300
-                        hover:bg-[#E9E3D8]
-                      `}
-                    >
-                      Read Article
+                    {/* ARTICLE CONTENT */}
 
-                      <span
-                        className={`
-                          transition-transform
-                          duration-300
-                          group-hover/link:translate-x-1
-                        `}
-                      >
+                    <div className="max-w-[720px]">
+                      <h3 className="font-serif text-[1.7rem] leading-[1.08] tracking-[-0.025em] text-[#3A413A] sm:text-[1.9rem]">
+                        {article.title}
+                      </h3>
+
+                      <p className="mt-3 max-w-[620px] text-[13px] leading-6 text-[#6B7169]">
+                        {article.description}
+                      </p>
+                    </div>
+
+                    {/* ARROW */}
+
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#A6AC9F] text-[#5D655A] transition-all duration-300 group-hover:border-[#747C69] group-hover:bg-[#747C69] group-hover:text-[#FAF9F5]">
+                      <span className="transition-transform duration-300 group-hover:translate-x-0.5">
                         →
                       </span>
-                    </Link>
-                  </div>
-                </article>
-              </Reveal>
+                    </div>
+                  </Link>
+                </Reveal>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* =====================================================
-          JOURNAL PHILOSOPHY
+          EDITORIAL STATEMENT
       ===================================================== */}
-      <section
-        className={`
-          bg-[#ECE6DC]
-          px-5
-          py-20
-          md:px-10
-          md:py-28
-        `}
-      >
-        <Reveal>
-          <div
-            className={`
-              mx-auto
-              max-w-6xl
-              rounded-[38px]
-              border
-              border-[#D5CEC2]
-              bg-[#F5F0E7]/65
-              px-7
-              py-20
-              text-center
-              shadow-[0_15px_50px_rgba(65,60,50,0.04)]
-              md:px-12
-              md:py-24
-            `}
-          >
-            <span
-              className={`
-                inline-flex
-                rounded-full
-                border
-                border-[#C6C1B4]
-                bg-[#EEE8DE]/60
-                px-5
-                py-2
-                text-[9px]
-                uppercase
-                tracking-[0.36em]
-                text-[#7B806F]
-              `}
-            >
-              A Slower Read
-            </span>
 
-            <h2
-              className={`
-                mx-auto
-                mt-7
-                max-w-3xl
-                font-serif
-                text-4xl
-                leading-tight
-                text-[#373E34]
-                md:text-5xl
-              `}
-            >
-              Skincare does not have to feel complicated.
-            </h2>
+      <section className="bg-[#FAF9F5] px-5 py-16 sm:px-10 lg:px-14 lg:py-20 xl:px-20">
+        <div className="mx-auto max-w-[1280px]">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-[34px] bg-[#747C69] px-8 py-14 sm:px-12 lg:px-16 lg:py-18">
+              {/* DECORATIVE DETAILS */}
 
-            <p
-              className={`
-                mx-auto
-                mt-7
-                max-w-2xl
-                text-[17px]
-                leading-8
-                text-[#676D61]
-                md:text-lg
-              `}
-            >
-              The Journal is a place to share what inspires Willow & Tallow—from
-              traditional ingredients and simple rituals to thoughtful ways of
-              caring for your skin.
-            </p>
-          </div>
-        </Reveal>
+              <div className="pointer-events-none absolute -right-28 -top-40 h-[390px] w-[390px] rounded-full border border-[#A3AA99]/45" />
+
+              <div className="pointer-events-none absolute -bottom-44 -right-10 h-[340px] w-[340px] rounded-full bg-[#818978]/45" />
+
+              <div className="pointer-events-none absolute right-[17%] top-[20%] h-20 w-20 rounded-full border border-[#A7AE9E]/30" />
+
+              <div className="relative z-10 grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+                <div>
+                  <p className="text-[8px] font-medium uppercase tracking-[0.38em] text-[#DDE1D7]">
+                    A Slower Read
+                  </p>
+
+                  <div className="mt-4 h-px w-10 bg-[#D4D9CE]/70" />
+                </div>
+
+                <div className="max-w-[720px]">
+                  <h2 className="font-serif text-[2.7rem] leading-[1.02] tracking-[-0.04em] text-[#FAF9F5] sm:text-[3.4rem] lg:text-[3.9rem]">
+                    Skincare does not have to
+                    <br />
+                    <span className="italic text-[#E4E7DF]">
+                      feel complicated.
+                    </span>
+                  </h2>
+
+                  <p className="mt-6 max-w-[560px] text-[14px] leading-7 text-[#E2E5DD] sm:text-[15px]">
+                    The Journal is a place to share what inspires Willow &amp;
+                    Tallow — from traditional ingredients and simple rituals
+                    to thoughtful ways of caring for your skin.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* =====================================================
-          CTA
+          FINAL CTA
       ===================================================== */}
-      <section
-        className={`
-          bg-[#F5F0E7]
-          px-5
-          py-20
-          md:px-10
-          md:py-28
-        `}
-      >
-        <Reveal>
-          <div
-            className={`
-              mx-auto
-              max-w-6xl
-              rounded-[38px]
-              border
-              border-[#D5CEC2]
-              bg-[#EEE8DE]
-              px-7
-              py-20
-              text-center
-              shadow-[0_15px_50px_rgba(65,60,50,0.05)]
-              md:px-12
-              md:py-24
-            `}
-          >
-            <span
-              className={`
-                inline-flex
-                rounded-full
-                border
-                border-[#C6C1B4]
-                bg-[#F5F0E7]/60
-                px-5
-                py-2
-                text-[9px]
-                uppercase
-                tracking-[0.36em]
-                text-[#7C826F]
-              `}
-            >
-              From Ritual to Routine
-            </span>
 
-            <h2
-              className={`
-                mx-auto
-                mt-7
-                max-w-3xl
-                font-serif
-                text-4xl
-                leading-tight
-                text-[#373E34]
-                md:text-5xl
-              `}
-            >
-              Discover what&apos;s coming to Willow & Tallow.
+      <section className="border-t border-[#E1E1DA] bg-[#F5F3ED] px-6 py-16 sm:px-10 lg:px-14 lg:py-20 xl:px-20">
+        <Reveal>
+          <div className="mx-auto max-w-[900px] text-center">
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-7 bg-[#A4AA9C]" />
+
+              <p className="text-[8px] font-medium uppercase tracking-[0.38em] text-[#7C8377]">
+                From Ritual to Routine
+              </p>
+
+              <span className="h-px w-7 bg-[#A4AA9C]" />
+            </div>
+
+            <h2 className="mx-auto mt-6 max-w-[800px] font-serif text-[2.8rem] leading-[1.02] tracking-[-0.045em] text-[#373D37] sm:text-[3.5rem] lg:text-[4rem]">
+              Thoughtful reading.
+              <br />
+              <span className="italic text-[#747C6A]">
+                Simpler everyday care.
+              </span>
             </h2>
 
-            <p
-              className={`
-                mx-auto
-                mt-6
-                max-w-xl
-                text-[17px]
-                leading-8
-                text-[#686E62]
-              `}
-            >
-              Explore the collection and get a closer look at the skincare
-              essentials currently in the works.
+            <p className="mx-auto mt-6 max-w-[520px] text-[14px] leading-7 text-[#696F67] sm:text-[15px]">
+              Discover the skincare essentials behind the rituals,
+              ingredients, and ideas shared in the Journal.
             </p>
 
             <Link
               href="/shop"
-              className={`
-                group
-                mt-9
-                inline-flex
-                items-center
-                gap-3
-                rounded-full
-                bg-[#56604E]
-                px-8
-                py-4
-                text-[9px]
-                uppercase
-                tracking-[0.27em]
-                text-[#F7F2EA]
-                transition-all
-                duration-300
-                hover:-translate-y-0.5
-                hover:bg-[#454E40]
-              `}
+              className="group mt-8 inline-flex items-center gap-3 rounded-full bg-[#596252] px-7 py-3.5 text-[8px] font-medium uppercase tracking-[0.28em] text-[#FAF9F5] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#485143]"
             >
-              View the Collection
+              Explore the Collection
 
-              <span
-                className={`
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                `}
-              >
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
             </Link>
           </div>
         </Reveal>
       </section>
-
-      {/* =====================================================
-          HERO ANIMATION
-      ===================================================== */}
-      <style jsx global>{`
-        @keyframes heroFade {
-          0% {
-            opacity: 0;
-            transform: translateY(12px);
-          }
-
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          *,
-          *::before,
-          *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-          }
-        }
-      `}</style>
     </main>
   );
 }
